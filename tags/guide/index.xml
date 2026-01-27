@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guide on wkittredge</title>
+    <link>http://localhost:1313/tags/guide/</link>
+    <description>Recent content in Guide on wkittredge</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing Dotfiles with Yolk</title>
+      <link>http://localhost:1313/posts/yolk/</link>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/yolk/</guid>
+      <description>&lt;p&gt;I found &lt;a href=&#34;https://elkowar.github.io/yolk/&#34;&gt;yolk&lt;/a&gt; when searching for an easy way to manage and template my configuration files. I had been using &lt;a href=&#34;https://www.gnu.org/software/stow/&#34;&gt;GNU Stow&lt;/a&gt; beforehand, but it lacks a convenient templating method.&lt;/p&gt;&#xA;&lt;p&gt;Apart from the &lt;a href=&#34;https://elkowar.github.io/yolk/book/&#34;&gt;yolk documentation&lt;/a&gt; itself, I couldn&amp;rsquo;t find many resources about how to use it. I also haven&amp;rsquo;t seen it mentioned in many online discussions or lists of similar tools. &lt;strong&gt;This is a quickstart guide for replicating my yolk setup and getting started with templating some configs.&lt;/strong&gt; If you&amp;rsquo;re interested, you can read about how I previously managed configuration files with Stow. Otherwise, skip straight to seeing &lt;a href=&#34;#new-method-yolk&#34;&gt;how I use yolk&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

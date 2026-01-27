@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>InsightConnect Workflow</title>
+<link rel="stylesheet" href="/fonts.min.bbe9cf010678e1cb8590bd9976d849252c77677415ef3fa9db498d88e9fb9283.css" integrity="sha256-u&#43;nPAQZ44cuFkL2ZdthJJSx3Z3QV7z&#43;p20mNiOn7koM=">
+<link rel="stylesheet" href="/main.min.76900fafe1d5d127b4f158cd3c4267f8c996986b3df50df9e0200bd2604987a9.css" integrity="sha256-dpAPr&#43;HV0Se08VjNPEJn&#43;MmWmGs99Q354CAL0mBJh6k=">
+<link rel="stylesheet" href="/dark.min.d32436f771fa4508087219e4dae85f13aa994057f29514bd2f53eb7f8b79e79b.css" integrity="sha256-0yQ293H6RQgIchnk2uhfE6qZQFfylRS9L1Prf4t555s=">
+<meta name="generator" content="Hugo 0.152.2">
+        <link rel="icon" href="data:," />
+        
+    </head>
+    <body>
+      <a id="top"></a>
+      <header>
+  <nav class="navbar">
+    <div class="navbar-icon"><ul class="navbar-icon">
+    </ul></div>
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/posts/">Posts</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+    <span class="navbar-filler"></span>
+    <div class="container">
+    <div class="toggle-container">
+      <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#C5AD87"><path fill="#C5AD87" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/></svg>
+      <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#57421E"><path fill="#57421E" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+      </svg>
+      <input class="toggle-box" type="checkbox" aria-labal="Toggle dark/light theme.">
+    </div>
+</div>
+
+<style>
+
+ 
+
+.toggle-container {
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-box {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+ 
+
+.dark-icon {
+  display: none;
+}
+
+ 
+  
+</style>
+
+<script>
+    var body = document.body;
+	var switcher = document.getElementsByClassName('toggle-box')[0];
+
+	
+	switcher.addEventListener("click", function() {
+        this.classList.toggle('toggle-box--checked');
+		
+		if (this.classList.contains('toggle-box--checked')) {
+			body.classList.add('dark-mode');
+			
+			localStorage.setItem('darkMode', 'true');
+		} else {
+			body.classList.remove('dark-mode');
+			setTimeout(function() {
+				localStorage.removeItem('darkMode');
+			}, 100);
+		}
+	})
+
+	
+	if (localStorage.getItem('darkMode')) {
+		
+        switcher.classList.add('toggle-box--checked');
+        body.classList.add('dark-mode');
+	}
+
+</script>
+
+  </nav>
+</header>
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>InsightConnect Workflow</h1>
+        <p><i>Published: Dec 18, 2025</i></p>
+    </div>
+    <div class="post-open-tags"></div>
+    <div class="post-open-quote"></div>
+  </section>
+  
+    <aside class="toc">
+      <nav class="toc-inner">
+        <h1 class="toc-title">
+          <a href="#top">Contents</a>
+        </h1>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#diagram">Diagram</a></li>
+    <li><a href="#documentation">Documentation</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#example">Example</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#caveats">Caveats</a></li>
+        <li><a href="#parameters">Parameters</a></li>
+        <li><a href="#improvements">Improvements</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </nav>
+    </aside>
+  
+  <section class="post-body"><h2 id="abstract">Abstract</h2>
+<p>This is an overview of the <a href="https://docs.rapid7.com/insightconnect/">Rapid7 InsightConnect</a> automation that I created collaboratively with Caydon Thomas during my <a href="/portfolio#internships">internship at National Heritage Academies</a> (NHA). It reduces that amount of time that security analysts and support technicians spend initiating and tracking endpoint remediation tickets by allowing one to interactively build and submit service requests. Error handling, execution status updates (analogous to return codes), help, and troubleshooting features are built-in.</p>
+<h2 id="diagram">Diagram</h2>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.21e82505c4d19fa112badbea83c1ef264cbf4bd1cd63b2a6a9fc08ddca497857.css"
+        integrity="sha256-IeglBcTRn6ESutvqg8HvJky/S9HNY7KmqfwI3cpJeFc="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-50 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="diagram.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="diagram.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="diagram.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>A simplified execution flow diagram.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h2 id="documentation">Documentation</h2>
+<p>A copy of the documentation that I created for this workflow can be read below. <em><strong>Some minor details have been changed or omitted to protect potentially sensitive information about how the automation has been integrated into NHA&rsquo;s operations.</strong></em></p>
+<h3 id="description">Description</h3>
+<p>This workflow is intended to make it easier to send tickets to TSC when a security incident occurs. When this workflow is enabled, you can post a special message in Slack to interactively build and submit a TDX ticket to the email queue via Slack message replies and reactions. Before sending the ticket, you will be allowed to select a template and review the email.</p>
+<p><em>The following ticket templates are supported:</em></p>
+<table>
+  <thead>
+      <tr>
+          <th>Template</th>
+          <th>Requires&hellip;</th>
+          <th>Subject</th>
+          <th>Body</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Unwanted Program</td>
+          <td><code>email</code>, <code>hostname</code></td>
+          <td><em>[Intentionally omitted]</em></td>
+          <td><em>[Intentionally omitted]</em></td>
+      </tr>
+      <tr>
+          <td>Malware (isolated)</td>
+          <td><code>email</code>, <code>hostname</code></td>
+          <td><em>[Intentionally omitted]</em></td>
+          <td><em>[Intentionally omitted]</em></td>
+      </tr>
+      <tr>
+          <td>Malware (un-isolated)</td>
+          <td><code>email</code>, <code>hostname</code></td>
+          <td><em>[Intentionally omitted]</em></td>
+          <td><em>[Intentionally omitted]</em></td>
+      </tr>
+      <tr>
+          <td>Password Reset (account compromised)</td>
+          <td><code>email</code></td>
+          <td><em>[Intentionally omitted]</em></td>
+          <td><em>[Intentionally omitted]</em></td>
+      </tr>
+      <tr>
+          <td>Password Reset (suspicious authentication)</td>
+          <td><code>email</code></td>
+          <td><em>[Intentionally omitted]</em></td>
+          <td><em>[Intentionally omitted]</em></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="example">Example</h3>
+<p><strong><code>@Rapid7 InsightConnect tdx user@nhaschools.com hostname</code></strong></p>
+<ul>
+<li><strong><code>@Rapid7 InsightConnect</code></strong> mentions the Rapid7 InsightConnect user on Slack</li>
+<li><strong><code>tdx</code></strong> is the workflow trigger phrase</li>
+<li><strong><code>user@nhaschools.com</code></strong> is the email of the user in the ticket</li>
+<li><strong><code>hostname</code></strong> is the hostname of the device in the ticket</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<p>To use this workflow, mention the <code>Rapid7 InsightConnect</code> user from the workflow trigger channel in a message that contains the workflow trigger phrase <em><strong>and</strong></em> any information required by your ticket template. <strong>The trigger phrase, user email, and device hostname can be supplied in any order</strong> (space-separated).</p>
+<p><strong>Every message must include <em>at least:</em></strong></p>
+<ul>
+<li>the <code>@Rapid7 InsightConnect</code> mention</li>
+<li>the workflow trigger phrase</li>
+<li>the email address of the user in the ticket
+<ul>
+<li><em><strong>note:</strong></em> this is the email address of the user that the ticket is about - not the address that sends or receives the ticket email itself</li>
+</ul>
+</li>
+</ul>
+<h3 id="caveats">Caveats</h3>
+<ol>
+<li>A TDX service has been configured to monitor the ticket queue inbox for emails generated by this workflow with specific/special subjects. <em><strong>Do not change ticket email subjects</strong> in this workflow without notifying the team responsible for the TDX service.</em> <em><strong>Otherwise, the process that TSC uses to update IT Security on ticket resolutions will break.</strong></em></li>
+</ol>
+<h3 id="parameters">Parameters</h3>
+<p><em>The behavior of this workflow can be changed with the following parameters:</em></p>
+<table>
+  <thead>
+      <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>Trigger Channel</code></td>
+          <td><em>Slack channel that the workflow will monitor for and respond to messages in.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Trigger Regex</code></td>
+          <td><em>Regex that, when matched, triggers the workflow when the Rapid7 InsightConnect user in mentioned in Slack.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Email Regex</code></td>
+          <td><em>Regex pattern used to match an email address.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Hostname Regex</code></td>
+          <td><em>Regex pattern used to match device hostnames.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Email Sender</code></td>
+          <td><em>Email address used to send the ticket message.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Email Destination</code></td>
+          <td><em>Email address that will receive the ticket message from the email sender.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Unwanted Program Subject</code></td>
+          <td><em>Email subject used for unwanted program tickets.</em></td>
+          <td><strong>see caveat 1</strong></td>
+      </tr>
+      <tr>
+          <td><code>Unwanted Program Body</code></td>
+          <td><em>Email body used for unwanted program tickets.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Malware Subject</code></td>
+          <td><em>Email subject used for malware tickets.</em></td>
+          <td><strong>see caveat 1</strong></td>
+      </tr>
+      <tr>
+          <td><code>Malware Body - Isolated</code></td>
+          <td><em>Email body used for malware tickets where the device has been isolated.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Malware Body - Unisolated</code></td>
+          <td><em>Email body used for malware tickets where the device is still un-isolated.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Password Reset Subject</code></td>
+          <td><em>Email subject used for password reset tickets.</em></td>
+          <td><strong>see caveat 1</strong></td>
+      </tr>
+      <tr>
+          <td><code>Password Reset Body - Account Compromised</code></td>
+          <td><em>Email body used for account compromised password reset tickets.</em></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><code>Password Reset Body - Suspicious Authentication</code></td>
+          <td><em>Email body used for suspicious authentication password reset tickets.</em></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="improvements">Improvements</h3>
+<ol>
+<li>Because it is possible to get the email address of the analyst that sends the command in Slack, we could have an option to send a copy of the final ticket email message to the user&rsquo;s inbox for additional confirmation that the ticket was submitted.</li>
+</ol>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; Will Kittredge
+        </p>
+        <p class="copyright">
+          Created with <a class='copyrightAccent' href='https://gohugo.io'>Hugo</a>,
+          <a class='copyrightAccent' href='https://github.com/marcus0x62/tinyblog'>Tinyblog</a>, and
+          <a class='copyrightAccent' href='https://github.com/marcus0x62/tinyimages'>Tinyimages</a>
+        </p>
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+
+
+
+
+  
+  
+
+  
+    
+      
+      
+
+      
+      
+    
+  
+
+  
+    
+    
+
+  
+
+  
+    
+      
+      
+
+    
+
+    
+    
+
+    
+
+    
+      
+        
+        
+      
+    
+  
+    
+    
+  
+
+  
+
+

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Managing Dotfiles with Yolk</title>
+<link rel="stylesheet" href="/fonts.min.bbe9cf010678e1cb8590bd9976d849252c77677415ef3fa9db498d88e9fb9283.css" integrity="sha256-u&#43;nPAQZ44cuFkL2ZdthJJSx3Z3QV7z&#43;p20mNiOn7koM=">
+<link rel="stylesheet" href="/main.min.76900fafe1d5d127b4f158cd3c4267f8c996986b3df50df9e0200bd2604987a9.css" integrity="sha256-dpAPr&#43;HV0Se08VjNPEJn&#43;MmWmGs99Q354CAL0mBJh6k=">
+<link rel="stylesheet" href="/dark.min.d32436f771fa4508087219e4dae85f13aa994057f29514bd2f53eb7f8b79e79b.css" integrity="sha256-0yQ293H6RQgIchnk2uhfE6qZQFfylRS9L1Prf4t555s=">
+<meta name="generator" content="Hugo 0.152.2">
+        <link rel="icon" href="data:," />
+        
+          
+          <meta property="og:type" content="article">
+          <meta property="og:title" content="Managing Dotfiles with Yolk">
+          <meta property="og:description"
+                content="I found yolk when searching for an easy way to manage and template my configuration files. I had been using GNU Stow beforehand, but it lacks a convenient templating method.
+Apart from the yolk …">
+          <meta property="og:url" content="http://localhost:1313/posts/yolk/">
+          
+            
+          
+          <meta property="article:published_time"
+                content="2026-01-27T00:00:00&#43;00:00">
+          <meta property="article:modified_time"
+                content="2026-01-27T00:00:00&#43;00:00">
+          
+            
+              <meta property="article:tag" content="guide">
+            
+              <meta property="article:tag" content="linux">
+            
+          
+        
+    </head>
+    <body>
+      <a id="top"></a>
+      <header>
+  <nav class="navbar">
+    <div class="navbar-icon"><ul class="navbar-icon">
+    </ul></div>
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/posts/">Posts</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+    <span class="navbar-filler"></span>
+    <div class="container">
+    <div class="toggle-container">
+      <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#C5AD87"><path fill="#C5AD87" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/></svg>
+      <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#57421E"><path fill="#57421E" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+      </svg>
+      <input class="toggle-box" type="checkbox" aria-labal="Toggle dark/light theme.">
+    </div>
+</div>
+
+<style>
+
+ 
+
+.toggle-container {
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-box {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+ 
+
+.dark-icon {
+  display: none;
+}
+
+ 
+  
+</style>
+
+<script>
+    var body = document.body;
+	var switcher = document.getElementsByClassName('toggle-box')[0];
+
+	
+	switcher.addEventListener("click", function() {
+        this.classList.toggle('toggle-box--checked');
+		
+		if (this.classList.contains('toggle-box--checked')) {
+			body.classList.add('dark-mode');
+			
+			localStorage.setItem('darkMode', 'true');
+		} else {
+			body.classList.remove('dark-mode');
+			setTimeout(function() {
+				localStorage.removeItem('darkMode');
+			}, 100);
+		}
+	})
+
+	
+	if (localStorage.getItem('darkMode')) {
+		
+        switcher.classList.add('toggle-box--checked');
+        body.classList.add('dark-mode');
+	}
+
+</script>
+
+  </nav>
+</header>
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>Managing Dotfiles with Yolk</h1>
+        <p><i>Published: Jan 27, 2026</i></p>
+    </div>
+    <div class="post-open-tags"><span>Tags:</span><a class="taglink" href="/tags/guide/"><kbd class="tag">guide</kbd></a><a class="taglink" href="/tags/linux/"><kbd class="tag">linux</kbd></a></div>
+    <div class="post-open-quote"></div>
+  </section>
+  
+    <aside class="toc">
+      <nav class="toc-inner">
+        <h1 class="toc-title">
+          <a href="#top">Contents</a>
+        </h1>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#background--problem">Background &amp; Problem</a></li>
+    <li><a href="#old-method-stow">Old Method: Stow</a>
+      <ul>
+        <li><a href="#shortcoming">Shortcoming</a></li>
+      </ul>
+    </li>
+    <li><a href="#new-method-yolk">New Method: Yolk</a>
+      <ul>
+        <li><a href="#basic-yolkrhai-example">Basic yolk.rhai example</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </nav>
+    </aside>
+  
+  <section class="post-body"><p>I found <a href="https://elkowar.github.io/yolk/">yolk</a> when searching for an easy way to manage and template my configuration files. I had been using <a href="https://www.gnu.org/software/stow/">GNU Stow</a> beforehand, but it lacks a convenient templating method.</p>
+<p>Apart from the <a href="https://elkowar.github.io/yolk/book/">yolk documentation</a> itself, I couldn&rsquo;t find many resources about how to use it. I also haven&rsquo;t seen it mentioned in many online discussions or lists of similar tools. <strong>This is a quickstart guide for replicating my yolk setup and getting started with templating some configs.</strong> If you&rsquo;re interested, you can read about how I previously managed configuration files with Stow. Otherwise, skip straight to seeing <a href="#new-method-yolk">how I use yolk</a>.</p>
+<h2 id="background--problem">Background &amp; Problem</h2>
+<p>I didn&rsquo;t have a need for managing configuration files at all until relatively recently. Most of the programs I used had convenient ways to import, export, set, and sometimes autoconfigure or sync your options. This changed when I took a class called <em>Secure Digital Technologies</em> during the early stages of my degree at Ferris State University. After this point I would have to increasingly rely on Linux programs (terminal or otherwise) for academic and work purposes. Many of these applications require manual configuration by editing files directly or writing them yourself.</p>
+<p>Writing and editing configuration files isn&rsquo;t normally difficult, but it can quickly become a mess as more programs are installed. It becomes harder to manage and version control more files, and they will often become dispersed across your disk(s) over time. Some applications might expect files in <code>~/.config/</code>, while others might want them sitting loosely in the home folder.</p>
+<p>File management challenges started to hinder my ability to experiment - which was part of the reason I began using Linux in the first place. Besides needing it for work and learning purposes, I also like having the ability to fully customize every aspect of the system. Manually handling problems with configuration file management would be unwieldy, impractical, error-prone, and time-consuming. A smarter solution is necessary. <strong>I needed a way to centralize and version control all of my important configuration files. Ideally, it should also be easy to make per-device changes.</strong></p>
+<h2 id="old-method-stow">Old Method: Stow</h2>
+<p>I learned this method from a <a href="https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html">guide</a> linked on Stow&rsquo;s homepage. <a href="#shortcoming">It wasn&rsquo;t a perfect solution for my needs</a>, but it worked well enough for a long while. Some of the notes I made for myself about using Stow are included below.</p>
+<p>Create a <code>.dotfiles/</code> directory to use as a central location for managing your configurations. Regardless of what your programs call for, you can organize your configurations in (more or less) whichever way you like within this directory <strong>at the top level.</strong> Beyond that, you should mimic the structure that your programs expect.</p>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.21e82505c4d19fa112badbea83c1ef264cbf4bd1cd63b2a6a9fc08ddca497857.css"
+        integrity="sha256-IeglBcTRn6ESutvqg8HvJky/S9HNY7KmqfwI3cpJeFc="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="dotfiles1.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="dotfiles1.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="dotfiles1.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>Old screenshot of my directory structure using Stow.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>It&rsquo;s also a good idea to start tracking changes (remember to make regular commits with meaningful messages):</p>
+<pre tabindex="0"><code>git init
+git add .
+git commit -m &#39;initial commit`
+</code></pre><p>To <strong>stow</strong> something is to create symbolic links using the <code>stow</code> command:</p>
+<pre tabindex="0"><code>stow --dotfiles -vt &lt;target-dir&gt; &lt;package&gt;
+</code></pre><p>To <strong>unstow</strong> something is to remove the symbolic links - the reverse of stowing:</p>
+<pre tabindex="0"><code>stow --dotfiles -vt &lt;target-dir&gt; -D &lt;package&gt;
+</code></pre><p>Top-level folders in your <code>.dotfiles/</code> directory are treated as packages by the <code>stow</code> command. By default, it will target the parent directory and create symlinks for your Stow package(s) there. If necessary, use the <code>-n</code> option to simulate changes to the filesystem. This can be a useful way to check your work when combined with different verbosity levels.</p>
+<p>The target directory will likely be your home directory when managing configuration files. As an example, the command to enable the <code>vim</code> configuration is:</p>
+<pre tabindex="0"><code>stow --dotfiles -vt ~ vim
+</code></pre><p>When this command is run, <code>stow</code> will look inside the in the <code>.dotfiles/vim/</code> directory and see the <code>dot-vim/</code> folder. It then creates a <code>.vim/</code> symlink in <code>~/</code>.</p>
+<p>You don&rsquo;t have to follow the <code>dot-</code> naming convention, but it avoids the problem of having a package directory filled with hidden files. Make sure you use the <code>--dotfiles</code> option if you decide to do this.</p>
+<h3 id="shortcoming">Shortcoming</h3>
+<p>This old method works fine when you only need one version of every configuration file, but what about when you need different configs for different machines? After all, I did mention that per-device changes sould be easy. I could change my workflow to use multiple Git branches, but I honestly don&rsquo;t have any interest in that. That feels like it increases mental overhead, which is the opposite of what I want when working with things like configuration files.</p>
+<p><strong>What I needed was a simple and easy way to template my configuration files with minimal setup that fit my existing workflow.</strong> Until then, I would just comment/uncomment the correct lines in my config files depending on which device I was using (not fun). I looked at tools like <a href="https://www.chezmoi.io/">chezmoi</a>, but I found that many would do a little more than I wanted. I think chezmoi is great, but it feels like overkill in my current Linux ecosystem so I don&rsquo;t want to invest in learning all of its features only to use a few. I&rsquo;m still keeping it in mind for the future when my setup has matured, however.</p>
+<h2 id="new-method-yolk">New Method: Yolk</h2>
+<p>I was browsing GitHub and when I found yolk. The description sounded interesting, so I read the <a href="https://elkowar.github.io/yolk/book/">documentation</a> and decided that it could address my needs. There are multiple valid ways to configure and use yolk. <strong>This is a short guide to get you started rather than a deep-dive into every feature. I&rsquo;ll be showing the approach that I use, but you don&rsquo;t have to do it this way.</strong> As always, read the docs for more information.</p>
+<p>The first thing you need to do is <a href="https://elkowar.github.io/yolk/artifacts/">install yolk</a>. I used the <code>cargo</code> install method:</p>
+<pre tabindex="0"><code>cargo install yolk_dots --locked --profile=dist
+</code></pre><p>This is the point when you would normally run the <code>yolk init</code> command to generate the default file structure. I wanted to reuse the <code>.dotfiles/</code> structure I had with Stow, so I provide a custom path with the <code>--yolk-dir</code> option. Right now I just have an alias, but you can also set the <code>YOLK_DIR</code> environment variable according to command help output text. That might be a smarter idea.</p>
+<pre tabindex="0"><code>alias yolk=&#39;yolk --yolk-dir ~/.dotfiles&#39;
+</code></pre><p>It&rsquo;s now time to get version control working. If you already have Git installed and used <code>yolk init</code>, then there isn&rsquo;t anything else to do here except remembering how to correctly interact with the repository (see below). If you made a custom directory to provide yolk, then <code>git init</code> a repository and run <code>yolk safeguard</code> to safeguard the Git folder. <strong>This is crucial.</strong> The reason is explained on <a href="https://elkowar.github.io/yolk/book/git_concepts.html#safeguarding-git">this docs page</a>:</p>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>&ldquo;Yolk wraps the Git CLI to ensure that Git only ever interacts with your dotfiles in their canonical state. If it didn&rsquo;t do that, you would end up committing the local state of your dotfiles, which would conflict with their state from another machine &ndash; which is what yolk is trying to solve.&rdquo;</p>
+</i>
+  </blockquote></figure>
+<p>Once yolk is set up for version control, just <strong>remember to use <code>yolk git &lt;command&gt;</code> instead of <code>git &lt;command&gt;</code> to interact with your dotfiles repository.</strong> For example, you commit changes with <code>yolk git commit -m &lt;msg&gt;</code>.</p>
+<p>Make an <code>eggs/</code> folder in the yolk directory to house all your configuration packages. The structure can depend on which <a href="https://elkowar.github.io/yolk/book/yolk_rhai.html#strategy">deployment strategy</a> you select.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-2-2">
+  <label for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="dotfiles2.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-2" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="dotfiles2.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="dotfiles2.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>Screenshot showing part of my current directory structure.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>I use the Stow-style <em>merge</em> strategy, which is <strong>not the default.</strong> This means that my <code>./dotfiles/eggs/&lt;package&gt;</code> directory structures must mimic the directory structures of their target folders. You might need to do something different if you decide to use the <em>put</em> strategy.</p>
+<p>After getting the files where they need to be, you can insert templates directly into your configurations. A basic example showcasing conditionals is included below. Yolk can also perform other operations such as text replacement. Check the <a href="https://elkowar.github.io/yolk/book/templates.html">template</a> and <a href="https://elkowar.github.io/yolk/book/rhai_docs/index.html">function reference</a> pages for more information about templating.</p>
+<pre tabindex="0"><code>/* Customize Waybar font family and size per-device. */
+
+window#waybar {
+    color: #959595;
+    /*{% if SYSTEM.hostname == &#34;abscissa&#34; %}*/
+    font-family: &#34;GohuFont uni14 Nerd Font Propo&#34;;
+    font-size: 14px;
+    /*{% elif SYSTEM.hostname == &#34;moonbeam&#34; %}*/
+    /*&lt;yolk&gt; font-family: &#34;GeistMono Nerd Font Propo&#34;;*/
+    /*&lt;yolk&gt; font-size: small;*/
+    /*{% end %}*/
+}
+</code></pre><p>Template instructions are written in comments. When yolk evaluates and deploys files, it follows the template instructions to determine how to operate. In the above example, yolk controls which lines to include by commenting disabled blocks with a special <code>&lt;yolk&gt;</code> prefix. The prefix will be removed when template instructions tell yolk to re-enable those commented lines - <strong>do not remove the prefix manually.</strong></p>
+<p>Next, make a <code>yolk.rhai</code> file in your yolk directory to tell the program what it should do with your configurations. <strong>This is an important file, so I recommend reading the <a href="https://elkowar.github.io/yolk/book/yolk_rhai.html">relevant documentation page</a>.</strong> A portion of my <code>yolk.rhai</code> and an explanation of what it does is included below.</p>
+<p>Run <code>yolk sync</code> after you&rsquo;re done writing the <code>yolk.rhai</code> file and templating your configurations to deploy everything according to what you defined. Remember to <code>yolk sync</code> often when you&rsquo;re adding and changing configurations, especially if you experience problems with settings not being applied.</p>
+<h3 id="basic-yolkrhai-example">Basic yolk.rhai example</h3>
+<pre tabindex="0"><code>export let eggs = #{
+    bash: #{
+        targets: &#34;~&#34;,
+        strategy: &#34;merge&#34;,
+        main_file: &#34;.bashrc&#34;,
+    },
+    gammastep: #{
+        targets: &#34;~&#34;,
+        strategy: &#34;merge&#34;,
+    },
+    keyd: #{
+        enabled: SYSTEM.hostname == &#34;abscissa&#34;,
+        targets: &#34;/&#34;,
+        strategy: &#34;merge&#34;,
+    },
+    waybar: #{
+        targets: &#34;~&#34;,
+        strategy: &#34;merge&#34;,
+        templates: [&#34;.config/waybar/config.jsonc&#34;,&#34;.config/waybar/style.css&#34;],
+        main_file: &#34;.config/waybar/config.jsonc&#34;,
+    },
+}
+</code></pre><h4 id="bash">bash</h4>
+<ul>
+<li>Merge contents of <code>.dotfiles/eggs/bash/</code> with <code>~/</code></li>
+<li>Using <code>yolk edit bash</code> opens the <code>.bashrc</code> file</li>
+</ul>
+<h4 id="gammastep">gammastep</h4>
+<ul>
+<li>Merge contents of <code>.dotfiles/eggs/gammastep/</code> with <code>~/</code></li>
+</ul>
+<h4 id="keyd">keyd</h4>
+<ul>
+<li>Merge contents of <code>.dotfiles/eggs/keyd/</code> with <code>/</code> if the hostname is <code>abscissa</code></li>
+</ul>
+<h4 id="waybar">waybar</h4>
+<ul>
+<li>Merge contents of <code>.dotfiles/eggs/waybar/</code> with <code>~/</code></li>
+<li>Enable templating in the <code>config.jsonc</code> and <code>style.css</code> files</li>
+<li>Using <code>yolk edit waybar</code> opens the <code>config.jsonc</code> file</li>
+</ul>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; Will Kittredge
+        </p>
+        <p class="copyright">
+          Created with <a class='copyrightAccent' href='https://gohugo.io'>Hugo</a>,
+          <a class='copyrightAccent' href='https://github.com/marcus0x62/tinyblog'>Tinyblog</a>, and
+          <a class='copyrightAccent' href='https://github.com/marcus0x62/tinyimages'>Tinyimages</a>
+        </p>
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+
+
+
+
+  
+  
+
+  
+    
+      
+      
+
+      
+      
+    
+  
+
+  
+    
+    
+
+  
+
+  
+    
+      
+      
+
+    
+
+    
+    
+
+    
+
+    
+      
+        
+        
+      
+    
+  
+    
+    
+  
+
+  
+
+

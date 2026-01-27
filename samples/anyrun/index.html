@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ANY.RUN Malware Investigation</title>
+<link rel="stylesheet" href="/fonts.min.bbe9cf010678e1cb8590bd9976d849252c77677415ef3fa9db498d88e9fb9283.css" integrity="sha256-u&#43;nPAQZ44cuFkL2ZdthJJSx3Z3QV7z&#43;p20mNiOn7koM=">
+<link rel="stylesheet" href="/main.min.76900fafe1d5d127b4f158cd3c4267f8c996986b3df50df9e0200bd2604987a9.css" integrity="sha256-dpAPr&#43;HV0Se08VjNPEJn&#43;MmWmGs99Q354CAL0mBJh6k=">
+<link rel="stylesheet" href="/dark.min.d32436f771fa4508087219e4dae85f13aa994057f29514bd2f53eb7f8b79e79b.css" integrity="sha256-0yQ293H6RQgIchnk2uhfE6qZQFfylRS9L1Prf4t555s=">
+<meta name="generator" content="Hugo 0.152.2">
+        <link rel="icon" href="data:," />
+        
+    </head>
+    <body>
+      <a id="top"></a>
+      <header>
+  <nav class="navbar">
+    <div class="navbar-icon"><ul class="navbar-icon">
+    </ul></div>
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/posts/">Posts</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+    <span class="navbar-filler"></span>
+    <div class="container">
+    <div class="toggle-container">
+      <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#C5AD87"><path fill="#C5AD87" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/></svg>
+      <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#57421E"><path fill="#57421E" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+      </svg>
+      <input class="toggle-box" type="checkbox" aria-labal="Toggle dark/light theme.">
+    </div>
+</div>
+
+<style>
+
+ 
+
+.toggle-container {
+  cursor: pointer;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-box {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+ 
+
+.dark-icon {
+  display: none;
+}
+
+ 
+  
+</style>
+
+<script>
+    var body = document.body;
+	var switcher = document.getElementsByClassName('toggle-box')[0];
+
+	
+	switcher.addEventListener("click", function() {
+        this.classList.toggle('toggle-box--checked');
+		
+		if (this.classList.contains('toggle-box--checked')) {
+			body.classList.add('dark-mode');
+			
+			localStorage.setItem('darkMode', 'true');
+		} else {
+			body.classList.remove('dark-mode');
+			setTimeout(function() {
+				localStorage.removeItem('darkMode');
+			}, 100);
+		}
+	})
+
+	
+	if (localStorage.getItem('darkMode')) {
+		
+        switcher.classList.add('toggle-box--checked');
+        body.classList.add('dark-mode');
+	}
+
+</script>
+
+  </nav>
+</header>
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>ANY.RUN Malware Investigation</h1>
+        <p><i>Published: Nov 19, 2025</i>
+          <i>Updated: Jan 25, 2026</i></p>
+    </div>
+    <div class="post-open-tags"></div>
+    <div class="post-open-quote"></div>
+  </section>
+  
+    <aside class="toc">
+      <nav class="toc-inner">
+        <h1 class="toc-title">
+          <a href="#top">Contents</a>
+        </h1>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#analysis-of-stealer-malware">Analysis of Stealer Malware</a>
+      <ul>
+        <li><a href="#behavior-during-execution-will">Behavior during execution (Will)</a></li>
+        <li><a href="#network-activity-will">Network activity (Will)</a></li>
+        <li><a href="#child-processes-will">Child processes (Will)</a></li>
+        <li><a href="#mitre-attck-will">MITRE ATT&amp;CK (Will)</a></li>
+        <li><a href="#indicators-of-compromise-garrett--will">Indicators of Compromise (Garrett &amp; Will)</a></li>
+        <li><a href="#key-observations-garrett--will">Key observations (Garrett &amp; Will)</a></li>
+        <li><a href="#recommendations-garrett">Recommendations (Garrett)</a></li>
+        <li><a href="#discussion-garrett">Discussion (Garrett)</a></li>
+        <li><a href="#conclusion-garrett">Conclusion (Garrett)</a></li>
+        <li><a href="#more-links">More links</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </nav>
+    </aside>
+  
+  <section class="post-body"><h2 id="abstract">Abstract</h2>
+<p>This was a group project where students were tasked with investigating a <strong>real malware sample</strong> of their choosing using the <a href="https://any.run/">ANY.RUN malware sandbox</a>. Results are delivered in the form of a blog post.</p>
+<p>Our professor gave us permission to submit our project for consideration to be published in the guest category of the official <a href="https://any.run/cybersecurity-blog/">ANY.RUN blog</a>, but it was unfortunately not selected.</p>
+<p>If you&rsquo;re interested, their <a href="https://any.run/cybersecurity-blog/dr-jim-furstenberg-expert-qa/">Q&amp;A with my professor Dr. Jim Furstenburg</a> about cybersecurity education is a good read. He has a lot of great experience and wisdom to share, and the post offers some insights into how the ISIN program at Ferris approaches teaching.</p>
+<h2 id="analysis-of-stealer-malware">Analysis of Stealer Malware</h2>
+<p><em><strong>Authored by: Garrett Blaylock and Will Kittredge - student analysts</strong></em></p>
+<p>In this post, we analyze stealer malware using ANY.RUN to try to understand its capabilities. Based on our findings, we discuss the potential impact of the malware and suggest some mitigation strategies.</p>
+<p>If you want to follow along, you can find more details about the malware and download a sample from the <a href="#more-links">MalwareBazaar database entry linked at the end</a>. Be forewarned, though. Understand the potential dangers and remember to take proper precautions with real malware samples!</p>
+<h3 id="behavior-during-execution-will">Behavior during execution (Will)</h3>
+<p>During execution, the malware seems to keep out of the way. The average user who just opened their laptop for some web browsing would probably be unaware of its presence unless they went looking for it. This would be expected for stealer malware - the less attention it draws to itself, the better. By remaining hidden, it can persist on the system for longer and steal more data.</p>
+<p>We do get some indication that something might be amiss when the malware first installs and executes, though.</p>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.21e82505c4d19fa112badbea83c1ef264cbf4bd1cd63b2a6a9fc08ddca497857.css"
+        integrity="sha256-IeglBcTRn6ESutvqg8HvJky/S9HNY7KmqfwI3cpJeFc="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="popups.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="popups.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="popups.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>Popup and cmd windows visible at the desktop on startup.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>In the background, information-gathering child processes are being created. We will examine these later in the <a href="#child-processes-will">child processes section</a>.</p>
+<h3 id="network-activity-will">Network activity (Will)</h3>
+<p>We can see that the <code>stub.exe</code> process made a request to <code>ip-api.com</code> to perform an IP lookup. Based on the <code>User-Agent</code> field of the request, we infer that the malware is probably using Python. This is consistent with information listed on MalwareBazaar.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-2-2">
+  <label for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="networkthreats.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-2" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="networkthreats.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="networkthreats.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>ANY.RUN detected threats.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-3-3">
+  <label for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="ipapi.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-3" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="ipapi.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="ipapi.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption><code>stub.exe</code> request information.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-4-4">
+  <label for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="ws2.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-4" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="ws2.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="ws2.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption><code>stub.exe</code> response information.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>We can download the PCAP containing all of the network traffic and use Wireshark to confirm that a connection was established. The site responded with JSON data.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-5-5">
+  <label for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="ws1.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-5" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="ws1.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="ws1.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>Wireshark shows a successful TCP handshake and HTTP GET request.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>The malware also attempted to access raw user content on GitHub. The request gets a <code>404: Not Found</code> response back, but the URL was suspicious. Based on the URL value, we assumed that this was JavaScript to perform some type of malicious injection.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-6-6">
+  <label for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="404.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-6" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="404.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="404.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>The <code>injection.js</code> file could not be accessed on GitHub. We believe it was probably reported or automatically flagged.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h3 id="child-processes-will">Child processes (Will)</h3>
+<p>The malware spawns child processes that gather information about the system, among other things. In this case <code>cmd.exe</code> is being invoked with the <code>/c</code> option, which tells the command prompt to exit after the specified command is executed.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-7-7">
+  <label for="gallery-lightbox-input-7-7" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="processes.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-7" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-7-7" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="processes.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="processes.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>ANY.RUN process list, <code>cmd.exe</code> processes spawned by <code>stub.exe</code> are visible</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Some of these processes establish persistence methods for the malware. For example, we can see that process <code>2600</code> ran a command that creates a scheduled task to automatically run the malware. Process <code>396</code> adds a key to the registry to make the malware a startup program. Other processes could reveal potentially sensitive information. Process <code>2356</code>, for example, executes the <code>Get-Clipboard</code> PowerShell cmdlet to get the contents of the clipboard. Passwords and personal information might be stored here depending on the victim user&rsquo;s prior activity that day.</p>
+<p>A de-obfuscated PowerShell command leads us to believe that this malware is also able to take screenshots of the infected system.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-8-8">
+  <label for="gallery-lightbox-input-8-8" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="powershellcmd.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-8" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-8-8" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="powershellcmd.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="powershellcmd.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>Base64 encoded command.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-9-9">
+  <label for="gallery-lightbox-input-9-9" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="decoded.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-9" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-9-9" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="decoded.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="decoded.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>Decoded Base64.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h3 id="mitre-attck-will">MITRE ATT&amp;CK (Will)</h3>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-10-10">
+  <label for="gallery-lightbox-input-10-10" title="Close">
+
+<picture class="gallery-image-primary">
+      
+      <img class="gallery-image-primary" src="mitre.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-10" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-10-10" title="Close">
+
+<picture class="gallery-lightbox-full">
+      
+      <img class="gallery-lightbox-full" src="mitre.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="mitre.webp">Click to view full size image</a>
+    </p>
+  </div>
+  <figcaption>The MITRE ATT&amp;CK chart that ANY.RUN generated for this malware sample.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>The malware&rsquo;s tactics align with several MITRE ATT&amp;CK techniques, including <a href="https://attack.mitre.org/techniques/T1059/001/">command-line execution</a> (T1059.001), <a href="https://attack.mitre.org/techniques/T1547/001/">registry key modifications for persistence</a> (T1547.001), and standard <a href="https://attack.mitre.org/techniques/T1071/001/">application layer protocols for command and control communication</a> (T1071.001). The MITRE ATT&amp;CK chart generated by ANY.RUN helps us get a more complete picture of what the malware is doing.</p>
+<p>Command and scripting interpreters such as Python, PowerShell, and the Windows command prompt are leveraged by the malware in execution. Using persistence methods like autostart and scheduled tasks, the malware ensures that it will be executed when the victim uses their machine. Once running, it attempts to gather information from the system and access credentials while simultaneously hiding itself. The stealer malware also appears to be virtualization-aware, as ANY.RUN detected time-based virtualization/sandbox evasion.</p>
+<h3 id="indicators-of-compromise-garrett--will">Indicators of Compromise (Garrett &amp; Will)</h3>
+<p>As part of the information-gathering processes started by the malware, it created network requests that ANY.RUN detected as potential indicators of compromise. These consist of a network connection that the <code>stub.exe</code> process made to the <code>restores.name</code> domain (IP <code>135.181.65.219</code>) and the failed attempt to access the <code>injection.js</code> file stored on GitHub. The network communication with <code>ip-api.com</code> was likely for geolocation and reconnaissance purposes.</p>
+<p>Obfuscation techniques were also identified, with Base64-encoded PowerShell commands used to execute scripts, possibly for capturing screenshots of the victim&rsquo;s system. These indicators of compromise (IoCs) provide critical insights for defenders to recognize and respond to the malware&rsquo;s activity effectively.</p>
+<h3 id="key-observations-garrett--will">Key observations (Garrett &amp; Will)</h3>
+<p>The analyzed malware exhibits stealthy behavior typical of stealer malware, designed to operate quietly in the background to avoid drawing attention. While it generally remains unobtrusive, initial execution reveals some activity through visible popups and cmd windows. This behavior might hint at an issue to attentive users but would likely go unnoticed by most. The malware engages in extensive information gathering by creating child process that collect system data, and its capabilities include executing PowerShell commands, potentially for capturing screenshots.</p>
+<p>Persistence mechanisms are a notable aspect of this malware&rsquo;s functionality, with evidence of registry modifications and scheduled tasks ensuring automatic execution upon system startup. This allows it to maintain access and carry out operations without requiring user intervention. Additionally, the malware communicates with external servers, including <code>ip-api.com</code>, to gather reconnaissance data, leveraging HTTP requests to interact with these endpoints. The <code>User-Agent</code> field in the requests suggest that it operates using Python, aligning with information from the MalwareBazaar database. Collectively, these observations indicate that the malware could be used for credential theft, espionage, or data exfiltration, making it a significant threat to affected systems.</p>
+<h3 id="recommendations-garrett">Recommendations (Garrett)</h3>
+<p>To mitigate the risks posed by this malware, organizations should implement a multi-layered approach to cybersecurity. Robust endpoint protection solutions, such as Endpoint Detection and Response (EDR) tools, should be deployed to monitor and block unauthorized activities, including child process creation, registry modifications, and suspicious network communications. Complementing this, user awareness training is essential to reduce the likelihood of infection, particularly by educating users on the dangers of interacting with unknown attachments, links, or files.</p>
+<p>Network monitoring should also be a priority, using firewalls and intrusion detection/prevention systems (IDS/IPS) to block communication with known malicious domains or IP addresses, such as <code>ip-api.com</code>. An incident response plan should be in place to address infections swiftly, encompassing steps for isolating affected systems, removing malware, and recovering data. Finally, keeping operating systems and software regularly updated is vital to minimize vulnerabilities that the malware could exploit. By combining these strategies, organizations can effectively reduce the risks and impact of malware attacks.</p>
+<h3 id="discussion-garrett">Discussion (Garrett)</h3>
+<p>This malware demonstrates the sophisticated yet stealthy behavior typical of modern stealer malware. By blending in with legitimate processes and establishing persistence through registry and scheduled task modifications, the malware maximizes its chances of success. The observed communication with external servers underscores its reconnaissance capabilities, likely aimed at tailoring its operations to the infected system&rsquo;s environment.</p>
+<p>The use of PowerShell commands for potential screenshot capturing further highlights the flexibility of this malware. Combined with its persistence techniques, it poses a significant threat to individual users and organizations, especially those lacking advanced security measures. While its exact payload and objectives remain unclear, the potential for credential theft or sensitive data exfiltration is evident.</p>
+<h3 id="conclusion-garrett">Conclusion (Garrett)</h3>
+<p>Analyzing this stealer malware provides critical insights into its techniques and impact. From initial infection to establishing persistence, its methods highlight the importance of proactive cybersecurity measures. Advanced tools like ANY.RUN make it easier to dissect such threats and understand their implications.</p>
+<p>Organizations must prioritize defense-in-depth strategies to mitigate the risks posed by malware of this nature. A combination of user education, advanced monitoring tools, and effective response protocols can reduce exposure and improve resilience against similar threats.</p>
+<p>For further details on this malware, including its behavior and characteristics, refer to the provided ANY.RUN task links. Understanding and preparing for these threats is essential in an ever-evolving cybersecurity landscape.</p>
+<h3 id="more-links">More links</h3>
+<p><a href="https://bazaar.abuse.ch/sample/18687a2ceebf3eda4a11a2ef0b1d85360d8837ad05c1b57f9f749ea06578848e">MalwareBazaar database entry</a></p>
+<p><a href="https://app.any.run/tasks/f71ce34e-fadf-4f68-8512-b132d935e46d">Public (not ours) ANY.RUN task</a></p>
+<p><a href="https://tria.ge/241102-3gj3aayell">This report also contains some useful information about the malware sample</a></p>
+<p><a href="https://github.com/quicaxd/Exela-V2.0">Exela Stealer GitHub page (detected by ANY.RUN)</a></p>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; Will Kittredge
+        </p>
+        <p class="copyright">
+          Created with <a class='copyrightAccent' href='https://gohugo.io'>Hugo</a>,
+          <a class='copyrightAccent' href='https://github.com/marcus0x62/tinyblog'>Tinyblog</a>, and
+          <a class='copyrightAccent' href='https://github.com/marcus0x62/tinyimages'>Tinyimages</a>
+        </p>
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+
+
+
+
+  
+  
+
+  
+    
+      
+      
+
+      
+      
+    
+  
+
+  
+    
+    
+
+  
+
+  
+    
+      
+      
+
+    
+
+    
+    
+
+    
+
+    
+      
+        
+        
+      
+    
+  
+    
+    
+  
+
+  
+
+
