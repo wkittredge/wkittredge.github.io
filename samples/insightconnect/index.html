@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>InsightConnect Automation Workflow</title>
+<link rel="stylesheet" href="/fonts.min.432d30cc1eb59295499225e91344ecaeefad12455678a1c3d2342ab2353e6b77.css" integrity="sha256-Qy0wzB61kpVJkiXpE0Tsru&#43;tEkVWeKHD0jQqsjU&#43;a3c=">
+<link rel="stylesheet" href="/main.min.4a2ea50553fe1d95f47677a089b7ffadc6863726e5b698b8f719e86f8b787b83.css" integrity="sha256-Si6lBVP&#43;HZX0dnegibf/rcaGNybltpi49xnob4t4e4M=">
+<link rel="stylesheet" href="/dark.min.2ba570a67c27c8503fa3dac85965646b23a90904424ac0320ed5e2c46161d4ae.css" integrity="sha256-K6VwpnwnyFA/o9rIWWVkayOpCQRCSsAyDtXixGFh1K4=">
+<meta name="generator" content="Hugo 0.164.0">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="icon" href="data:," />
+        
+        <script>
+          if (localStorage.getItem('darkMode')) {
+            document.documentElement.classList.add('dark-mode');
+          }
+        </script>
+    </head>
+    <body>
+      <header>
+  <nav class="navbar">
+    <div class="menu-toggle">
+  <input type="checkbox" id="menu-toggle" aria-label="Toggle menu"/>
+  <label for="menu-toggle" class="menu-toggle-label" title="Toggle menu (Esc)">
+    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </label>
+</div>
+
+    <button class="search-toggle" id="search-toggle" aria-label="Search">
+  <label for="search-toggle" class="search-toggle-label" title="Search (/)">
+  <svg class="search-icon" xmlns="http://www.w3.org/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="10.5" cy="10.5" r="7"/>
+    <line x1="21" y1="21" x2="15.45" y2="15.45"/>
+  </svg>
+</button>
+
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/blog/">Blog</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+    <style>
+      :root {
+        --pf-font: Roboto;
+        --pf-input-height: 24px;
+        --pf-border-radius: 4px;
+        --pf-modal-max-width: 700px;
+        --pf-mark: hsl(24 100% 4%);
+        --pf-text: hsl(38 48% 28%);
+        --pf-text-muted: hsl(38 48% 28%);
+        --pf-border-focus: hsl(291 39% 52%);
+        --pf-outline-focus: hsl(291 39% 52%);
+        --pf-text-secondary: hsl(24 9% 54%);
+        --pf-background: hsl(37 100% 98%);
+        --pf-hover: hsl(37 51% 87%);
+        --pf-border: hsl(38 26% 46%);
+      }
+    </style>
+    <pagefind-modal></pagefind-modal>
+
+    <span class="navbar-filler"></span>
+    <div class="theme-toggle">
+  <input type="checkbox" id="theme-toggle" aria-label="Toggle theme"/>
+  <label for="theme-toggle" class="theme-toggle-label" title="Toggle theme (T)">
+    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/>
+		</svg>
+    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+		</svg>
+  </label>
+</div>
+
+  </nav>
+  
+  <script src="/js/toggle-theme.min.3e5b425b4b935f4c94bfe1a74db4888c8928896c24d81da4aed25049716026b3.js" integrity="sha256-PltCW0uTX0yUv&#43;GnTbSIjIkoiWwk2B2krtJQSXFgJrM=" defer></script>
+  
+  <script src="/js/toggle-search.min.ca3987cff86c419e69b0ece70db05ebddb6bd19da20c2741f10a5af09f6ca1c1.js" integrity="sha256-yjmHz/hsQZ5psOznDbBevdtr0Z2iDCdB8Qpa8J9socE=" defer></script>
+</header>
+
+      <nav class="side-menu">
+  
+    
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  <p class="side-menu-main">Main</p>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <p class="side-menu-section">Resources</p>
+  <ul>
+    
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/news/">News</a></li>
+    
+    
+  </ul>
+  <p class="side-menu-section">Miscellaneous</p>
+  <ul>
+    
+    
+    <li><a href="/library/">Library</a></li>
+    <li><a href="/planned/">Planned Posts</a></li>
+    
+  </ul>
+</nav>
+
+<script src="/js/toggle-menu.min.d127d5789b156c038204796c3571910da7e149a96c334c80cbca37b1fbb30279.js" integrity="sha256-0SfVeJsVbAOCBHlsNXGRDafhSalsM0yAy8o3sfuzAnk=" defer></script>
+
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>InsightConnect Automation Workflow</h1>
+      <div class="post-open-dates">
+        <p>
+          <b><i>Published: Dec 18, 2025</i></b>
+            ·&nbsp;<i>Updated: May 17, 2026</i>
+        </p>
+      </div>
+    </div>
+    <div class="post-open-tags"></div>
+    <div class="post-open-quote"></div>
+  </section>
+  
+    <div class="toc-toggle">
+  <input type="checkbox" id="toc-toggle" aria-label="Toggle TOC"/>
+  <label for="toc-toggle" class="toc-toggle-label" title="Toggle contents (C)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path fill="currentColor" d="M4 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zM26 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2z"/>
+    </svg>
+  </label>
+</div>
+<script>
+  if (localStorage.getItem('tocOpen') !== 'false') {
+    document.documentElement.classList.add('toc-open');
+  }
+</script>
+<aside class="toc">
+  <nav class="toc-inner">
+    <h1 class="toc-title">
+      <a title="Go to top" href="#">Table of Contents</a>
+    </h1>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#diagram">Diagram</a></li>
+    <li><a href="#documentation">Documentation</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#example">Example</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#caveats">Caveats</a></li>
+        <li><a href="#parameters">Parameters</a></li>
+        <li><a href="#improvements">Improvements</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+</aside>
+
+<script src="/js/toggle-toc.min.0619f3fb0f5f1eef268a6c056de299c79647923e8aa3398e8f88e1e87c01a7ba.js" integrity="sha256-Bhnz&#43;w9fHu8mimwFbeKZx5ZHkj6KozmOj4jh6HwBp7o=" defer></script>
+
+  
+  <section class="post-body"><h2 id="abstract">Abstract</h2>
+<p><strong>Course:</strong> <em>ISIN 491 (ISI Internship)</em></p>
+<p>This is an overview of the Slack/TeamDynamix automation that I created collaboratively with Caydon Thomas using <a href="https://docs.rapid7.com/insightconnect/" target="_blank" rel="noopener noreferrer">Rapid7 InsightConnect</a> during my <a href="/portfolio#internships">internship at National Heritage Academies</a> (NHA).</p>
+<p>The automation reduces that amount of time that security analysts and support technicians spend initiating and tracking endpoint remediation tickets by allowing one to interactively build and submit service requests to a ticket queue. Error handling, execution status updates (analogous to return codes), help, and troubleshooting features are built-in.</p>
+<h2 id="diagram">Diagram</h2>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.8355ca89b786f020baa6372a4dde65908fa4a191d9ee6cafc3f66a3cd9d81375.css"
+        integrity="sha256-g1XKibeG8CC6pjcqTd5lkI&#43;koZHZ7myvw/ZqPNnYE3U="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-50 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="diagram.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="diagram.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="diagram.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A simplified execution flow diagram.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h2 id="documentation">Documentation</h2>
+<p>A copy of the documentation that I created for this workflow can be read below. <em><strong>Some minor details have been changed or omitted to protect potentially sensitive information about how the automation has been integrated into NHA&rsquo;s operations.</strong></em></p>
+<h3 id="description">Description</h3>
+<p>This workflow is intended to make it easier to send tickets to TSC when a security incident occurs. When this workflow is enabled, you can post a special message in Slack to interactively build and submit a TDX ticket to the email queue via Slack message replies and reactions. Before sending the ticket, you will be allowed to select a template and review the email.</p>
+<p><em>The following ticket templates are supported:</em></p>
+<table>
+	<thead>
+			<tr>
+					<th>Template</th>
+					<th>Requires&hellip;</th>
+					<th>Subject</th>
+					<th>Body</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Unwanted Program</td>
+					<td><code>email</code>, <code>hostname</code></td>
+					<td><em>[Intentionally omitted]</em></td>
+					<td><em>[Intentionally omitted]</em></td>
+			</tr>
+			<tr>
+					<td>Malware (isolated)</td>
+					<td><code>email</code>, <code>hostname</code></td>
+					<td><em>[Intentionally omitted]</em></td>
+					<td><em>[Intentionally omitted]</em></td>
+			</tr>
+			<tr>
+					<td>Malware (un-isolated)</td>
+					<td><code>email</code>, <code>hostname</code></td>
+					<td><em>[Intentionally omitted]</em></td>
+					<td><em>[Intentionally omitted]</em></td>
+			</tr>
+			<tr>
+					<td>Password Reset (account compromised)</td>
+					<td><code>email</code></td>
+					<td><em>[Intentionally omitted]</em></td>
+					<td><em>[Intentionally omitted]</em></td>
+			</tr>
+			<tr>
+					<td>Password Reset (suspicious authentication)</td>
+					<td><code>email</code></td>
+					<td><em>[Intentionally omitted]</em></td>
+					<td><em>[Intentionally omitted]</em></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="example">Example</h3>
+<pre tabindex="0"><code>@Rapid7 InsightConnect tdx user@nhaschools.com hostname
+</code></pre><ul>
+<li><strong><code>@Rapid7 InsightConnect</code></strong> mentions the Rapid7 InsightConnect user on Slack</li>
+<li><strong><code>tdx</code></strong> is the workflow trigger phrase</li>
+<li><strong><code>user@nhaschools.com</code></strong> is the email of the user in the ticket</li>
+<li><strong><code>hostname</code></strong> is the hostname of the device in the ticket</li>
+</ul>
+<h3 id="usage">Usage</h3>
+<p>To use this workflow, mention the Rapid7 InsightConnect user from the workflow trigger channel in a message that contains the workflow trigger phrase <em><strong>and</strong></em> any information required by your ticket template. <strong>The trigger phrase, user email, and device hostname can be supplied in any order</strong> (space-separated).</p>
+<p><strong>Every message must include <em>at least:</em></strong></p>
+<ul>
+<li>the <code>@Rapid7 InsightConnect</code> mention</li>
+<li>the workflow trigger phrase</li>
+<li>the email address of the user in the ticket
+<ul>
+<li><em><strong>note:</strong></em> this is the email address of the user that the ticket is about - not the address that sends or receives the ticket email itself</li>
+</ul>
+</li>
+</ul>
+<h3 id="caveats">Caveats</h3>
+<ol>
+<li>A TDX service has been configured to monitor the ticket queue inbox for emails generated by this workflow with specific/special subjects. <em><strong>Do not change ticket email subjects</strong> in this workflow without notifying the team responsible for the TDX service.</em> <em><strong>Otherwise, the process that TSC uses to update IT Security on ticket resolutions will break.</strong></em></li>
+</ol>
+<h3 id="parameters">Parameters</h3>
+<p><em>The behavior of this workflow can be changed with the following parameters:</em></p>
+<table>
+	<thead>
+			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+					<th>Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>Trigger Channel</code></td>
+					<td><em>Slack channel that the workflow will monitor for and respond to messages in.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Trigger Regex</code></td>
+					<td><em>Regex that, when matched, triggers the workflow when the Rapid7 InsightConnect user in mentioned in Slack.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Email Regex</code></td>
+					<td><em>Regex pattern used to match an email address.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Hostname Regex</code></td>
+					<td><em>Regex pattern used to match device hostnames.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Email Sender</code></td>
+					<td><em>Email address used to send the ticket message.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Email Destination</code></td>
+					<td><em>Email address that will receive the ticket message from the email sender.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Unwanted Program Subject</code></td>
+					<td><em>Email subject used for unwanted program tickets.</em></td>
+					<td><strong>see caveat 1</strong></td>
+			</tr>
+			<tr>
+					<td><code>Unwanted Program Body</code></td>
+					<td><em>Email body used for unwanted program tickets.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Malware Subject</code></td>
+					<td><em>Email subject used for malware tickets.</em></td>
+					<td><strong>see caveat 1</strong></td>
+			</tr>
+			<tr>
+					<td><code>Malware Body - Isolated</code></td>
+					<td><em>Email body used for malware tickets where the device has been isolated.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Malware Body - Unisolated</code></td>
+					<td><em>Email body used for malware tickets where the device is still un-isolated.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Password Reset Subject</code></td>
+					<td><em>Email subject used for password reset tickets.</em></td>
+					<td><strong>see caveat 1</strong></td>
+			</tr>
+			<tr>
+					<td><code>Password Reset Body - Account Compromised</code></td>
+					<td><em>Email body used for account compromised password reset tickets.</em></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>Password Reset Body - Suspicious Authentication</code></td>
+					<td><em>Email body used for suspicious authentication password reset tickets.</em></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="improvements">Improvements</h3>
+<ol>
+<li>Because it is possible to get the email address of the analyst that sends the command in Slack, we could have an option to send a copy of the final ticket email message to the user&rsquo;s inbox for additional confirmation that the ticket was submitted.</li>
+</ol>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; <a href="/">Will Kittredge</a>
+        </p>
+        
+          
+          
+          
+        
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+

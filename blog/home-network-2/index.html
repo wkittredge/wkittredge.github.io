@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Network Upgrade: Part 2</title>
+<link rel="stylesheet" href="/fonts.min.432d30cc1eb59295499225e91344ecaeefad12455678a1c3d2342ab2353e6b77.css" integrity="sha256-Qy0wzB61kpVJkiXpE0Tsru&#43;tEkVWeKHD0jQqsjU&#43;a3c=">
+<link rel="stylesheet" href="/main.min.4a2ea50553fe1d95f47677a089b7ffadc6863726e5b698b8f719e86f8b787b83.css" integrity="sha256-Si6lBVP&#43;HZX0dnegibf/rcaGNybltpi49xnob4t4e4M=">
+<link rel="stylesheet" href="/dark.min.2ba570a67c27c8503fa3dac85965646b23a90904424ac0320ed5e2c46161d4ae.css" integrity="sha256-K6VwpnwnyFA/o9rIWWVkayOpCQRCSsAyDtXixGFh1K4=">
+<meta name="generator" content="Hugo 0.164.0">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="icon" href="data:," />
+        
+        <script>
+          if (localStorage.getItem('darkMode')) {
+            document.documentElement.classList.add('dark-mode');
+          }
+        </script>
+    </head>
+    <body>
+      <header>
+  <nav class="navbar">
+    <div class="menu-toggle">
+  <input type="checkbox" id="menu-toggle" aria-label="Toggle menu"/>
+  <label for="menu-toggle" class="menu-toggle-label" title="Toggle menu (Esc)">
+    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </label>
+</div>
+
+    <button class="search-toggle" id="search-toggle" aria-label="Search">
+  <label for="search-toggle" class="search-toggle-label" title="Search (/)">
+  <svg class="search-icon" xmlns="http://www.w3.org/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="10.5" cy="10.5" r="7"/>
+    <line x1="21" y1="21" x2="15.45" y2="15.45"/>
+  </svg>
+</button>
+
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/blog/">Blog</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+    <style>
+      :root {
+        --pf-font: Roboto;
+        --pf-input-height: 24px;
+        --pf-border-radius: 4px;
+        --pf-modal-max-width: 700px;
+        --pf-mark: hsl(24 100% 4%);
+        --pf-text: hsl(38 48% 28%);
+        --pf-text-muted: hsl(38 48% 28%);
+        --pf-border-focus: hsl(291 39% 52%);
+        --pf-outline-focus: hsl(291 39% 52%);
+        --pf-text-secondary: hsl(24 9% 54%);
+        --pf-background: hsl(37 100% 98%);
+        --pf-hover: hsl(37 51% 87%);
+        --pf-border: hsl(38 26% 46%);
+      }
+    </style>
+    <pagefind-modal></pagefind-modal>
+
+    <span class="navbar-filler"></span>
+    <div class="theme-toggle">
+  <input type="checkbox" id="theme-toggle" aria-label="Toggle theme"/>
+  <label for="theme-toggle" class="theme-toggle-label" title="Toggle theme (T)">
+    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/>
+		</svg>
+    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+		</svg>
+  </label>
+</div>
+
+  </nav>
+  
+  <script src="/js/toggle-theme.min.3e5b425b4b935f4c94bfe1a74db4888c8928896c24d81da4aed25049716026b3.js" integrity="sha256-PltCW0uTX0yUv&#43;GnTbSIjIkoiWwk2B2krtJQSXFgJrM=" defer></script>
+  
+  <script src="/js/toggle-search.min.ca3987cff86c419e69b0ece70db05ebddb6bd19da20c2741f10a5af09f6ca1c1.js" integrity="sha256-yjmHz/hsQZ5psOznDbBevdtr0Z2iDCdB8Qpa8J9socE=" defer></script>
+</header>
+
+      <nav class="side-menu">
+  
+    
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  <p class="side-menu-main">Main</p>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <p class="side-menu-section">Resources</p>
+  <ul>
+    
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/news/">News</a></li>
+    
+    
+  </ul>
+  <p class="side-menu-section">Miscellaneous</p>
+  <ul>
+    
+    
+    <li><a href="/library/">Library</a></li>
+    <li><a href="/planned/">Planned Posts</a></li>
+    
+  </ul>
+</nav>
+
+<script src="/js/toggle-menu.min.d127d5789b156c038204796c3571910da7e149a96c334c80cbca37b1fbb30279.js" integrity="sha256-0SfVeJsVbAOCBHlsNXGRDafhSalsM0yAy8o3sfuzAnk=" defer></script>
+
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>Home Network Upgrade: Part 2</h1>
+      <div class="post-open-dates">
+        <p>
+          <b><i>Published: Dec 31, 2025</i></b>
+            ·&nbsp;<i>Updated: Apr 2, 2026</i>
+        </p>
+      </div>
+    </div>
+    <div class="post-open-tags"><a class="taglink" href="/tags/networking/"><kbd class="tag">networking</kbd></a><a class="taglink" href="/tags/projects/"><kbd class="tag">projects</kbd></a></div>
+    <div class="post-open-quote"></div>
+  </section>
+  
+    <div class="toc-toggle">
+  <input type="checkbox" id="toc-toggle" aria-label="Toggle TOC"/>
+  <label for="toc-toggle" class="toc-toggle-label" title="Toggle contents (C)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path fill="currentColor" d="M4 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zM26 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2z"/>
+    </svg>
+  </label>
+</div>
+<script>
+  if (localStorage.getItem('tocOpen') !== 'false') {
+    document.documentElement.classList.add('toc-open');
+  }
+</script>
+<aside class="toc">
+  <nav class="toc-inner">
+    <h1 class="toc-title">
+      <a title="Go to top" href="#">Table of Contents</a>
+    </h1>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#second-access-point">Second Access Point</a></li>
+    <li><a href="#machine-assembly">Machine Assembly</a></li>
+    <li><a href="#proxmox-installation">Proxmox Installation</a></li>
+    <li><a href="#initial-router-setup">Initial Router Setup</a></li>
+    <li><a href="#networking-enclosure">Networking Enclosure</a></li>
+    <li><a href="#next-post">Next Post</a></li>
+  </ul>
+</nav>
+  </nav>
+</aside>
+
+<script src="/js/toggle-toc.min.0619f3fb0f5f1eef268a6c056de299c79647923e8aa3398e8f88e1e87c01a7ba.js" integrity="sha256-Bhnz&#43;w9fHu8mimwFbeKZx5ZHkj6KozmOj4jh6HwBp7o=" defer></script>
+
+  
+  <section class="post-body">
+
+<blockquote class="alert alert-important">
+  <p class="alert-heading">
+    🔍
+    
+      Important
+    
+  </p>
+  <p>This post is part of a series. Also see parts <a href="/blog/home-network-1">1</a> and <a href="/blog/home-network-3">3</a>.</p>
+</blockquote>
+<h2 id="second-access-point">Second Access Point</h2>
+<p>Because the first access point I deployed has a weaker signal than the Wi-Fi router it replaced, I need to deploy another access point to cover the basement. No new cables are getting installed—I&rsquo;m just adding another access point along the path that already exists. See the diagram below for a better idea of what I&rsquo;m talking about.</p>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.8355ca89b786f020baa6372a4dde65908fa4a191d9ee6cafc3f66a3cd9d81375.css"
+        integrity="sha256-g1XKibeG8CC6pjcqTd5lkI&#43;koZHZ7myvw/ZqPNnYE3U="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="access-point-2.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="access-point-2.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="access-point-2.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A simplified diagram of the new physical network structure with a second access point.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Nearly all devices in the basement computer lab are wired, but I also spend a lot of time down there. I need phones and laptops to have a reliable signal while I&rsquo;m working away from a wired network port.</p>
+<p>I removed the wall plate where the old Cat5e cable terminates and crimped an RJ45 connector to the end. Next, I installed a bracket in place of the old wall plate, plugged the access point in, and snapped it to the wall. On the other side of the cable, I put a PoE switch between the router and the access point to replace the old single-device PoE injector that powered the first access point.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-4"
+             id="gallery-thumbnail-input-4-4"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-4-4">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-4-4">
+        <label for="gallery-lightbox-input-4-4"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="lab-ap-1.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-4" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-4-4"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="lab-ap-1.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="lab-ap-1.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Old wall plate in the computer lab. The cable from the router terminated behind the RJ45 keystone.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-4"
+             id="gallery-thumbnail-input-4-5">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-4-5">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-4-5">
+        <label for="gallery-lightbox-input-4-5"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="lab-ap-2.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-4" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-4-5"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="lab-ap-2.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="lab-ap-2.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>After removing the plate, installing the bracket, and crimping on a new RJ45 connector.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-4"
+             id="gallery-thumbnail-input-4-6">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-4-6">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-4-6">
+        <label for="gallery-lightbox-input-4-6"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="lab-ap-3.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-4" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-4-6"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="lab-ap-3.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="lab-ap-3.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Completed access point install. All wired computer lab traffic must pass through the AP before reaching the router, which isn&#39;t ideal but it works fine for my use case.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-4-4"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-4-4"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="lab-ap-1.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-4-5"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-4-5"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="lab-ap-2.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-4-6"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-4-6"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="lab-ap-3.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<h2 id="machine-assembly">Machine Assembly</h2>
+<p>Owed to 10+ years of experience assembling computer and server hardware, putting the machine itself together thankfully wasn&rsquo;t too difficult. Unfortunately, I didn&rsquo;t think to take many pictures of the build process. I&rsquo;ll take more pictures next time I need to take the router down for maintenance.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-2-2">
+  <label for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="defective.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-2" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="defective.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="defective.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Picture taken during testing. The M.2 drive is clearly connected, but cannot be found by the motherboard.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>The motherboard needs to be replaced soon because the one that I purchased ended up being defective. Despite supporting the interface and protocol, none of my M.2 NVMe drives are detected by the board. The Proxmox hypervisor and router VM will temporarily live on a SATA SSD that I had to harvest from a different machine until I get a replacement motherboard that can actually detect my drives.</p>
+<h2 id="proxmox-installation">Proxmox Installation</h2>
+<p>I did a standard Proxmox install after assembling the machine. Nothing special or of interest to note here.</p>
+<h2 id="initial-router-setup">Initial Router Setup</h2>
+<p>Now that all the new network devices have been installed and assembled, it&rsquo;s time to get an initial setup working.</p>
+<p>It&rsquo;s important to note that my goal at this stage is to get the traffic flowing again rather than making configurations that will address the concerns I listed in the first post. I&rsquo;ll cover most of those configurations in the next post once the network is working and stable.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-3-3">
+  <label for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="dashboard.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-3" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="dashboard.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="dashboard.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A screenshot of the OPNsense dashboard. Attentive readers might notice that I have already started configuring VLANs.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>On the Proxmox side, we need to create a VM for the virtualized <a href="https://opnsense.org/" target="_blank" rel="noopener noreferrer">OPNsense</a> install to use. It&rsquo;s important to check the <code>Start at boot</code> option so that the router automatically starts itself after I power on the host machine. You also might be able to squeeze some more performance from the VM by changing the CPU type to <code>host</code>, but I decided against this because I will be swapping out the host machine&rsquo;s processor for a different one later. Otherwise, this part of the install mainly comes down to giving the VM the virtualized hardware that it needs.</p>
+<p>On the OPNsense side, we can pretty much follow the installation wizard and use default settings out of the box. I selected UFS instead of ZFS during the installation as all snapshots will be handled by Proxmox. After completing the install, the only step I had left before I could connect to the Internet again was to spoof the old router&rsquo;s MAC address on the WAN port to get around any potential ISP device activation shenanigans.</p>
+<h2 id="networking-enclosure">Networking Enclosure</h2>
+<p>I was gifted an enclosure for the core networking devices so that everything isn&rsquo;t sitting loosely on a shelf in the basement. I think it looks and feels much more manageable with everything organized and contained.</p>
+<p>It will likely be mounted on the wall near the breaker box at some point in the future.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-5"
+             id="gallery-thumbnail-input-5-8"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-5-8">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-5-8">
+        <label for="gallery-lightbox-input-5-8"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="enclosure-1.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-5" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-5-8"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="enclosure-1.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="enclosure-1.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Wide view of the enclosure.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-5"
+             id="gallery-thumbnail-input-5-9">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-5-9">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-5-9">
+        <label for="gallery-lightbox-input-5-9"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="enclosure-2.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-5" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-5-9"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="enclosure-2.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="enclosure-2.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Closer view of the enclosure.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-5"
+             id="gallery-thumbnail-input-5-10">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-5-10">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-5-10">
+        <label for="gallery-lightbox-input-5-10"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="enclosure-3.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-5" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-5-10"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="enclosure-3.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="enclosure-3.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Close-up view inside the enclosure.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-5-8"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-5-8"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="enclosure-1.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-5-9"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-5-9"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="enclosure-2.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-5-10"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-5-10"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="enclosure-3.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<h2 id="next-post">Next Post</h2>
+<p>The <a href="/blog/home-network-3">next part of this project</a> will cover configuring the new network devices and testing functionality.</p>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; <a href="/">Will Kittredge</a>
+        </p>
+        
+          
+          
+          
+        
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+

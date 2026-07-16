@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Movies on wkittredge</title>
+		<link>https://wkittredge.com/tags/movies/</link>
+		<description>Recent content in Movies on wkittredge</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://wkittredge.com/tags/movies/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>From Projectionist to Analyst</title>
+				<link>https://wkittredge.com/blog/projection-cybersecurity/</link>
+				<pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/projection-cybersecurity/</guid>
+				<description>&lt;p&gt;I worked as a projectionist at &lt;a href=&#34;https://www.celebrationcinema.com/cinemas/Celebration-Cinema-GR-South&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Celebration Cinema South&lt;/a&gt; for nearly four years before I attended the Information Security and Intelligence program at Ferris State University. Since I&amp;rsquo;ve been on a roll with reflecting on my prior experiences lately, I thought now would be a good opportunity to write about being a projectionist. What was it like? What did I learn? Most importantly, how did my experience prepare me to be a cybersecurity analyst?&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

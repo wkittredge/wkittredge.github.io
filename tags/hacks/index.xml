@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Hacks on wkittredge</title>
+		<link>https://wkittredge.com/tags/hacks/</link>
+		<description>Recent content in Hacks on wkittredge</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://wkittredge.com/tags/hacks/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>SP-111 Keyboard</title>
+				<link>https://wkittredge.com/blog/sp111/</link>
+				<pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/sp111/</guid>
+				<description>&lt;p&gt;One of the first things people notice when they see my setup (whether at &lt;a href=&#34;https://wkittredge.com/blog/cyber-competitions&#34;&gt;cyber competitions&lt;/a&gt; or in pictures) is my keyboard, the SP-111. It&amp;rsquo;s essentially the opposite of what one normally expects. The numpad is on the left side, it has two (three?) spacebars, a variety of non-standard keys, and it runs on customized &lt;a href=&#34;https://docs.qmk.fm/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;QMK Firmware&lt;/a&gt;. Not to mention the elephant in the room: it&amp;rsquo;s split in half.&lt;/p&gt;&#xA;&lt;p&gt;I won&amp;rsquo;t lie, it took a long time to finish and it was &lt;em&gt;expensive&lt;/em&gt;. I invested a lot into customizing this keyboard, but I also learned a lot. The end result is a silent, reliable, and perfectly-tailored input device that I intend to use for the rest of my life. Many would find it hard to justify spending so much time and money on a keyboard, but a keyboard is more than just the sum of its parts when you work in cybersecurity. This post is an overview of anything someone might want to know about it; it&amp;rsquo;s just as much for my reference as it is anyone else&amp;rsquo;s.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

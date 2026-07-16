@@ -1,0 +1,2714 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SP-111 Keyboard</title>
+<link rel="stylesheet" href="/fonts.min.432d30cc1eb59295499225e91344ecaeefad12455678a1c3d2342ab2353e6b77.css" integrity="sha256-Qy0wzB61kpVJkiXpE0Tsru&#43;tEkVWeKHD0jQqsjU&#43;a3c=">
+<link rel="stylesheet" href="/main.min.4a2ea50553fe1d95f47677a089b7ffadc6863726e5b698b8f719e86f8b787b83.css" integrity="sha256-Si6lBVP&#43;HZX0dnegibf/rcaGNybltpi49xnob4t4e4M=">
+<link rel="stylesheet" href="/dark.min.2ba570a67c27c8503fa3dac85965646b23a90904424ac0320ed5e2c46161d4ae.css" integrity="sha256-K6VwpnwnyFA/o9rIWWVkayOpCQRCSsAyDtXixGFh1K4=">
+<link rel="stylesheet" href="/highlight.min.75664cab144ab2aaa9eab9d067161052704848a582c5f3683fed4f919250dae6.css" integrity="sha256-dWZMqxRKsqqp6rnQZxYQUnBISKWCxfNoP&#43;1PkZJQ2uY=">
+<meta name="generator" content="Hugo 0.164.0">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="icon" href="data:," />
+        
+        <script>
+          if (localStorage.getItem('darkMode')) {
+            document.documentElement.classList.add('dark-mode');
+          }
+        </script>
+    </head>
+    <body>
+      <header>
+  <nav class="navbar">
+    <div class="menu-toggle">
+  <input type="checkbox" id="menu-toggle" aria-label="Toggle menu"/>
+  <label for="menu-toggle" class="menu-toggle-label" title="Toggle menu (Esc)">
+    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </label>
+</div>
+
+    <button class="search-toggle" id="search-toggle" aria-label="Search">
+  <label for="search-toggle" class="search-toggle-label" title="Search (/)">
+  <svg class="search-icon" xmlns="http://www.w3.org/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="10.5" cy="10.5" r="7"/>
+    <line x1="21" y1="21" x2="15.45" y2="15.45"/>
+  </svg>
+</button>
+
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/blog/">Blog</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+    <style>
+      :root {
+        --pf-font: Roboto;
+        --pf-input-height: 24px;
+        --pf-border-radius: 4px;
+        --pf-modal-max-width: 700px;
+        --pf-mark: hsl(24 100% 4%);
+        --pf-text: hsl(38 48% 28%);
+        --pf-text-muted: hsl(38 48% 28%);
+        --pf-border-focus: hsl(291 39% 52%);
+        --pf-outline-focus: hsl(291 39% 52%);
+        --pf-text-secondary: hsl(24 9% 54%);
+        --pf-background: hsl(37 100% 98%);
+        --pf-hover: hsl(37 51% 87%);
+        --pf-border: hsl(38 26% 46%);
+      }
+    </style>
+    <pagefind-modal></pagefind-modal>
+
+    <span class="navbar-filler"></span>
+    <div class="theme-toggle">
+  <input type="checkbox" id="theme-toggle" aria-label="Toggle theme"/>
+  <label for="theme-toggle" class="theme-toggle-label" title="Toggle theme (T)">
+    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/>
+		</svg>
+    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+		</svg>
+  </label>
+</div>
+
+  </nav>
+  
+  <script src="/js/toggle-theme.min.3e5b425b4b935f4c94bfe1a74db4888c8928896c24d81da4aed25049716026b3.js" integrity="sha256-PltCW0uTX0yUv&#43;GnTbSIjIkoiWwk2B2krtJQSXFgJrM=" defer></script>
+  
+  <script src="/js/toggle-search.min.ca3987cff86c419e69b0ece70db05ebddb6bd19da20c2741f10a5af09f6ca1c1.js" integrity="sha256-yjmHz/hsQZ5psOznDbBevdtr0Z2iDCdB8Qpa8J9socE=" defer></script>
+</header>
+
+      <nav class="side-menu">
+  
+    
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  <p class="side-menu-main">Main</p>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <p class="side-menu-section">Resources</p>
+  <ul>
+    
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/news/">News</a></li>
+    
+    
+  </ul>
+  <p class="side-menu-section">Miscellaneous</p>
+  <ul>
+    
+    
+    <li><a href="/library/">Library</a></li>
+    <li><a href="/planned/">Planned Posts</a></li>
+    
+  </ul>
+</nav>
+
+<script src="/js/toggle-menu.min.d127d5789b156c038204796c3571910da7e149a96c334c80cbca37b1fbb30279.js" integrity="sha256-0SfVeJsVbAOCBHlsNXGRDafhSalsM0yAy8o3sfuzAnk=" defer></script>
+
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>SP-111 Keyboard</h1>
+      <div class="post-open-dates">
+        <p>
+          <b><i>Published: Mar 22, 2026</i></b>
+            ·&nbsp;<i>Updated: May 17, 2026</i>
+        </p>
+      </div>
+    </div>
+    <div class="post-open-tags"><a class="taglink" href="/tags/keyboards/"><kbd class="tag">keyboards</kbd></a><a class="taglink" href="/tags/projects/"><kbd class="tag">projects</kbd></a><a class="taglink" href="/tags/hacks/"><kbd class="tag">hacks</kbd></a></div>
+    <div class="post-open-quote">This is my rifle. There are many like it, but this one is mine. [...] Without me, my rifle is useless. Without my rifle, I am useless.</div>
+  </section>
+  
+    <div class="toc-toggle">
+  <input type="checkbox" id="toc-toggle" aria-label="Toggle TOC"/>
+  <label for="toc-toggle" class="toc-toggle-label" title="Toggle contents (C)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path fill="currentColor" d="M4 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zM26 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2z"/>
+    </svg>
+  </label>
+</div>
+<script>
+  if (localStorage.getItem('tocOpen') !== 'false') {
+    document.documentElement.classList.add('toc-open');
+  }
+</script>
+<aside class="toc">
+  <nav class="toc-inner">
+    <h1 class="toc-title">
+      <a title="Go to top" href="#">Table of Contents</a>
+    </h1>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#materials-and-build-process">Materials and Build Process</a></li>
+    <li><a href="#layouts">Layouts</a></li>
+    <li><a href="#my-keymap">My Keymap</a></li>
+    <li><a href="#custom-firmware">Custom Firmware</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+  </nav>
+</aside>
+
+<script src="/js/toggle-toc.min.0619f3fb0f5f1eef268a6c056de299c79647923e8aa3398e8f88e1e87c01a7ba.js" integrity="sha256-Bhnz&#43;w9fHu8mimwFbeKZx5ZHkj6KozmOj4jh6HwBp7o=" defer></script>
+
+  
+  <section class="post-body"><p>One of the first things people notice when they see my setup (whether at <a href="/blog/cyber-competitions">cyber competitions</a> or in pictures) is my keyboard, the SP-111. It&rsquo;s essentially the opposite of what one normally expects. The numpad is on the left side, it has two (three?) spacebars, a variety of non-standard keys, and it runs on customized <a href="https://docs.qmk.fm/" target="_blank" rel="noopener noreferrer">QMK Firmware</a>. Not to mention the elephant in the room: it&rsquo;s split in half.</p>
+<p>I won&rsquo;t lie, it took a long time to finish and it was <em>expensive</em>. I invested a lot into customizing this keyboard, but I also learned a lot. The end result is a silent, reliable, and perfectly-tailored input device that I intend to use for the rest of my life. Many would find it hard to justify spending so much time and money on a keyboard, but a keyboard is more than just the sum of its parts when you work in cybersecurity. This post is an overview of anything someone might want to know about it; it&rsquo;s just as much for my reference as it is anyone else&rsquo;s.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-7"
+             id="gallery-thumbnail-input-7-7"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-7-7">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-7-7">
+        <label for="gallery-lightbox-input-7-7"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="sp111_1.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-7" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-7-7"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="sp111_1.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="sp111_1.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>My SP-111 in a split configuration with the latest keymap. The red LED indicates command mode.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-7"
+             id="gallery-thumbnail-input-7-8">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-7-8">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-7-8">
+        <label for="gallery-lightbox-input-7-8"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="sp111_2.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-7" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-7-8"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="sp111_2.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="sp111_2.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>My SP-111 with both halves joined using an old layout/keymap.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-7-7"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-7-7"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="sp111_1.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-7-8"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-7-8"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="sp111_2.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>Keyboards are a hacker&rsquo;s primary mechanism for enacting their will in cyberspace. With the stroke of a key, motion is converted into sequences of electrical impulses that encode the user&rsquo;s intent. A series of complex and seemingly magical events take place in the blink of an eye, and then a character appears on the display. The input was processed by your computer and drawn on a screen faster than you could even begin to consider the engineering that allowed it to occur. Perhaps you&rsquo;re only logging into your PC, or maybe you&rsquo;ve just discovered a bombshell zero-day vulnerability and you&rsquo;re racing to write a patch&hellip; or an exploit.</p>
+<p>Your keyboard doesn&rsquo;t know which is the case. It doesn&rsquo;t care. It&rsquo;s a tool—akin to a soldier&rsquo;s weapon. But sometimes a keyboard can be <em>much</em> more effective than a firearm, all things considered. Analysts, engineers, programmers, military operators, and cybercriminals alike all use this essential and often-overlooked piece of technology to control their computers. Regardless of which side of cyberwar you stand on, <strong>the world is at your fingertips if you have the know-how. In this sense, keyboards are the interface between you and your goals.</strong> It&rsquo;s the main device that your thoughts and commands are filtered through, and it will take care of you if you take care of it.</p>
+<h2 id="background">Background</h2>
+<p>Although this is what one would call a <em>custom board</em>, I didn&rsquo;t create the entire thing from scratch. I purchased a kit that included the PCBs, cases, and plates. Everything else (e.g., switches, stabilizers, keycaps, etc.) is the responsibility of the user that assembles the kit. If you&rsquo;re unfamiliar with the world of custom keyboards, designers will often post <a href="https://geekhack.org/index.php?board=132.0" target="_blank" rel="noopener noreferrer">interest checks</a> in specialized forums to gauge whether the community is interested in their work. A kit usually becomes available for purchase later as part of a <a href="https://geekhack.org/index.php?board=70.0" target="_blank" rel="noopener noreferrer">group buy</a> if feedback is positive.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-8"
+             id="gallery-thumbnail-input-8-10"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-8-10">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-8-10">
+        <label for="gallery-lightbox-input-8-10"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="render_1.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-8" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-8-10"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="render_1.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="render_1.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A render of the SP-111 in gray.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-8"
+             id="gallery-thumbnail-input-8-11">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-8-11">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-8-11">
+        <label for="gallery-lightbox-input-8-11"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="render_2.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-8" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-8-11"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="render_2.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="render_2.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A render of the SP-111 in sea blue.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-8"
+             id="gallery-thumbnail-input-8-12">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-8-12">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-8-12">
+        <label for="gallery-lightbox-input-8-12"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="render_3.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-8" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-8-12"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="render_3.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="render_3.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A render of the SP-111 in lavender.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-8"
+             id="gallery-thumbnail-input-8-13">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-8-13">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-8-13">
+        <label for="gallery-lightbox-input-8-13"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="render_4.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-8" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-8-13"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="render_4.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="render_4.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A render of the SP-111 in wine.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-8-10"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-8-10"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="render_1.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-8-11"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-8-11"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="render_2.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-8-12"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-8-12"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="render_3.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-8-13"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-8-13"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="render_4.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>I discovered the SP-111 while I was taking technical drafting and engineering design courses in high school. We started in year 1 with old-fashioned paper and pencil drafting (which I still love), and later moved on to computer software like <a href="https://www.autodesk.com/products/autocad/overview" target="_blank" rel="noopener noreferrer">AutoCAD</a> and <a href="https://www.solidworks.com/product/solidworks-design" target="_blank" rel="noopener noreferrer">SolidWorks</a> in years 2, 3, and 4.</p>
+<p>Anyone with AutoCAD experience will tell you how useful the numpad is, so it&rsquo;s no surprise that I quickly began searching for a keyboard with a left-oriented numpad. That&rsquo;s (arguably) where it belongs, anyways. I usually use the numpad with a mouse, and it feels much more natural to be able to keep my right hand where it is while I use the numpad with my left hand. This avoids the awkward motion of either removing your right hand from the mouse (assuming you&rsquo;re right-handed) or moving your left hand all the way to the other side of your keyboard just to insert some numbers.</p>
+<p>Although I currently don&rsquo;t use it this way, a left-oriented numpad can also serve as a convenient built-in macropad if you&rsquo;re willing to put in some configuration work.</p>
+<h2 id="materials-and-build-process">Materials and Build Process</h2>
+<p>My kit was delivered in November 2024 after nearly two years of waiting—I had placed my order in February 2023 when the <a href="https://www.instagram.com/blindassassin111/" target="_blank" rel="noopener noreferrer">designer</a> launched a <a href="https://geekhack.org/index.php?topic=119284.0" target="_blank" rel="noopener noreferrer">group buy for a revised SP-111</a>. That kind of delay is typical for custom keyboards. If anything, it was actually quite fast compared to some other group buys that have gotten stuck in development hell. While I was waiting, I worked on acquiring everything else I would need to make a finished keyboard. A list of materials and prices is visible below for anyone looking at doing a similar build.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-15"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-15">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-15">
+        <label for="gallery-lightbox-input-9-15"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="build_1.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-15"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="build_1.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="build_1.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Unboxing the SP-111 kit.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-16">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-16">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-16">
+        <label for="gallery-lightbox-input-9-16"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="build_2.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-16"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="build_2.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="build_2.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Preparing the PCBs, plates, and cases.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-17">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-17">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-17">
+        <label for="gallery-lightbox-input-9-17"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="build_3.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-17"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="build_3.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="build_3.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Assembling and installing the stabilizers.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-18">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-18">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-18">
+        <label for="gallery-lightbox-input-9-18"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="build_4.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-18"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="build_4.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="build_4.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Testing and tuning the stabilizers.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-19">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-19">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-19">
+        <label for="gallery-lightbox-input-9-19"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="build_5.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-19"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="build_5.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="build_5.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Installed all switches.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-20">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-20">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-20">
+        <label for="gallery-lightbox-input-9-20"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="build_6.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-20"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="build_6.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="build_6.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Preparing to solder the left PCB.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-9-15"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-15"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="build_1.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-9-16"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-16"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="build_2.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-9-17"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-17"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="build_3.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-9-18"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-18"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="build_4.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-9-19"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-19"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="build_5.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-9-20"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-20"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="build_6.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>Because this isn&rsquo;t a tutorial for building custom keyboards, my assembly steps have been simplified:</p>
+<ol>
+<li>Test PCBs and flash latest default firmware</li>
+<li>Assemble and install stabilizers</li>
+<li>Test stabilizers and <a href="https://youtu.be/xlSIIZqyQR0" target="_blank" rel="noopener noreferrer">tune accordingly</a></li>
+<li>Install and solder switches</li>
+<li>Assemble keyboard and test functionality</li>
+<li>Create keymap</li>
+<li>Write and flash <a href="#custom-firmware">custom firmware</a></li>
+</ol>
+<p>I originally assembled my SP-111 with an aluminum plate and Boba U4T switches, but later swapped to a carbon fiber plate with case foam and Boba U4 silent tactile switches. This was mainly to reduce noise and avoid being &ldquo;that guy&rdquo; at the office (nobody wants to hear your <a href="https://youtu.be/r5H58uudo1Y?t=1069" target="_blank" rel="noopener noreferrer">buckling spring IBM</a> all day). Honestly, I much prefer the silent sound now that I&rsquo;ve made the change.</p>
+<p>Unfortunately, I discovered that my spare right PCB has five diodes that are just <em>missing</em> when I went to install the new switches. My original plan was to remove the existing PCBs that had the old switches installed and desolder them later. In the meantime, the new silent switches would get soldered to my spare PCBs and installed in the keyboard. I ended up having to desolder my working right PCB to install the new switches.</p>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.8355ca89b786f020baa6372a4dde65908fa4a191d9ee6cafc3f66a3cd9d81375.css"
+        integrity="sha256-g1XKibeG8CC6pjcqTd5lkI&#43;koZHZ7myvw/ZqPNnYE3U="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-50 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="diode.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="diode.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="diode.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>The size of a diode compared to my fingertip.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>I haven&rsquo;t had time to try fixing the missing diodes yet, but I might end up needing to take my PCB to a repair shop. The diodes are <em>extremely</em> small and I don&rsquo;t have the proper equipment or technique to handle microsoldering jobs right now.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Item</th>
+					<th>Cost (USD)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>SP-111 kit (includes carbon fiber plate and spare PCBs)</td>
+					<td>$606.54</td>
+			</tr>
+			<tr>
+					<td>ePBT 6085 keycap set (includes base, numpad, spacebars, novelties, and 40s)</td>
+					<td>$164.49</td>
+			</tr>
+			<tr>
+					<td>Gazzew Boba U4T switches x200 (68g)</td>
+					<td>$132.50</td>
+			</tr>
+			<tr>
+					<td>Gazzew Boba U4 silent tactile switches x120 (v2, 68g)</td>
+					<td>$88.30</td>
+			</tr>
+			<tr>
+					<td>TX AP clip-in stabilizers (1.6mm)</td>
+					<td>$71.06</td>
+			</tr>
+			<tr>
+					<td>Case and plate foam</td>
+					<td>$34.50</td>
+			</tr>
+			<tr>
+					<td>Split wrist rest</td>
+					<td>$28.83</td>
+			</tr>
+			<tr>
+					<td>Replacement diodes</td>
+					<td>$12.12</td>
+			</tr>
+			<tr>
+					<td><strong>Grand Total</strong></td>
+					<td><strong>$1,138.34</strong></td>
+			</tr>
+	</tbody>
+</table>
+<p>I know what you&rsquo;re probably thinking. <em>&quot;$1,100 for a keyboard?! That&rsquo;s <strong>insane</strong>.&quot;</em> You might be right (giving it a typing test might change your mind), but if you think this is bad you should take a look at <a href="https://keycult.com/collections/drawings" target="_blank" rel="noopener noreferrer">keycult</a>. Around those parts it isn&rsquo;t uncommon to enter a lottery just for a <em>chance</em> at buying a $700+ kit, and keep in mind, you&rsquo;re still responsible for purchasing the remaining components like switches and kepcaps. High-end custom keyboards are a rich man&rsquo;s hobby, so it&rsquo;s one and done for me.</p>
+<h2 id="layouts">Layouts</h2>
+<p>It&rsquo;s helpful to understand what valid SP-111 layouts can look like before discussing keymaps. Refer to the diagram below:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-2-2">
+  <label for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="layout.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-2" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="layout.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="layout.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Diagram of valid SP-111 layouts. Mirrored numpads also work, but require a custom plate.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>The SP-111 has a highly versatile layout. This is one of the main reasons that I selected the kit over other contenders. The potential for customization is almost limitless when you add QMK to the mix, assuming you have keycaps that match your underlying layout and keymap. You could always get around this by using blank keycaps, but I prefer mine to have legends.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-10"
+             id="gallery-thumbnail-input-10-22"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-10-22">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-10-22">
+        <label for="gallery-lightbox-input-10-22"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="base.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-10" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-10-22"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="base.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="base.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>ePBT 6085 base kit.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-10"
+             id="gallery-thumbnail-input-10-23">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-10-23">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-10-23">
+        <label for="gallery-lightbox-input-10-23"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="numpad.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-10" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-10-23"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="numpad.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="numpad.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>ePBT 6085 numpad kit.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-10"
+             id="gallery-thumbnail-input-10-24">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-10-24">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-10-24">
+        <label for="gallery-lightbox-input-10-24"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="spacebars.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-10" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-10-24"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="spacebars.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="spacebars.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>ePBT 6085 spacebars kit.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-10"
+             id="gallery-thumbnail-input-10-25">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-10-25">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-10-25">
+        <label for="gallery-lightbox-input-10-25"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="novelties.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-10" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-10-25"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="novelties.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="novelties.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>ePBT 6085 novelties kit.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-10"
+             id="gallery-thumbnail-input-10-26">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-10-26">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-10-26">
+        <label for="gallery-lightbox-input-10-26"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="40s.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-10" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-10-26"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="40s.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="40s.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>ePBT 6085 40s kit.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-10-22"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-10-22"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="base.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-10-23"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-10-23"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="numpad.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-10-24"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-10-24"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="spacebars.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-10-25"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-10-25"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="novelties.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-10-26"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-10-26"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="40s.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>Speaking of keycaps, I selected the <a href="https://keyspresso.ca/products/group-buy-epbt-6085" target="_blank" rel="noopener noreferrer">ePBT 6085 set</a> which happened to have excellent compatibility for what I planned to do. This set was based off of the <a href="https://deskthority.net/viewtopic.php?t=14478" target="_blank" rel="noopener noreferrer">Docutech keyboard</a> that was intended for use with the gorgeously-retro <a href="https://en.wikipedia.org/wiki/Xerox_Daybreak#/media/File:TSD-Xerox-8010-kol.jpg" target="_blank" rel="noopener noreferrer">Xerox computer system pictured below</a>. For the unfamiliar, the computer desktop as we know it today essentially originated at Xerox. Expect a post about this at some (undetermined) point in the future!</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-70 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-3-3">
+  <label for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="xerox.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-3" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="xerox.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="xerox.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Picture of an old Xerox workstation found on Wikipedia.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h2 id="my-keymap">My Keymap</h2>
+<p>My keymap contains three layers:</p>
+<ul>
+<li>Command layer (0)</li>
+<li>Normal layer (1)</li>
+<li>Function layer (2)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-11"
+             id="gallery-thumbnail-input-11-28"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-11-28">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-11-28">
+        <label for="gallery-lightbox-input-11-28"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="layer_0.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-11" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-11-28"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="layer_0.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="layer_0.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Command layer keymap.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-11"
+             id="gallery-thumbnail-input-11-29">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-11-29">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-11-29">
+        <label for="gallery-lightbox-input-11-29"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="layer_1.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-11" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-11-29"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="layer_1.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="layer_1.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Normal layer keymap.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-11"
+             id="gallery-thumbnail-input-11-30">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-11-30">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-11-30">
+        <label for="gallery-lightbox-input-11-30"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="layer_2.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-11" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-11-30"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="layer_2.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="layer_2.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Function layer keymap.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-11-28"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-11-28"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="layer_0.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-11-29"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-11-29"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="layer_1.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-11-30"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-11-30"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="layer_2.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>The <strong>command layer</strong> is the <a href="https://docs.qmk.fm/keymap#keymap-and-layers" target="_blank" rel="noopener noreferrer">default layer</a>. Its purpose is to allow one to execute commands with <code>Super</code> + <code>&lt;key&gt;</code> input combinations that my devices are configured to watch for. A held spacebar is treated as a Windows/Super modifier in this layer, but a space is still inserted like normal when the key is tapped to allow the user to type.</p>
+<p>A byproduct of using this setup is that it becomes easy to make mistakes at high WPM. This happens if the user begins their next keystroke before lifting their finger completely from the spacebar after they attempted to type a <code>Space</code> character. The firmware recognizes this as holding the spacebar and translates it into a Windows/Super modifier when the user actually only meant to insert a <code>Space</code>. The result is that commands can sometimes fire mistakenly during typing.</p>
+<p>An easy solution is to create another layer where the spacebar acts <em>only</em> as a normal spacebar—this is why the <strong>normal layer</strong> exists. The intention is for users to switch to normal mode in situations where significant amounts of typing are required, otherwise, the command layer is perfectly serviceable for short bursts as long as you&rsquo;re mindful about avoiding accidental commands.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-4-4">
+  <label for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="wpm.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-4" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="wpm.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="wpm.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Split layouts feel easier and more natural to type on. I can regularly reach ~100 WPM after putting in some practice despite being a poor typist.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>The last layer is the <strong>function layer</strong>. This layer can only be accessed by holding down the momentary activation key or the caps lock key (which is remapped to <code>Escape</code>). The layer effectively functions as a modifier when held; many keys are automatically prepended with <code>Shift</code> or <code>Ctrl</code>, and <code>h</code> / <code>j</code> / <code>k</code> / <code>l</code> turns into <code>Left</code> / <code>Down</code> / <code>Up</code> / <code>Right</code>, among other changes.</p>
+<h2 id="custom-firmware">Custom Firmware</h2>
+<p>The keymap works great, but there&rsquo;s one major problem: <strong>there&rsquo;s no visual way to tell which layer is currently active.</strong> Without some kind of indicator, the user just has to remember which layer they activated last—very inconvenient. Fixing this requires reprogramming the device with custom firmware as <a href="https://www.caniusevia.com/" target="_blank" rel="noopener noreferrer">VIA</a> doesn&rsquo;t give users granular control over LEDs from the web interface.</p>
+<p>My modified firmware changes the color of the keyboard&rsquo;s first LED to indicate the active layer: red for command, and green for normal. <strong>Here&rsquo;s the expected behavior:</strong></p>
+<ul>
+<li>LED 1 is red while in the command layer</li>
+<li>LED 1 is green while in the normal layer</li>
+<li>Use <code>Lock</code> key (right shift) to toggle layers</li>
+<li>LED state updates immediately</li>
+<li>Momentary activation of the function layer does not change LED state</li>
+<li>LEDs 2 and 3 indicate caps lock and num lock state</li>
+</ul>
+<p>I made sure that the colors matched my shell&rsquo;s mode string as a bonus.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-5-5">
+  <label for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="shell.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-5" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="shell.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="shell.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>LED 1 uses the same coloring scheme as the shell mode string (green=insert/normal, red=command).</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>I&rsquo;ve found that the easiest way to modify the SP-111&rsquo;s firmware is to use the <a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/viktus/sp111_v2/keymaps/default/keymap.c" target="_blank" rel="noopener noreferrer">default keymap</a> as a starting point. The first thing I needed to do was <a href="https://docs.qmk.fm/newbs_getting_started" target="_blank" rel="noopener noreferrer">prepare a QMK environment</a>. I ran the install script (but <em>not before examining it</em>, of course):</p>
+<pre tabindex="0"><code>curl -fsSL https://install.qmk.fm | sh
+</code></pre><p>After that it&rsquo;s just a matter of running <code>qmk setup</code> and following the prompts to finish getting ready. I compiled firmware using the default SP-111 keymap to confirm that everything works:</p>
+<pre tabindex="0"><code>qmk compile -kb viktus/sp111_v2 -km default
+</code></pre><p>This generated a <code>viktus_sp111_v2_default.hex</code> file in my <code>qmk_firmware</code> folder. I transferred the hex file to my Windows laptop and flashed my spare PCBs with <a href="https://qmk.fm/toolbox" target="_blank" rel="noopener noreferrer">QMK Toolbox</a>. This also worked as expected, so I continued working on my firmware modifications.</p>
+<p>The SP-111 has <a href="https://www.caniusevia.com/docs/supported_keyboards" target="_blank" rel="noopener noreferrer">VIA support</a>, so I used the <a href="https://www.usevia.app/" target="_blank" rel="noopener noreferrer">configurator</a> to make my desired keymap and exported it as a <code>json</code> file. Next, I made a copy of the default keymap and began inserting <a href="https://docs.qmk.fm/keycodes" target="_blank" rel="noopener noreferrer">keycodes</a> over from the <code>json</code> into my <code>keymaps/custom/keymap.c</code> file. This is what the final keymap looks like:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">PROGMEM</span> <span class="n">keymaps</span><span class="p">[][</span><span class="n">MATRIX_ROWS</span><span class="p">][</span><span class="n">MATRIX_COLS</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">_BASE</span><span class="p">]</span> <span class="o">=</span> <span class="nf">LAYOUT</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_PSCR</span><span class="p">,</span> <span class="n">KC_SCRL</span><span class="p">,</span> <span class="n">KC_DEL</span><span class="p">,</span>  <span class="n">KC_PAUS</span><span class="p">,</span>    <span class="n">KC_ESC</span><span class="p">,</span>          <span class="n">KC_F1</span><span class="p">,</span>   <span class="n">KC_F2</span><span class="p">,</span>   <span class="n">KC_F3</span><span class="p">,</span>   <span class="n">KC_F4</span><span class="p">,</span>   <span class="n">KC_F5</span><span class="p">,</span>   <span class="n">KC_F6</span><span class="p">,</span>   <span class="n">KC_F7</span><span class="p">,</span>                           <span class="n">KC_F8</span><span class="p">,</span>   <span class="n">KC_F9</span><span class="p">,</span>   <span class="n">KC_F10</span><span class="p">,</span>  <span class="n">KC_F11</span><span class="p">,</span>  <span class="n">KC_F12</span><span class="p">,</span>           <span class="n">KC_F13</span><span class="p">,</span>  <span class="n">KC_STOP</span><span class="p">,</span> <span class="n">MACRO_1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_NUM</span><span class="p">,</span>  <span class="n">KC_PSLS</span><span class="p">,</span> <span class="n">KC_PAST</span><span class="p">,</span> <span class="n">KC_BSPC</span><span class="p">,</span>    <span class="n">KC_GRV</span><span class="p">,</span>          <span class="n">KC_1</span><span class="p">,</span>    <span class="n">KC_2</span><span class="p">,</span>    <span class="n">KC_3</span><span class="p">,</span>    <span class="n">KC_4</span><span class="p">,</span>    <span class="n">KC_5</span><span class="p">,</span>    <span class="n">KC_6</span><span class="p">,</span>    <span class="n">KC_7</span><span class="p">,</span>                            <span class="n">KC_8</span><span class="p">,</span>    <span class="n">KC_9</span><span class="p">,</span>    <span class="n">KC_0</span><span class="p">,</span>    <span class="n">KC_MINS</span><span class="p">,</span> <span class="n">KC_EQL</span><span class="p">,</span>  <span class="n">KC_BSPC</span><span class="p">,</span> <span class="n">KC_BSPC</span><span class="p">,</span> <span class="n">KC_INS</span><span class="p">,</span>  <span class="n">KC_HOME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P7</span><span class="p">,</span>   <span class="n">KC_P8</span><span class="p">,</span>   <span class="n">KC_P9</span><span class="p">,</span>   <span class="n">KC_PMNS</span><span class="p">,</span>    <span class="n">KC_TAB</span><span class="p">,</span>          <span class="n">KC_Q</span><span class="p">,</span>    <span class="n">KC_W</span><span class="p">,</span>    <span class="n">KC_E</span><span class="p">,</span>    <span class="n">KC_R</span><span class="p">,</span>    <span class="n">KC_T</span><span class="p">,</span>    <span class="n">KC_Y</span><span class="p">,</span>    <span class="n">KC_U</span><span class="p">,</span>                            <span class="n">KC_I</span><span class="p">,</span>    <span class="n">KC_O</span><span class="p">,</span>    <span class="n">KC_P</span><span class="p">,</span>    <span class="n">KC_LBRC</span><span class="p">,</span> <span class="n">KC_RBRC</span><span class="p">,</span> <span class="n">KC_BSLS</span><span class="p">,</span>          <span class="n">KC_DEL</span><span class="p">,</span>  <span class="n">KC_END</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P4</span><span class="p">,</span>   <span class="n">KC_P5</span><span class="p">,</span>   <span class="n">KC_P6</span><span class="p">,</span>   <span class="n">KC_PPLS</span><span class="p">,</span>    <span class="nf">LT</span><span class="p">(</span><span class="n">_FN</span><span class="p">,</span> <span class="n">KC_ESC</span><span class="p">),</span> <span class="n">KC_A</span><span class="p">,</span>    <span class="n">KC_S</span><span class="p">,</span>    <span class="n">KC_D</span><span class="p">,</span>    <span class="n">KC_F</span><span class="p">,</span>    <span class="n">KC_G</span><span class="p">,</span>    <span class="n">KC_H</span><span class="p">,</span>    <span class="n">KC_J</span><span class="p">,</span>                            <span class="n">KC_K</span><span class="p">,</span>    <span class="n">KC_L</span><span class="p">,</span>    <span class="n">KC_SCLN</span><span class="p">,</span> <span class="n">KC_QUOT</span><span class="p">,</span> <span class="n">KC_NUHS</span><span class="p">,</span> <span class="n">KC_ENT</span><span class="p">,</span>           <span class="n">KC_PGDN</span><span class="p">,</span> <span class="n">KC_PGUP</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P1</span><span class="p">,</span>   <span class="n">KC_P2</span><span class="p">,</span>   <span class="n">KC_P3</span><span class="p">,</span>   <span class="n">KC_PENT</span><span class="p">,</span>    <span class="n">KC_LSFT</span><span class="p">,</span>         <span class="n">KC_NUBS</span><span class="p">,</span> <span class="n">KC_Z</span><span class="p">,</span>    <span class="n">KC_X</span><span class="p">,</span>    <span class="n">KC_C</span><span class="p">,</span>    <span class="n">KC_V</span><span class="p">,</span>    <span class="n">KC_B</span><span class="p">,</span>    <span class="n">KC_N</span><span class="p">,</span>                            <span class="n">KC_M</span><span class="p">,</span>    <span class="n">KC_COMM</span><span class="p">,</span> <span class="n">KC_DOT</span><span class="p">,</span>  <span class="n">KC_SLSH</span><span class="p">,</span> <span class="nf">TG</span><span class="p">(</span><span class="n">_L1</span><span class="p">),</span> <span class="nf">MO</span><span class="p">(</span><span class="n">_FN</span><span class="p">),</span>          <span class="n">KC_UP</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P0</span><span class="p">,</span>   <span class="n">MACRO_0</span><span class="p">,</span> <span class="n">KC_PDOT</span><span class="p">,</span> <span class="n">KC_PENT</span><span class="p">,</span>    <span class="n">KC_LCTL</span><span class="p">,</span>         <span class="n">KC_LGUI</span><span class="p">,</span> <span class="n">KC_LALT</span><span class="p">,</span> <span class="n">KC_SPC</span><span class="p">,</span>  <span class="n">KC_BSPC</span><span class="p">,</span>                   <span class="nf">MT</span><span class="p">(</span><span class="n">MOD_LGUI</span> <span class="o">|</span> <span class="n">MOD_RGUI</span><span class="p">,</span> <span class="n">KC_SPC</span><span class="p">),</span> <span class="n">KC_APP</span><span class="p">,</span>  <span class="n">KC_RALT</span><span class="p">,</span> <span class="n">KC_NO</span><span class="p">,</span>   <span class="n">KC_0</span><span class="p">,</span>                      <span class="n">KC_LEFT</span><span class="p">,</span> <span class="n">KC_DOWN</span><span class="p">,</span> <span class="n">KC_RIGHT</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">_L1</span><span class="p">]</span> <span class="o">=</span> <span class="nf">LAYOUT</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_PSCR</span><span class="p">,</span> <span class="n">KC_SCRL</span><span class="p">,</span> <span class="n">KC_DEL</span><span class="p">,</span>  <span class="n">KC_PAUS</span><span class="p">,</span>    <span class="n">KC_ESC</span><span class="p">,</span>          <span class="n">KC_F1</span><span class="p">,</span>   <span class="n">KC_F2</span><span class="p">,</span>   <span class="n">KC_F3</span><span class="p">,</span>   <span class="n">KC_F4</span><span class="p">,</span>   <span class="n">KC_F5</span><span class="p">,</span>   <span class="n">KC_F6</span><span class="p">,</span>   <span class="n">KC_F7</span><span class="p">,</span>   <span class="n">KC_F8</span><span class="p">,</span>   <span class="n">KC_F9</span><span class="p">,</span>   <span class="n">KC_F10</span><span class="p">,</span>  <span class="n">KC_F11</span><span class="p">,</span>  <span class="n">KC_F12</span><span class="p">,</span>           <span class="n">KC_F13</span><span class="p">,</span>  <span class="n">KC_STOP</span><span class="p">,</span> <span class="n">MACRO_1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_NUM</span><span class="p">,</span>  <span class="n">KC_PSLS</span><span class="p">,</span> <span class="n">KC_PAST</span><span class="p">,</span> <span class="n">KC_BSPC</span><span class="p">,</span>    <span class="n">KC_GRV</span><span class="p">,</span>          <span class="n">KC_1</span><span class="p">,</span>    <span class="n">KC_2</span><span class="p">,</span>    <span class="n">KC_3</span><span class="p">,</span>    <span class="n">KC_4</span><span class="p">,</span>    <span class="n">KC_5</span><span class="p">,</span>    <span class="n">KC_6</span><span class="p">,</span>    <span class="n">KC_7</span><span class="p">,</span>    <span class="n">KC_8</span><span class="p">,</span>    <span class="n">KC_9</span><span class="p">,</span>    <span class="n">KC_0</span><span class="p">,</span>    <span class="n">KC_MINS</span><span class="p">,</span> <span class="n">KC_EQL</span><span class="p">,</span>  <span class="n">KC_TRNS</span><span class="p">,</span> <span class="n">KC_BSPC</span><span class="p">,</span> <span class="n">KC_INS</span><span class="p">,</span>  <span class="n">KC_HOME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P7</span><span class="p">,</span>   <span class="n">KC_P8</span><span class="p">,</span>   <span class="n">KC_P9</span><span class="p">,</span>   <span class="n">KC_PMNS</span><span class="p">,</span>    <span class="n">KC_TAB</span><span class="p">,</span>          <span class="n">KC_Q</span><span class="p">,</span>    <span class="n">KC_W</span><span class="p">,</span>    <span class="n">KC_E</span><span class="p">,</span>    <span class="n">KC_R</span><span class="p">,</span>    <span class="n">KC_T</span><span class="p">,</span>    <span class="n">KC_Y</span><span class="p">,</span>    <span class="n">KC_U</span><span class="p">,</span>    <span class="n">KC_I</span><span class="p">,</span>    <span class="n">KC_O</span><span class="p">,</span>    <span class="n">KC_P</span><span class="p">,</span>    <span class="n">KC_LBRC</span><span class="p">,</span> <span class="n">KC_RBRC</span><span class="p">,</span> <span class="n">KC_BSLS</span><span class="p">,</span>          <span class="n">KC_DEL</span><span class="p">,</span>  <span class="n">KC_END</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P4</span><span class="p">,</span>   <span class="n">KC_P5</span><span class="p">,</span>   <span class="n">KC_P6</span><span class="p">,</span>   <span class="n">KC_PPLS</span><span class="p">,</span>    <span class="nf">LT</span><span class="p">(</span><span class="n">_FN</span><span class="p">,</span> <span class="n">KC_ESC</span><span class="p">),</span> <span class="n">KC_A</span><span class="p">,</span>    <span class="n">KC_S</span><span class="p">,</span>    <span class="n">KC_D</span><span class="p">,</span>    <span class="n">KC_F</span><span class="p">,</span>    <span class="n">KC_G</span><span class="p">,</span>    <span class="n">KC_H</span><span class="p">,</span>    <span class="n">KC_J</span><span class="p">,</span>    <span class="n">KC_K</span><span class="p">,</span>    <span class="n">KC_L</span><span class="p">,</span>    <span class="n">KC_SCLN</span><span class="p">,</span> <span class="n">KC_QUOT</span><span class="p">,</span> <span class="n">KC_TRNS</span><span class="p">,</span> <span class="n">KC_ENT</span><span class="p">,</span>           <span class="n">KC_PGDN</span><span class="p">,</span> <span class="n">KC_PGUP</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P1</span><span class="p">,</span>   <span class="n">KC_P2</span><span class="p">,</span>   <span class="n">KC_P3</span><span class="p">,</span>   <span class="n">KC_TRNS</span><span class="p">,</span>    <span class="n">KC_LSFT</span><span class="p">,</span>         <span class="n">KC_TRNS</span><span class="p">,</span> <span class="n">KC_Z</span><span class="p">,</span>    <span class="n">KC_X</span><span class="p">,</span>    <span class="n">KC_C</span><span class="p">,</span>    <span class="n">KC_V</span><span class="p">,</span>    <span class="n">KC_B</span><span class="p">,</span>    <span class="n">KC_N</span><span class="p">,</span>    <span class="n">KC_M</span><span class="p">,</span>    <span class="n">KC_COMM</span><span class="p">,</span> <span class="n">KC_DOT</span><span class="p">,</span>  <span class="n">KC_SLSH</span><span class="p">,</span> <span class="n">KC_NO</span><span class="p">,</span>   <span class="nf">MO</span><span class="p">(</span><span class="n">_FN</span><span class="p">),</span>          <span class="n">KC_UP</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_P0</span><span class="p">,</span>   <span class="n">MACRO_0</span><span class="p">,</span> <span class="n">KC_PDOT</span><span class="p">,</span> <span class="n">KC_PENT</span><span class="p">,</span>    <span class="n">KC_LCTL</span><span class="p">,</span>         <span class="n">KC_LGUI</span><span class="p">,</span> <span class="n">KC_LALT</span><span class="p">,</span> <span class="n">KC_SPC</span><span class="p">,</span>  <span class="n">KC_BSPC</span><span class="p">,</span>                   <span class="n">KC_SPC</span><span class="p">,</span>  <span class="n">KC_TRNS</span><span class="p">,</span> <span class="n">KC_RALT</span><span class="p">,</span> <span class="n">KC_NO</span><span class="p">,</span>   <span class="n">KC_1</span><span class="p">,</span>                      <span class="n">KC_LEFT</span><span class="p">,</span> <span class="n">KC_DOWN</span><span class="p">,</span> <span class="n">KC_RGHT</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="n">_FN</span><span class="p">]</span> <span class="o">=</span> <span class="nf">LAYOUT</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>    <span class="n">KC_CAPS</span><span class="p">,</span>   <span class="n">KC_F13</span><span class="p">,</span>  <span class="n">KC_F14</span><span class="p">,</span>  <span class="n">KC_F15</span><span class="p">,</span>  <span class="n">KC_F16</span><span class="p">,</span>  <span class="n">KC_F17</span><span class="p">,</span>  <span class="n">KC_F18</span><span class="p">,</span>  <span class="n">KC_F19</span><span class="p">,</span>  <span class="n">KC_F20</span><span class="p">,</span>  <span class="n">KC_F21</span><span class="p">,</span>     <span class="n">KC_F22</span><span class="p">,</span>     <span class="n">KC_F23</span><span class="p">,</span>     <span class="n">KC_F24</span><span class="p">,</span>                 <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">QK_BOOT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>    <span class="nf">S</span><span class="p">(</span><span class="n">KC_GRV</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_1</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_2</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_3</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_4</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_5</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_6</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_7</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_8</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_9</span><span class="p">),</span>    <span class="nf">S</span><span class="p">(</span><span class="n">KC_0</span><span class="p">),</span>    <span class="nf">S</span><span class="p">(</span><span class="n">KC_MINS</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_EQL</span><span class="p">),</span>  <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span>   <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="nf">C</span><span class="p">(</span><span class="n">KC_Y</span><span class="p">),</span> <span class="n">KC_HOME</span><span class="p">,</span> <span class="n">KC_END</span><span class="p">,</span>  <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span>    <span class="nf">S</span><span class="p">(</span><span class="n">KC_LBRC</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_RBRC</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_BSLS</span><span class="p">),</span>          <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span>   <span class="nf">C</span><span class="p">(</span><span class="n">KC_A</span><span class="p">),</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="nf">C</span><span class="p">(</span><span class="n">KC_F</span><span class="p">),</span> <span class="n">_______</span><span class="p">,</span> <span class="n">KC_LEFT</span><span class="p">,</span> <span class="n">KC_DOWN</span><span class="p">,</span> <span class="n">KC_UP</span><span class="p">,</span>   <span class="n">KC_RGHT</span><span class="p">,</span>    <span class="nf">S</span><span class="p">(</span><span class="n">KC_SCLN</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_QUOT</span><span class="p">),</span> <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span>             <span class="n">MS_BTN1</span><span class="p">,</span> <span class="n">MS_BTN2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span>   <span class="n">_______</span><span class="p">,</span> <span class="nf">C</span><span class="p">(</span><span class="n">KC_Z</span><span class="p">),</span> <span class="nf">C</span><span class="p">(</span><span class="n">KC_X</span><span class="p">),</span> <span class="nf">C</span><span class="p">(</span><span class="n">KC_C</span><span class="p">),</span> <span class="nf">C</span><span class="p">(</span><span class="n">KC_V</span><span class="p">),</span> <span class="n">_______</span><span class="p">,</span> <span class="n">KC_PGDN</span><span class="p">,</span> <span class="n">KC_PGUP</span><span class="p">,</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_COMM</span><span class="p">),</span> <span class="nf">S</span><span class="p">(</span><span class="n">KC_DOT</span><span class="p">),</span>  <span class="nf">S</span><span class="p">(</span><span class="n">KC_SLSH</span><span class="p">),</span> <span class="nf">TO</span><span class="p">(</span><span class="n">_BASE</span><span class="p">),</span>  <span class="n">_______</span><span class="p">,</span>             <span class="n">MS_UP</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">KC_MPRV</span><span class="p">,</span> <span class="n">KC_MNXT</span><span class="p">,</span> <span class="n">KC_MPLY</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span>   <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">KC_DEL</span><span class="p">,</span>                    <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span> <span class="n">_______</span><span class="p">,</span>    <span class="n">_______</span><span class="p">,</span>    <span class="n">KC_2</span><span class="p">,</span>                               <span class="n">MS_LEFT</span><span class="p">,</span> <span class="n">MS_DOWN</span><span class="p">,</span> <span class="n">MS_RGHT</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>The main modification needs to be inserted after the keycodes. This code changes the behavior of the onboard LEDs by using LED 1 as a layer indicator. LEDs 2 and 3 are used to indicate the caps lock and num lock states.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#ifdef RGB_MATRIX_ENABLE
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">rgb_matrix_indicators_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">led_t</span> <span class="n">led_state</span> <span class="o">=</span> <span class="nf">host_keyboard_led_state</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">uint8_t</span> <span class="n">LED1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// power/layer indicator
+</span></span></span><span class="line"><span class="cl">    <span class="kt">uint8_t</span> <span class="n">LED2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// capslock
+</span></span></span><span class="line"><span class="cl">    <span class="kt">uint8_t</span> <span class="n">LED3</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// numlock
+</span></span></span><span class="line"><span class="cl">    <span class="kt">uint8_t</span> <span class="n">base_layer</span> <span class="o">=</span> <span class="nf">get_highest_layer</span><span class="p">(</span><span class="n">layer_state</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="mi">1UL</span> <span class="o">&lt;&lt;</span> <span class="n">_FN</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">base_layer</span> <span class="o">==</span> <span class="n">_L1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">rgb_matrix_set_color</span><span class="p">(</span><span class="n">LED1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">rgb_matrix_set_color</span><span class="p">(</span><span class="n">LED1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">led_state</span><span class="p">.</span><span class="n">caps_lock</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">rgb_matrix_set_color</span><span class="p">(</span><span class="n">LED2</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">rgb_matrix_set_color</span><span class="p">(</span><span class="n">LED2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">led_state</span><span class="p">.</span><span class="n">num_lock</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">rgb_matrix_set_color</span><span class="p">(</span><span class="n">LED3</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">rgb_matrix_set_color</span><span class="p">(</span><span class="n">LED3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span></code></pre></div><p>With the keymap file done, all that&rsquo;s left is compiling and flashing the custom firmware.</p>
+<pre tabindex="0"><code>qmk compile -kb viktus/sp111_v2 -km custom
+</code></pre><p>I flashed the firmware according to the following (paraphrased) instructions that were included with the board:</p>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>In order to program the board with new firmware, you will need to be able to program both halves separately. Always make sure the same firmware version is programmed on both halves or there may be unexpected errors/issues. When programming the PCBs do not have the interconnect cable plugged in, and only plug into the PCBs via the USB port labeled &ldquo;COMPUTER&rdquo;.</p>
+<p>The left half of the SP-111 can be programmed while fully assembled via the USB port that you use to connect to your computer already. If disassembled, use the USB port labeled &ldquo;COMPUTER&rdquo; on the PCB for programming only. The right half of the SP-111 must be taken apart in order to access a secondary, internal USB connector, labeled as &ldquo;COMPUTER&rdquo; on the PCB for programming.</p>
+</i>
+  </blockquote></figure>
+<ol>
+<li>Make sure you have the latest release (not a beta) of QMK Toolbox downloaded</li>
+<li>Launch QMK Toolbox and click the <code>Open</code> button located near the top right</li>
+<li>Navigate to your firmware hex file <code>&lt;FILENAME&gt;.hex</code> and open it</li>
+<li>Ensure the dropdown next to the open button has the <code>ATmega32U4</code> option selected</li>
+<li>Enable the <code>Auto-Flash</code> feature</li>
+<li>Plug in either the left or right PCB via the USB port labeled <code>COMPUTER</code></li>
+<li>Push the small button labeled <code>RESET</code> on the bottom of the PCB near the MCU/controller once and let go</li>
+<li>You should now see text scrolling that shows the firmware flashing progress</li>
+</ol>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-6-6">
+  <label for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="flash.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-6" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="flash.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="flash.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A screenshot showing successful firmware flashing.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://geekhack.org/index.php?topic=119285.0" target="_blank" rel="noopener noreferrer">geekhack Interest Check</a></li>
+<li><a href="https://geekhack.org/index.php?topic=119284.0" target="_blank" rel="noopener noreferrer">geekhack Group Buy</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/viktus/sp111_v2" target="_blank" rel="noopener noreferrer">SP-111 v2 QMK Firmware</a></li>
+<li><a href="https://hakkousa.com/products/soldering/soldering-stations/fx-888dx.html" target="_blank" rel="noopener noreferrer">Hakko FX-888D Soldering Station</a></li>
+<li><a href="https://hakkousa.com/products/desoldering/desoldering-tools/fr-301-portable-desoldering-tool.html" target="_blank" rel="noopener noreferrer">Hakko FR-301 Desoldering Tool</a></li>
+<li><a href="https://www.engineertools-jp.com/product-page/ss-03-solder-sucker" target="_blank" rel="noopener noreferrer">Manual Desoldering Pump</a></li>
+<li><a href="https://www.mouser.com/ProductDetail/Taiwan-Semiconductor/TS4148-RBG?qs=5aG0NVq1C4zjFQ%2F0tPTeiA%3D%3D" target="_blank" rel="noopener noreferrer">Replacement PCB Diodes</a></li>
+<li><a href="https://ringerkeys.com/collections/switches/products/gazzew-boba-u4t-thocky-tactile-switches?variant=33205934784594" target="_blank" rel="noopener noreferrer">Boba U4T Tactile Switches</a></li>
+<li><a href="https://ringerkeys.com/products/gazzew-boba-u4-silent-tactile-switches?variant=42015459737682" target="_blank" rel="noopener noreferrer">Boba U4 Silent Tactile Switches</a></li>
+<li><a href="https://cannonkeys.com/products/tx-stabilizers?variant=41063006634095" target="_blank" rel="noopener noreferrer">TX AP Clip-In Stabilizers</a></li>
+<li><a href="https://keyspresso.ca/products/group-buy-epbt-6085" target="_blank" rel="noopener noreferrer">ePBT 6085 Keycaps</a></li>
+<li><a href="https://stupidfish.design/products/sp-111-case-and-plate-foam-set" target="_blank" rel="noopener noreferrer">Case/Plate Foam</a></li>
+<li><a href="https://youtu.be/xlSIIZqyQR0" target="_blank" rel="noopener noreferrer">Stabilizer Tuning Tutorial</a></li>
+</ul>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; <a href="/">Will Kittredge</a>
+        </p>
+        
+          
+          
+          
+        
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+

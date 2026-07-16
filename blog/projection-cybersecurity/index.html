@@ -1,0 +1,4085 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>From Projectionist to Analyst</title>
+<link rel="stylesheet" href="/fonts.min.432d30cc1eb59295499225e91344ecaeefad12455678a1c3d2342ab2353e6b77.css" integrity="sha256-Qy0wzB61kpVJkiXpE0Tsru&#43;tEkVWeKHD0jQqsjU&#43;a3c=">
+<link rel="stylesheet" href="/main.min.4a2ea50553fe1d95f47677a089b7ffadc6863726e5b698b8f719e86f8b787b83.css" integrity="sha256-Si6lBVP&#43;HZX0dnegibf/rcaGNybltpi49xnob4t4e4M=">
+<link rel="stylesheet" href="/dark.min.2ba570a67c27c8503fa3dac85965646b23a90904424ac0320ed5e2c46161d4ae.css" integrity="sha256-K6VwpnwnyFA/o9rIWWVkayOpCQRCSsAyDtXixGFh1K4=">
+<meta name="generator" content="Hugo 0.164.0">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="icon" href="data:," />
+        
+        <script>
+          if (localStorage.getItem('darkMode')) {
+            document.documentElement.classList.add('dark-mode');
+          }
+        </script>
+    </head>
+    <body>
+      <header>
+  <nav class="navbar">
+    <div class="menu-toggle">
+  <input type="checkbox" id="menu-toggle" aria-label="Toggle menu"/>
+  <label for="menu-toggle" class="menu-toggle-label" title="Toggle menu (Esc)">
+    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </label>
+</div>
+
+    <button class="search-toggle" id="search-toggle" aria-label="Search">
+  <label for="search-toggle" class="search-toggle-label" title="Search (/)">
+  <svg class="search-icon" xmlns="http://www.w3.org/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="10.5" cy="10.5" r="7"/>
+    <line x1="21" y1="21" x2="15.45" y2="15.45"/>
+  </svg>
+</button>
+
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/blog/">Blog</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+    <style>
+      :root {
+        --pf-font: Roboto;
+        --pf-input-height: 24px;
+        --pf-border-radius: 4px;
+        --pf-modal-max-width: 700px;
+        --pf-mark: hsl(24 100% 4%);
+        --pf-text: hsl(38 48% 28%);
+        --pf-text-muted: hsl(38 48% 28%);
+        --pf-border-focus: hsl(291 39% 52%);
+        --pf-outline-focus: hsl(291 39% 52%);
+        --pf-text-secondary: hsl(24 9% 54%);
+        --pf-background: hsl(37 100% 98%);
+        --pf-hover: hsl(37 51% 87%);
+        --pf-border: hsl(38 26% 46%);
+      }
+    </style>
+    <pagefind-modal></pagefind-modal>
+
+    <span class="navbar-filler"></span>
+    <div class="theme-toggle">
+  <input type="checkbox" id="theme-toggle" aria-label="Toggle theme"/>
+  <label for="theme-toggle" class="theme-toggle-label" title="Toggle theme (T)">
+    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/>
+		</svg>
+    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+		</svg>
+  </label>
+</div>
+
+  </nav>
+  
+  <script src="/js/toggle-theme.min.3e5b425b4b935f4c94bfe1a74db4888c8928896c24d81da4aed25049716026b3.js" integrity="sha256-PltCW0uTX0yUv&#43;GnTbSIjIkoiWwk2B2krtJQSXFgJrM=" defer></script>
+  
+  <script src="/js/toggle-search.min.ca3987cff86c419e69b0ece70db05ebddb6bd19da20c2741f10a5af09f6ca1c1.js" integrity="sha256-yjmHz/hsQZ5psOznDbBevdtr0Z2iDCdB8Qpa8J9socE=" defer></script>
+</header>
+
+      <nav class="side-menu">
+  
+    
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  <p class="side-menu-main">Main</p>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <p class="side-menu-section">Resources</p>
+  <ul>
+    
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/news/">News</a></li>
+    
+    
+  </ul>
+  <p class="side-menu-section">Miscellaneous</p>
+  <ul>
+    
+    
+    <li><a href="/library/">Library</a></li>
+    <li><a href="/planned/">Planned Posts</a></li>
+    
+  </ul>
+</nav>
+
+<script src="/js/toggle-menu.min.d127d5789b156c038204796c3571910da7e149a96c334c80cbca37b1fbb30279.js" integrity="sha256-0SfVeJsVbAOCBHlsNXGRDafhSalsM0yAy8o3sfuzAnk=" defer></script>
+
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>From Projectionist to Analyst</h1>
+      <div class="post-open-dates">
+        <p>
+          <b><i>Published: Jun 1, 2026</i></b>
+        </p>
+      </div>
+    </div>
+    <div class="post-open-tags"><a class="taglink" href="/tags/movies/"><kbd class="tag">movies</kbd></a><a class="taglink" href="/tags/career/"><kbd class="tag">career</kbd></a><a class="taglink" href="/tags/cybersecurity/"><kbd class="tag">cybersecurity</kbd></a></div>
+    <div class="post-open-quote"></div>
+  </section>
+  
+    <div class="toc-toggle">
+  <input type="checkbox" id="toc-toggle" aria-label="Toggle TOC"/>
+  <label for="toc-toggle" class="toc-toggle-label" title="Toggle contents (C)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path fill="currentColor" d="M4 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zM26 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2z"/>
+    </svg>
+  </label>
+</div>
+<script>
+  if (localStorage.getItem('tocOpen') !== 'false') {
+    document.documentElement.classList.add('toc-open');
+  }
+</script>
+<aside class="toc">
+  <nav class="toc-inner">
+    <h1 class="toc-title">
+      <a title="Go to top" href="#">Table of Contents</a>
+    </h1>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-be-a-projectionist">How to Be a Projectionist</a>
+      <ul>
+        <li><a href="#basic-information">Basic Information</a></li>
+        <li><a href="#managing-a-multiplex">Managing a Multiplex</a></li>
+        <li><a href="#operating-a-projector">Operating a Projector</a></li>
+        <li><a href="#running-group-events">Running Group Events</a></li>
+      </ul>
+    </li>
+    <li><a href="#lessons-learned">Lessons Learned</a>
+      <ul>
+        <li><a href="#theater-memories">Theater Memories</a></li>
+      </ul>
+    </li>
+    <li><a href="#connection-to-cybersecurity">Connection to Cybersecurity</a>
+      <ul>
+        <li><a href="#incident-response">Incident Response</a></li>
+        <li><a href="#knowing-the-technology">Knowing the Technology</a></li>
+        <li><a href="#automation-and-optimization">Automation and Optimization</a></li>
+        <li><a href="#documentation-and-training">Documentation and Training</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </nav>
+</aside>
+
+<script src="/js/toggle-toc.min.0619f3fb0f5f1eef268a6c056de299c79647923e8aa3398e8f88e1e87c01a7ba.js" integrity="sha256-Bhnz&#43;w9fHu8mimwFbeKZx5ZHkj6KozmOj4jh6HwBp7o=" defer></script>
+
+  
+  <section class="post-body"><p>I worked as a projectionist at <a href="https://www.celebrationcinema.com/cinemas/Celebration-Cinema-GR-South" target="_blank" rel="noopener noreferrer">Celebration Cinema South</a> for nearly four years before I attended the Information Security and Intelligence program at Ferris State University. Since I&rsquo;ve been on a roll with reflecting on my prior experiences lately, I thought now would be a good opportunity to write about being a projectionist. What was it like? What did I learn? Most importantly, how did my experience prepare me to be a cybersecurity analyst?</p>
+<h2 id="how-to-be-a-projectionist">How to Be a Projectionist</h2>
+<p>I loved being a projectionist. I won&rsquo;t pretend that it&rsquo;s one of the most important jobs in the world, but there&rsquo;s something special about being trusted to control $1,000,000+ worth of multiplex-grade AV equipment while you&rsquo;re still in school. (Also, free movies!)</p>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.8355ca89b786f020baa6372a4dde65908fa4a191d9ee6cafc3f66a3cd9d81375.css"
+        integrity="sha256-g1XKibeG8CC6pjcqTd5lkI&#43;koZHZ7myvw/ZqPNnYE3U="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="booth_1.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="booth_1.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="booth_1.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A picture of theater 2&rsquo;s equipment taken from the north side of our projection booth.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p><strong>At a broad level, being a projectionist requires the following:</strong></p>
+<ul>
+<li>A very high attention to detail and awareness of time</li>
+<li>Strong multitasking and communication abilities</li>
+<li>Technical and computer skills</li>
+<li>Ability to remain calm and composed under pressure or stress</li>
+<li>Self-managed and directed, able to operate effectively with little or no supervision</li>
+<li>The patience, aptitude, and care to handle expensive and sensitive equipment</li>
+</ul>
+<p>We spend much of our time upstairs in the projection booth (with some exceptions) overseeing general operations and attending to any recurring weekly tasks. This could involve a variety of activities such as performing maintenance and testing on our projection equipment, managing digital cinema content, and completing administrative tasks in preparation for upcoming films. You can view a full list below if you&rsquo;re interested.</p>
+
+<details>
+	<summary><strong>View weekly duties&hellip;</strong></summary>
+	<p><strong>Friday:</strong></p>
+<ul>
+<li>Deletions on the TMS</li>
+<li>Deletions on houses</li>
+<li>Check for any content drives to return</li>
+<li>Good Clean/AV Check #1 and #2</li>
+</ul>
+<p><strong>Saturday:</strong></p>
+<ul>
+<li>Good Clean/AV Check #3, #4, and #5</li>
+</ul>
+<p><strong>Sunday:</strong></p>
+<ul>
+<li>Good Clean/AV Check #6, #7, and #8</li>
+</ul>
+<p><strong>Monday:</strong></p>
+<ul>
+<li>Retrieve credit offsets and add to BackOffice</li>
+<li>Update the DPL</li>
+<li>Good Clean/AV Check #9 (MasterImage) and #10</li>
+</ul>
+<p><strong>Tuesday:</strong></p>
+<ul>
+<li>Good Clean/AV Check #11 and #12</li>
+</ul>
+<p><strong>Wednesday:</strong></p>
+<ul>
+<li>Ingest TrailMix</li>
+<li>Update Print IDs in Showtime Manager</li>
+<li>Build new show lists</li>
+<li>Link new shows</li>
+<li>Perform DBOX Audio Mapping</li>
+<li>Good Clean/AV Check #13 and #14</li>
+</ul>
+<p><strong>Thursday:</strong></p>
+<ul>
+<li>Check screening checklists</li>
+<li>Update Movie CCAP list and hang in box office</li>
+<li>Preshow updates (check for specific back-placements)</li>
+<li>Delete trailers from TMS</li>
+<li>Check for any promotional items to rotate</li>
+<li>Good Clean/AV Check #15 (MasterImage) and #16 (MasterImage)</li>
+</ul>
+<p><strong>Every day:</strong></p>
+<ul>
+<li>Help on the floor</li>
+<li>Check first starts</li>
+<li>Ingest incoming content and keys</li>
+<li>Bring projection deliveries upstairs</li>
+<li>Rotate posters at EoN (if necessary)</li>
+<li>Theater checks</li>
+<li>Lot checks</li>
+</ul>
+</details>
+
+<p>In addition to, well&hellip; making sure our guests actually have movies to watch, we can also serve as subject matter experts when <a href="#running-group-events">group events</a> with special AV needs are booked in our auditoriums. We&rsquo;re responsible for making sure that all the systems function perfectly at the time of the event, which often involves significant amounts of planning and testing. More on this later.</p>
+<p>In the absence of any projection tasks and group events, we&rsquo;re expected to find other ways to be productive by working on projects and helping out the customer-facing employees on the floor. After all, every projectionist has already been trained as an usher, box office cashier, concession worker, and sometimes even as a manager.</p>
+<p>Not everything always goes according to plan, however. When you&rsquo;re the projectionist, you&rsquo;re expected to be available on the radio <em>at all times</em> (i.e., no breaks) ready to handle any presentation issues immediately as they occur. Basically, you&rsquo;re also an <a href="#incident-response">incident responder</a>.</p>
+<h3 id="basic-information">Basic Information</h3>
+<p>This section outlines some basic information in order to give additional context to the remainder of the post. See this satellite photo of the theater:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-2-2">
+  <label for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="map.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-2" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="map.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="map.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A satellite photo of the theater I worked at. The red vehicle in the bottom-left corner is my Jeep!</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>The main lobby runs vertically up and down the center of the building in this image with two hallways (branching from the left and right) that each lead to eight auditoriums. Each side of the building has a separate projection booth connected by a catwalk that crosses the lobby so we can access the other side without going downstairs. The right side has a staircase, while the left side has an elevator (technically, both sides have staircases but the left one locks behind you—exit only).</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-3-3">
+  <label for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="catwalk.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-3" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="catwalk.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="catwalk.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A photo I found on Google Maps that shows the lobby/catwalk before the recent remodels.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p><strong>To summarize:</strong></p>
+<ul>
+<li>The right/north side is called the &ldquo;north booth&rdquo; (theaters 1-8)
+<ul>
+<li>Accessed via staircase</li>
+</ul>
+</li>
+<li>The left/south side is called the &ldquo;south booth&rdquo; (theaters 9-16)
+<ul>
+<li>Accessed via north side staircase and catwalk (faster) or south side elevator (slower)</li>
+</ul>
+</li>
+</ul>
+<p>That&rsquo;s pretty much it as far as the physical layout of the building goes. Now we can talk about some basic projection stuff. Fortunately, I still have a copy of the <em>Projection Basics Reference Sheet</em> that I created to help train new projectionists. See the <strong>terminology and acronyms</strong> below, then I&rsquo;ll do some additional explaining:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-4-4">
+  <label for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="basics.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-4" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="basics.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="basics.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>The reference sheet I created for training. I&rsquo;m told it still circulates in the projection mailing list.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>It can seem a little dense at first glance if you don&rsquo;t have a trainer to go over it with you first, but it&rsquo;s pretty simple when you get down to it. You can ignore the automation cues and common procedures for the most part. This is basically what you need to know:</p>
+<ul>
+<li>Every auditorium has a projector with a Touch Panel Controller (<strong>TPC</strong>) and Doremi cinema server</li>
+<li>Every auditorium also has a sound processor and a set of amplifiers, although configurations will vary</li>
+<li>Projectors display images, Doremis play back the cinema content, and the sound systems handle audio</li>
+<li>An automation panel orchestrates and cues the aforementioned systems during scheduled playback</li>
+<li>We have a Theater Management System (<strong>TMS</strong>) to monitor and control the multiplex from a central location</li>
+<li>We use the TMS and Doremis to build Show Playlists (<strong>SPLs</strong>) that can control the entire presentation</li>
+<li>SPLs contain automation panel cues and Composition Playlists (<strong>CPLs</strong>), CPLs are the actual cinema content</li>
+<li>We obtain CPLs by &ldquo;ingesting&rdquo; Digital Cinema Packages (<strong>DCPs</strong>) to the Doremis or TMS</li>
+<li>CPLs are encrypted and require a Key Delivery Message (<strong>KDM</strong>) to play, valid only for a limited time</li>
+<li>We use the Digital Print Log (<strong>DPL</strong>) to track the status of content, keys, and related info across the multiplex</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-17"
+             id="gallery-thumbnail-input-17-17"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-17-17">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-17-17">
+        <label for="gallery-lightbox-input-17-17"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="projector.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-17" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-17-17"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="projector.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="projector.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A picture of a projector and TPC.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-17"
+             id="gallery-thumbnail-input-17-18">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-17-18">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-17-18">
+        <label for="gallery-lightbox-input-17-18"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="tpc.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-17" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-17-18"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="tpc.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="tpc.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A closer view of the TPC.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-17"
+             id="gallery-thumbnail-input-17-19">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-17-19">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-17-19">
+        <label for="gallery-lightbox-input-17-19"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="equipment.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-17" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-17-19"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="equipment.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="equipment.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A picture showing a Doremi, automation panel, sound processor, audio monitor, and amplifiers.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-17"
+             id="gallery-thumbnail-input-17-20">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-17-20">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-17-20">
+        <label for="gallery-lightbox-input-17-20"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="tms.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-17" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-17-20"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="tms.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="tms.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A picture showing part of the TMS.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-17-17"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-17-17"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="projector.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-17-18"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-17-18"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="tpc.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-17-19"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-17-19"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="equipment.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-17-20"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-17-20"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="tms.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<h3 id="managing-a-multiplex">Managing a Multiplex</h3>
+<p><em><strong>Every single second</strong></em> matters when you&rsquo;re operating the projection booth. When I worked at the theater, I synchronized my wristwatch with the TMS clock down to the second at the start of <em>every single shift</em>. The building has 16 auditoriums, which means 16 sets of projectors, cinema servers, and sound processors. Despite the fact that much of it was getting a little old, trust me when I say that not <em>one</em> of those systems is going to be even a second behind the TMS schedule, so you&rsquo;d better not be either.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-70 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-5-5">
+  <label for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="booth_2.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-5" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="booth_2.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="booth_2.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A picture showing part of the north projection booth. Taken from approximately the same position as the picture of theater 2, but rotated 180 degrees.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Accurate and intentional timekeeping is a must, so I highly recommend a Casio with that annoying hourly beep turned on.</p>
+<p>Imagine for a moment that you&rsquo;re working the booth on a Christmas night. There are currently hundreds of guests inside the building (perhaps nearly 2,000) on one of the busiest days of the year, and you&rsquo;re helping some of the ushers clean up after a particularly messy showtime of <em>The Polar Express.</em> You&rsquo;re in the middle of sweeping popcorn when you remember that theater 15 needs to be set up for 3D showtimes at 7:20. Then you check your phone and notice that the time is 7:19.</p>
+<p>You begin sprinting out of the theater almost immediately, but you have to wade through an ocean of people in the lobby before you can make it up the stairs (the elevator is too slow), across the catwalk, through the security door, and finally to that projector. It&rsquo;s going to take about 30 seconds for the <a href="https://web.archive.org/web/20130909022704/http://www.masterimage3d.com/cinema/3d-cinema-systems" target="_blank" rel="noopener noreferrer">MasterImage 3D wheel</a> to raise into position and spin up. Do you still have enough time?</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-70 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-6-6">
+  <label for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="christmas.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-6" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="christmas.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="christmas.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A picture of me hiding behind the soda machines during an actual Christmas night projection shift in 2022.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>That story was just for illustrative purposes, but the point is that you always need to be aware of what&rsquo;s happening. While it&rsquo;s true that a lot of our equipment operates on schedules that can (and often do) run showtimes automatically, you also have to remember that there&rsquo;s a lot still happening manually. There are many opportunities for things to go wrong if you aren&rsquo;t paying attention to your tasks, not to mention the possibility of technology errors.</p>
+<p>At the end of the day it&rsquo;s on you to be aware of what every piece of projection technology should be doing, making sure it actually happens, and fixing things if it doesn&rsquo;t. This means being hyper-aware of the schedule, current time, and even your physical location within the building. That becomes second nature soon enough, but I always wrote down any important times and set reminders at the start of my shifts.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-7-7">
+  <label for="gallery-lightbox-input-7-7" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="schedules.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-7" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-7-7" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="schedules.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="schedules.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>My schedule-making kit with some old projection schedules. Schedules are typically printed as a double-sided Sessions by Credit Time and Sessions by Screen playlist report, then folded to fit in a pocket.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Call me crazy, but I was practically religious about ensuring that everything operated as flawlessly as I could make it. I put a significant amount of effort into preparing my schedule at the start of every shift, going so far as to bring rulers, cutting mats, X-Acto knives, highlighters, and stencils to mark them up perfectly. In four years, I didn&rsquo;t have a single human error on my record.</p>
+<h3 id="operating-a-projector">Operating a Projector</h3>
+<p>Let&rsquo;s say you wanted (or needed) to manually operate one of the projectors. What would you do?</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-18"
+             id="gallery-thumbnail-input-18-22"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-18-22">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-18-22">
+        <label for="gallery-lightbox-input-18-22"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="automation.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-18" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-18-22"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="automation.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="automation.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A picture of an automation panel.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-18"
+             id="gallery-thumbnail-input-18-23">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-18-23">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-18-23">
+        <label for="gallery-lightbox-input-18-23"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="doremi.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-18" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-18-23"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="doremi.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="doremi.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A picture of a Doremi.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-18-22"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-18-22"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="automation.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-18-23"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-18-23"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="doremi.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>Step one is probably going to be terminating the automation program to make sure that a stray cue doesn&rsquo;t come when you&rsquo;re least expecting it and mess with your workflow. Go to the DCA21 automation panel and press <code>EXIT</code>, and then press <code>MAN</code> to disable <code>GO</code> mode. Now go to the Doremi&rsquo;s playback tab and enable manual mode to prevent it from overriding any changes you&rsquo;re about to make, regardless of what the schedule says.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-8-8">
+  <label for="gallery-lightbox-input-8-8" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="tpc_1.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-8" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-8-8" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="tpc_1.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="tpc_1.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A projector TPC&rsquo;s main interface.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Next up is checking the projector&rsquo;s TPC for errors. If everything looks good (green status icon), you can strike the lamp (press and hold the light bulb icon) to get it warming up while you take care of the next steps. It would be wise to make sure that the dowser is closed (blocked lens icon) so that no light accidentally reaches the screen before you&rsquo;re ready.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-19"
+             id="gallery-thumbnail-input-19-25"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-19-25">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-19-25">
+        <label for="gallery-lightbox-input-19-25"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="doremi_1.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-19" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-19-25"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="doremi_1.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="doremi_1.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A Doremi at the SPL editor tab.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-19"
+             id="gallery-thumbnail-input-19-26">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-19-26">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-19-26">
+        <label for="gallery-lightbox-input-19-26"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="doremi_2.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-19" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-19-26"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="doremi_2.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="doremi_2.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A Doremi at the SPL playback tab in scheduled mode.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-19"
+             id="gallery-thumbnail-input-19-27">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-19-27">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-19-27">
+        <label for="gallery-lightbox-input-19-27"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="doremi_3.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-19" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-19-27"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="doremi_3.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="doremi_3.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A Doremi at the SPL playback tab in manual mode.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-19-25"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-19-25"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="doremi_1.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-19-26"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-19-26"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="doremi_2.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-19-27"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-19-27"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="doremi_3.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>Now we need to go back to the Doremi and choose some content to play back. You could load one of the prebuilt SPLs, make a new one, or even edit an existing one. Once that&rsquo;s done, you can go back to the playback tab and press the pause button the load the SPL without starting it.</p>
+<p>One important thing to note here is that you need to make sure the projector is using the correct channel for the content&rsquo;s aspect ratio. Typically, this will either be <code>Flat</code> or <code>Scope</code> (aka CinemaScope). You also need to make sure the projector is physically capable of displaying the aspect ratio. Some require a manual lens adjustment procedure when you switch aspect ratios, while others might have a <a href="https://www.christiedigital.com/products/end-of-support/lenses/motorized-auxiliary-lens-mount/overview" target="_blank" rel="noopener noreferrer">Motorized Auxiliary Lens Mount</a> (MALM) that you can toggle from the TPC.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-9-9">
+  <label for="gallery-lightbox-input-9-9" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="ovation.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-9" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-9-9" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="ovation.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="ovation.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>One of our (then) newer sound processors.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Almost there! Now that the projector and Doremi are ready, we just have to make sure that the audio processor is set to the <code>SERVER</code> channel to ensure that cinema content is audible in the auditorium. After this you can open the dowser and play the SPL.</p>
+<p>All of this becomes automatic the more you do it. This is actually the easy part—the hard part is when you need to make unplanned manual adjustments on-the-fly without disrupting the rest of the schedule. This is where experience and skill can make a <em>massive</em> difference. It isn&rsquo;t very wise to keep manual modes enabled for any longer than you absolutely need to, so the detailed procedures for running manual shows will likely be more complicated depending on the situation.</p>
+<h3 id="running-group-events">Running Group Events</h3>
+<p>Group events, while sometimes exhausting, were probably some of my favorite parts about being a projectionist. I have fond memories of setting up our equipment with the team, configuring the AV systems, planning and practicing our motions, and then pulling it all off perfectly when the moment is right.</p>
+<p>Some events required nothing more than starting the feature at a specific time of the organizer&rsquo;s choosing, while others were so involved that they might need another dedicated projectionist on staff. We would typically switch to a different radio channel so we could communicate with group coordinators without disrupting the rest of the theater.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-20"
+             id="gallery-thumbnail-input-20-29"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-20-29">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-20-29">
+        <label for="gallery-lightbox-input-20-29"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="groups_1.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-20" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-20-29"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="groups_1.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="groups_1.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Part of my setup for a large group in one of our biggest auditoriums. They needed to play non-cinema content and utilize microphones for a company leadership presentation.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-20"
+             id="gallery-thumbnail-input-20-30">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-20-30">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-20-30">
+        <label for="gallery-lightbox-input-20-30"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="groups_2.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-20" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-20-30"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="groups_2.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="groups_2.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Always take a picture of your microphone volumes once you get them calibrated!</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-20-29"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-20-29"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="groups_1.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-20-30"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-20-30"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="groups_2.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>The most involved set of group events that I remember were for a nice man called Anup. I believe he was from Nepal or Bangladesh, but I can&rsquo;t remember anymore. He was interested in hosting events at the theater where we would play some films from his native country, which presented a number of challenges for us. For one, there was a slight language barrier that made it harder to communicate effectively. But the bigger problem (by far) was the cinema content itself.</p>
+<p>Originally, Anup came to us with a standard video file (<code>mp4</code> or similar). The movie was intended to be projected in <code>Scope</code> format, but our scaler (used for non-cinema content, see picture 1 above) simply wasn&rsquo;t able to manage this during testing. Anup was eventually able to get us a real DCP so we could play it directly, but none of our Doremis would ingest it or recognize the content as playable. I then attempted to make my own DCP from his original video file using <a href="https://dcpomatic.com/" target="_blank" rel="noopener noreferrer">DCP-o-matic</a>, but this was also unsuccessful. We had to settle with using the scaler to make the image as large as possible, and then used the (now manually operated) curtains to hide the empty screen space inside the auditorium.</p>
+<p>This actually required <em>three</em> people to pull off in the moment. I was upstairs with fellow projectionist Dave, and our manager Allyssa was down in the auditorium. When the time was right, Allyssa cued us over the radio and started moving the curtains into position. Then, Dave and I had to make a series of very fast changes from regular DCP content (for trailers) to HDMI from the scaler (for Anup&rsquo;s screening). Dave operated the Doremi, automation panel, and audio processor while I operated the projector and adjusted the lens. Basically, we had only about <em>5-10 seconds</em> to do all the following:</p>
+<ol>
+<li>Close the projector dowser</li>
+<li>Terminate automation and eject the trailers SPL</li>
+<li>Fade the house lights out for the feature</li>
+<li>Switch to the non-sync audio channel and adjust volume for the feature</li>
+<li>Switch the projector to the alternative content channel</li>
+<li>Adjust and refocus the lens <em>blind</em>—remember the dowser is still closed (this normally takes multiple minutes even when you can see)</li>
+<li>Open the dowser and begin content playback</li>
+</ol>
+<p>It took a lot of preparation, but it went off exactly as planned. We&rsquo;re still proud of this one!</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>There&rsquo;s more that goes into being a projectionist than just what I was able to fit here, but that&rsquo;s pretty much the gist of what it was like. So, what did I learn?</p>
+<p>Perhaps the most important lesson I learned from my time at Celebration Cinema was the value of being on a team and contributing to something larger than yourself. All of us (the whole staff) were on the same page and working towards the same goal—we were darn good at our jobs and had a <em><strong>ton</strong></em> of fun doing so. I can wholeheartedly say that if working at the theater paid the bills then I might have kept this job forever. Our work culture was something very special. As much as I loved the job, it was nothing compared to the people.</p>
+<p>Moreover, you should take pride in your work. I mentioned at the start that I&rsquo;m fully aware a projectionist job isn&rsquo;t all that important in the grand scheme of things, but I hope you can see that I still gave it my all regardless. Put in the effort. People will notice, and results will follow.</p>
+<p>Apart from that, the theater was a great place to build soft skills and learn about what good service looks like. We called this <em>celebrated service</em>, something you might be familiar with from the <a href="https://www.mlive.com/sponsored/2015/10/5th_annual_celebrated_service.html" target="_blank" rel="noopener noreferrer">celebrated service award</a> if you&rsquo;re from the area. One thing I&rsquo;ll never forget from our training is this quote:</p>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>People will forget what you said, people will forget what you did, but people will always remember how you made them feel.</p>
+</i>
+  </blockquote></figure>
+<p>This is the essence of celebrated service:</p>
+<ul>
+<li>Our customers aren&rsquo;t just guests, they can also be our coworkers, community members, and vendors</li>
+<li>Engage with guests for as long as <em>they</em> want, not as little as possible</li>
+<li>Figure out what they want and get it for them accurately, politely, and enthusiastically</li>
+<li>Make their interaction with us the best part of their day</li>
+<li>Go the extra mile—do something nice that the guest didn&rsquo;t ask for</li>
+</ul>
+<p>None of the most important lessons I learned related to technical skills, although I did certainly get a lot of practice at improving those too. My most important lessons involved developing better interpersonal skills, becoming a better communicator, and learning how to be the best team player that I possibly could. Being a projectionist, just like being a cybersecurity analyst, is not just about your technical skills. Those can be taught and studied. It&rsquo;s the way that you operate, the mindset you have, and the disciplines you display that will distinguish you from others.</p>
+<h3 id="theater-memories">Theater Memories</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-21"
+             id="gallery-thumbnail-input-21-32"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-21-32">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-21-32">
+        <label for="gallery-lightbox-input-21-32"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="bowling.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-21" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-21-32"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="bowling.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="bowling.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>A picture from our staff bowling trip.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-21"
+             id="gallery-thumbnail-input-21-33">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-21-33">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-21-33">
+        <label for="gallery-lightbox-input-21-33"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="break.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-21" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-21-33"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="break.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="break.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Fun in the break room.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-21"
+             id="gallery-thumbnail-input-21-34">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-21-34">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-21-34">
+        <label for="gallery-lightbox-input-21-34"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="summer.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-21" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-21-34"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="summer.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="summer.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>The summer 2019 party!</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-21"
+             id="gallery-thumbnail-input-21-35">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-21-35">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-21-35">
+        <label for="gallery-lightbox-input-21-35"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="eon.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-21" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-21-35"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="eon.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="eon.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Writing EoN emails.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-21"
+             id="gallery-thumbnail-input-21-36">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-21-36">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-21-36">
+        <label for="gallery-lightbox-input-21-36"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="grads.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-21" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-21-36"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="grads.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="grads.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>2019 grads party.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-21"
+             id="gallery-thumbnail-input-21-37">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-21-37">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-21-37">
+        <label for="gallery-lightbox-input-21-37"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="peppinos.avif" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-21" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-21-37"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="peppinos.avif" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="peppinos.avif">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>One of our trips to Peppino&#39;s after work.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-21-32"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-21-32"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="bowling.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-21-33"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-21-33"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="break.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-21-34"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-21-34"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="summer.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-21-35"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-21-35"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="eon.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-21-36"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-21-36"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="grads.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-21-37"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-21-37"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="peppinos.avif" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>A list containing some of my favorite theater memories is preserved below.</p>
+
+<details>
+	<summary><strong>Theater memories&hellip;</strong></summary>
+	<ul>
+<li><em>Midsommar</em> employee screening in theater 1</li>
+<li><em>Avengers: Endgame</em> release night (D-Day)
+<ul>
+<li>And <em>many</em> other busy nights</li>
+</ul>
+</li>
+<li>Staff outings and holiday parties (too many to count)</li>
+<li>Daniel&rsquo;s employee screening events (<em>The Thing</em>, <em>Get Out</em>, <em>American Psycho</em>, and many others)</li>
+<li>QC screening <em>Arctic Dogs</em> with Christian and Josh</li>
+<li>Matthew experiences a xenon projector lamp explosion</li>
+<li>Daniel dropping an entire container of popcorn kernels right before close</li>
+<li>Projectionist training shifts and changeover</li>
+<li>Peppino&rsquo;s and Steak &rsquo;n Shake with the whole team after closing</li>
+<li>Closing shifts with Allyssa</li>
+<li>Theater and lot checks with Ellen</li>
+<li>Sneaking up on Dave in the booth
+<ul>
+<li>Simon and Dave get revenge after the F9 employee screening</li>
+</ul>
+</li>
+<li><em>Yesterday</em> lobby promo loop (the same 8 seconds of the song, repeating forever)</li>
+<li>Lobby, NCM, and end credits music (I have a whole playlist!)</li>
+</ul>
+</details>
+
+<h2 id="connection-to-cybersecurity">Connection to Cybersecurity</h2>
+<p>If you read everything up to this point then you might be thinking: <em>&ldquo;all of this is nice, but it isn&rsquo;t cybersecurity.&rdquo;</em> That might be true, but I want to make the case that <strong>the skills I developed align with those necessary for cybersecurity roles—they were just used in a different context.</strong></p>
+<p>I&rsquo;ll dive into more details in the following sections, but first, consider this excerpt from the cover letter that helped me land my <a href="/blog/nha-internship">IT Security internship at National Heritage Academies</a>:</p>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>I worked at Celebration Cinema South before attending Ferris State University. Driven by curiosity about the inner workings of movie magic and a passion for technical behind-the-scenes roles, I worked my way up to the projectionist team. Unfortunately, much of our technology was dated and began to intermittently fail after theaters were allowed to re-open in the wake of pandemic lockdowns.</p>
+<p>Although it was stressful and frustrating at times to handle the stream of problems, it also prepared me for critical information security tasks like incident response, incident analysis, and troubleshooting. The context is different, but the skills are fundamentally the same. I developed stronger investigative abilities, strove to handle each incident with efficiency, and enhanced my ability to understand, document, communicate, and resolve technology issues.</p>
+</i>
+  </blockquote></figure>
+<p>Just like with computers in cybersecurity, our projection technology is actually multiple systems working together and you must know how they interact. By the way, here&rsquo;s another connection I always had in the back of my mind:</p>
+<ul>
+<li>TMS is like a SIEM</li>
+<li>Doremi/Projector is like an Endpoint</li>
+</ul>
+<h3 id="incident-response">Incident Response</h3>
+<p>I mentioned that our technology was aging, and I&rsquo;m not kidding about that. I remember seeing an old (<a href="https://web.archive.org/web/20221130055253/https://www.youtube.com/watch?v=_dMgsEfYl_U" target="_blank" rel="noopener noreferrer">now unavailable</a>) video from 1995 touring the inside of the <a href="https://web.archive.org/web/20081219202158/http://www.celebrationcinema.com/?pid=30616" target="_blank" rel="noopener noreferrer">Studio 28 multiplex</a> that was once part of the circuit. In this video you could see Dolby CP65 sound processors in the projection booth, many of which were either <em>still in service</em> or only <em>very recently</em> replaced on my last day at Celebration South in 2023. As for the technology that <em>had</em> to get replaced during the digital transition, well&hellip; Celebration Cinema was an <a href="https://www.christiedigital.com/help-center/customer-stories/celebration-cinema/" target="_blank" rel="noopener noreferrer">original adopter</a> of digital in 2007. I&rsquo;ll let you do the math.</p>
+<p>This means that our technology was constantly breaking. Combine this with the fact that theaters sat idle for over a year during the pandemic (i.e., none of the equipment had power despite being designed for daily use), and you&rsquo;re basically asking for trouble. We experienced significantly more technology failures after the theater was allowed to reopen because of this. I&rsquo;m told that the company paid someone to come in and occasionally power all the equipment on when they realized it shouldn&rsquo;t be sitting idle for so long, but by then it was too late.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-70 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-10-10">
+  <label for="gallery-lightbox-input-10-10" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="incident.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-10" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-10-10" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="incident.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="incident.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Report from an incident I handled. I had to run this show manually.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Maybe it&rsquo;s just me, but the little adrenaline rush that comes after hearing <em><strong>&ldquo;Hey projection&hellip;&rdquo;</strong></em> over the radio (this almost always means that something is wrong) never went away, no matter how much knowledge or experience I gained. You simply learn how to deal with it, and even how to use it to your advantage. One second you could be writing an email, and five seconds later you might be booking it all the way down to the opposite end of the booth. And when you finally get to where you&rsquo;re headed, you need to <em>act.</em> You don&rsquo;t always have time to think <em>&ldquo;wait, how do I do this again?&rdquo;</em> to yourself in that moment.</p>
+<p><strong>In my mind, this is exactly like what one of my cybersecurity professors would always say during class.</strong> I&rsquo;m paraphrasing here, but the gist of it is this:</p>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>Think of being in cybersecurity like being an athlete. I know it isn&rsquo;t always fun or easy to do all of this learning and practicing beforehand, but we do it so we&rsquo;re ready to go on game day. We do it so that these skills become second nature and that when the time comes, you and your team won&rsquo;t be scrambling because you will already know what to do.</p>
+</i>
+  </blockquote></figure>
+<p>In this sense, my experience with being the projectionist on duty when our technology failed was the exact same as what I experienced during my <a href="/blog/cyber-competitions">cyber competitions</a> and NHA internship.</p>
+<p>When our CyberForce competition blue team had to respond to the red team breaching our infrastructure, we already had a plan. We knew who would be tasked with investigating and what we would do first. When our IT Security team logged in for the morning at NHA to discover high priority alerts waiting for us in the queue, we didn&rsquo;t have to stop and think about what our next steps would be. All of my practice and experience leading up to these moments allowed me to take immediate and effective actions in much the same way that I already knew what I had to do when I was racing down the booth to fix a projector.</p>
+<p>One thing to keep in mind, however, is that incident response doesn&rsquo;t end with responding to the incident. The wisdom I just shared from my professor wasn&rsquo;t actually the end of his sporting analogies. Another thing he would often remind us is that <em>&ldquo;cyber is a team sport.&rdquo;</em> Part of this means staying on top of your communication and reporting after something goes wrong, and I&rsquo;m certainly no stranger to that part of incident response. I no longer have access to all of my old projection emails, but what I can tell you is that the ones I do have span from 2022-2023 (only about 1/4th of my time in the booth) and we filled out <em><strong>over 200 reports</strong></em> related to presentation incidents, flaws, and maintenance during this time.</p>
+<h3 id="knowing-the-technology">Knowing the Technology</h3>
+<p>Part of effective incident response is knowing your technology, regardless of whether the context is cybersecurity or movie theater projection. In both cases, you&rsquo;re often dealing with very serious pieces of professional business-grade hardware and software. It&rsquo;s important to understand how your systems function and what they&rsquo;re capable of. Not only does this mean studying up, it also means paying attention to the little things about their behavior, monitoring data, and alerts. Sure, that strange login might be nothing, but it could also be an indicator of compromise.</p>
+<p>I want to tell a short story about one of our projectors to help illustrate my point. For the unaware, cinema projectors and lamps are <em><strong>serious</strong></em> (not to mention expensive) pieces of equipment.</p>
+<p>Although laser projectors are starting to take over now, many cinemas still use older digital projectors that require xenon arc lamps (I&rsquo;ll never forget the ignition sound. Couldn&rsquo;t find a video, sorry!). The largest screens at my cinema required 6,000 watt lamps that cost &gt;$2,000 per unit. The lamp is housed in a containment area within the projector and you&rsquo;re required to wear specialized protective equipment when you handle them because&hellip; well, I&rsquo;ll let you read some warnings taken directly from the manual:</p>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>Any Xenon arc lamp used in the CP2000 is under high pressure and must be handled with great care at all times. Lamps may explode if dropped or mishandled.</p>
+</i>
+  </blockquote></figure>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>EXPLOSION HAZARD—Wear authorized protective clothing whenever the lamp door is open! Never apply a twisting or bending force to the quartz lamp body.</p>
+</i>
+  </blockquote></figure>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>Never attempt to remove the lamp when it is hot. The lamp is under great pressure when hot and may explode, causing personal injury and/or property damage. Allow to cool completely.</p>
+</i>
+  </blockquote></figure>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>Handle box with extreme caution—the lamp is hazardous even when packaged. Dispose of lamp box according to safety regulations for your area.</p>
+</i>
+  </blockquote></figure>
+<p>In case anyone is curious, I did get to witness a lamp explosion once when our lead projectionist was replacing an old one at the end of its service life. <a href="https://youtu.be/pdgfgWMx860" target="_blank" rel="noopener noreferrer">They sound like a gunshot</a>.</p>
+<p>These lamps become so hot during operation that they require active cooling to prevent explosions. Each projector has an interlock system that blocks the lamp from operating without an extractor fan to remove the hot air. It&rsquo;s basically impossible to miss when something goes wrong with the extractor fan because the projector TPC gives you a huge red warning.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-11-11">
+  <label for="gallery-lightbox-input-11-11" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="tpc_2.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-11" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-11-11" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="tpc_2.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="tpc_2.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>The TPC showing an extractor fan interlock alarm.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>We have temporary cooling units that we can use in the event of an extractor fan failure, but we depend on the interlock system to know when a failure has occurred. So what happens when the interlock system fails? This actually happened once.</p>
+<p>I was making my closing rounds at the end of the night and went to shut off all the equipment at theater 14 when the last showtime ended. That projector&rsquo;s extractor fan had experienced a failure and been repaired recently, so I was being extra vigilant. I shut off the extractor fan and started to go shut off the projector at the breaker box, but then I noticed something strange. The TPC didn&rsquo;t register that I had turned the fan off—it should&rsquo;ve had a massive red warning on it, and it didn&rsquo;t.</p>
+<p>This technically wasn&rsquo;t in my job description, but I had previously read through all the manuals for our equipment (see <a href="#documentation-and-training">documentation and training</a> for more details). I immediately went digging for the relevant page and found what I was looking for. The interlock system operates based on a simple metal fin (called a <em>vane switch</em>) that gets pulled into the correct position by moving air while the extractor fan is on, and this projector must&rsquo;ve had a damaged one.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-12-12">
+  <label for="gallery-lightbox-input-12-12" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="interlock.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-12" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-12-12" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="interlock.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="interlock.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>See the Exhaust Duct &amp; Lamp Fan Interlocks section for details about the vane switch. Any failed safety interlock should disable power to the lamp immediately and entirely until fixed.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>I used the maintenance procedure to test it and confirmed that the vane switch didn&rsquo;t work. I took this fact to its logical conclusion and realized that <strong>if our (now proven unreliable) extractor fan broke again, then the TPC would not be aware of it and the lamp would continue operating until an explosion occurred.</strong> This is obviously dangerous, but it&rsquo;s also <em>extremely expensive.</em> You don&rsquo;t want a lamp to explode, and if it does explode, you don&rsquo;t want it anywhere near your equipment and staff. I communicated this to our managers and the rest of the projection team, then raised a fuss in Christie incident reports to get the problem resolved.</p>
+<p>The point I want to make here is that knowing how your systems work is very important, and having more knowledge can make a major difference. It pays off be vigilant, resourceful, and persistent. This is the exact same attitude that I brought to the team while I was doing group projects in university, competing in cyber competitions, and working IT Security at NHA. The little things matter, and if you aren&rsquo;t careful they can turn into major problems. Nip it in the bud.</p>
+<h3 id="automation-and-optimization">Automation and Optimization</h3>
+<p>Another way that cybersecurity and projection jobs are alike is that both rely on automation. You can&rsquo;t just go out manually collecting data from each and every endpoint using something like <code>tcpdump</code> and then go feeding that data into a protocol analyzer. Maybe this is something you&rsquo;d do when you need to take a closer look at a specific device, but in the meantime, you need your SIEM technology and automation to be looking at the thousands of others. Cyber doesn&rsquo;t sleep—things are still happening out there in the meantime. Furthermore, you need to continue optimizing your automation to give you more time for the things that matter most. For cyber jobs this might look like tuning alert and detection rules to get rid of false positives and reduce ticket fatigue so that you actually have the time and energy to handle something major.</p>
+<p>The stakes aren&rsquo;t quite as high in projectionist jobs, but the motivations are exactly the same: automate and optimize to reduce the time you spend on tedious and less important things while maximizing the time spent on harder problems and things that matter more.</p>
+<p>One great example of this was when I automated part of our process to update the Digital Print Log (DPL) every week. This is one of the most important weekly tasks because it helps us track our readiness leading up to new weekend releases, but it also tends to be time-consuming, boring, and error-prone. Normally the person stuck doing the DPL is responsible for updating information, changing dates, and copying/pasting rows around such that it accurately reflects the upcoming schedule. I wired our whole Excel spreadsheet up with VBA to automate much of this (see below).</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-13-13">
+  <label for="gallery-lightbox-input-13-13" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="dpl_1.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-13" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-13-13" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="dpl_1.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="dpl_1.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Screenshot of an old DPL spreadsheet.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p><strong>Here&rsquo;s a closer look at what&rsquo;s going on:</strong></p>
+<ul>
+<li>The spreadsheet automatically tracks the last person to update it (records initials and date)</li>
+<li>A math function determines which keys (KDMs) are already expired and highlights them in red</li>
+<li>Another math function determines which keys <em>will be</em> expired before the DPL is updated again</li>
+<li>All automatic dates (i.e., not key expiration dates) are adjustable and update weekly</li>
+<li>Clicking inside a row (except section headers) displays a set of context-aware buttons to the right</li>
+<li>Clicking on a film&rsquo;s credit timecode calculates the nearest approximation in total minutes (used elsewhere)</li>
+</ul>
+<p>So what do the buttons do? How I configure options and adjust everything? We had a configuration sheet for that!</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-14-14">
+  <label for="gallery-lightbox-input-14-14" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="dpl_2.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-14" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-14-14" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="dpl_2.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="dpl_2.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Screenshot of the DPL configuration.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>There were a couple more hidden and advanced DPL features, but I won&rsquo;t go over those here. I won&rsquo;t lie when I say that developing this automation <em>was not</em> always fun. I was completely self-taught with no prior VBA experience (also, this was before LLMs could generate code for you&hellip;), so it took quite a lot of learning and experimenting to get this functional. The end result, however, has undoubtedly saved us hours of toiling away editing spreadsheets and prevented many mistakes.</p>
+<p>A simpler example of automating and optimizing that applies to almost every job (IT Security at NHA included!) is keeping your email inbox organized. Just like I did at NHA, I had a whole suite of inbox rules to keep everything organized while I was a projectionist. This included things like sorting your mail into folders, clearing out unimportant/automatic messages, and even categorizing each incident report based on type and theater number to make them more searchable.</p>
+<h3 id="documentation-and-training">Documentation and Training</h3>
+<p>Everyone in cybersecurity knows that a surprising amount of what we do involves reading (and sometimes writing) manuals and documentation. Securing information systems begins with understanding both how they function and what they&rsquo;re capable of. You need foundational knowledge of how they operate and an intuition for selecting the right tool for the job when something goes wrong.</p>
+<p>Projectionist jobs are the same; you need to know how each digital cinema system is interacting with the others when something goes wrong if you want a chance at fixing it. And something <em>always</em> goes wrong. I spent a significant portion of my free time reading through <a href="https://drive.google.com/drive/folders/10DYYzTM5ccNcDMRk35-GlcMbK6U2ja0G?usp=sharing" target="_blank" rel="noopener noreferrer">user manuals for our equipment</a>. (Check them out if you&rsquo;re interested!) Technically, this wasn&rsquo;t part of my job description—outside of everyday operations I was only expected to handle simple issues. Near-realtime support was available from the <a href="https://www.christiedigital.com/services/remote-monitoring/" target="_blank" rel="noopener noreferrer">Christie NOC</a> for more advanced issues, and they could always <a href="https://www.christiedigital.com/services/emergency-field-service/" target="_blank" rel="noopener noreferrer">dispatch a technician</a> on short notice if necessary.</p>
+<p>Although reading manuals can get old fast, I can confirm that it paid dividends (see <a href="#knowing-the-technology">knowing the technology</a>). I was able to more easily troubleshoot problems as they occurred and prevent disasters before they had a chance to develop thanks to my deeper knowledge of each system. In the event that a Christie technician needed to take over, I was able to provide them with enough technical information such that they knew what they were getting into and what their next steps were before arriving.</p>
+<p>Another connection between projection and cybersecurity is the importance of recording your actions and communicating the lessons you learned for developing future talent. I was able to pass a lot of knowledge on to the new projectionists I helped train:</p>
+<ul>
+<li>Isabelle</li>
+<li>Jasmine</li>
+<li>Juan</li>
+<li>Sophia</li>
+</ul>
+<p>A lot of this happened in the form of on-the-job training that I can&rsquo;t really provide here, but I do have some leftover training and reference materials to show that I created. You probably already saw the <em>Projection Basics Refernce Sheet</em> in the <a href="#basic-information">basic information</a> section, but I also made the documents outlined below.</p>
+<h4 id="work-in-progress-booth-manual">Work-in-Progress Booth Manual</h4>
+<p>An updated projection booth manual created entirely from scratch. It was intended to replace our old manual, but I didn&rsquo;t have enough time to finish it before leaving to attend Ferris State University. You can see the section that I did finish below. The complete version was planned to cover all aspects of projection.</p>
+<script type="text/javascript" src= '/js/pdf-js/build/pdf.js'></script>
+
+<style>
+  #embed-pdf-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 20vh;
+     
+  }
+  
+  .pdf-canvas {
+    border: 1px solid var(--border);
+    direction: ltr;
+     
+    height: auto;
+    display: none;
+
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+  }
+  
+  #the-canvas {
+    border: 1px solid var(--border);
+    direction: ltr;
+    width: 100%;
+    height: auto;
+    display: none;
+  }
+  
+  
+  .pdf-loadingWrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+  }
+  
+  .pdf-loading {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #d2d0d0;;
+    border-radius: 50%;
+    border-top-color: #383838;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+  }
+  
+  .pdf-paginator {
+    padding-top: 5px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  #overlayText {
+    word-wrap: break-word;
+    display: grid;
+    justify-content: end;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  #overlayText a {
+    position: relative;
+    top: 10px;
+    right: 4px;
+    color: #000;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 0.3em 1em;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: #00000030;
+    text-decoration: none;
+  }
+  
+  #overlayText svg {
+    height: clamp(1em, 2vw, 1.4em);
+    width:  clamp(1em, 2vw, 1.4em);
+  }
+  
+  
+  
+  @keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    to { -webkit-transform: rotate(360deg); }
+  }
+  </style><div class="embed-pdf-container" id="embed-pdf-container-af48ac7e">
+    <div class="pdf-loadingWrapper" id="pdf-loadingWrapper-af48ac7e">
+        <div class="pdf-loading" id="pdf-loading-af48ac7e"></div>
+    </div>
+    <div id="overlayText">
+      <a href="manual.pdf" aria-label="Download" download>
+        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+            <path d="M9 13c.3 0 .5-.1.7-.3L15.4 7 14 5.6l-4 4V1H8v8.6l-4-4L2.6 7l5.7 5.7c.2.2.4.3.7.3zm-7 2h14v2H2z" />
+        </svg>
+      </a>
+    </div>
+    <canvas class="pdf-canvas" id="pdf-canvas-af48ac7e"></canvas>
+</div>
+
+<div class="pdf-paginator" id="pdf-paginator-af48ac7e">
+    <button id="pdf-prev-af48ac7e">Previous</button>
+    <button id="pdf-next-af48ac7e">Next</button> &nbsp; &nbsp;
+    <span>
+      <span class="pdf-pagenum" id="pdf-pagenum-af48ac7e"></span> / <span class="pdf-pagecount" id="pdf-pagecount-af48ac7e"></span>
+    </span>
+    <a class="pdf-source" id="pdf-source-af48ac7e" href="manual.pdf">[pdf]</a>
+</div>
+
+<noscript>
+View the PDF file <a class="pdf-source" id="pdf-source-noscript-af48ac7e" href="manual.pdf">here</a>.
+</noscript>
+
+<script type="text/javascript">
+    (function(){
+    var url = 'manual.pdf';
+
+    var hidePaginator = "" === "true";
+    var hideLoader = "" === "true";
+    var selectedPageNum = parseInt("") || 1;
+
+    
+    var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+    
+    
+    
+	pdfjsLib.GlobalWorkerOptions.workerSrc = "/js/pdf-js/build/pdf.worker.js";
+
+    
+    var pdfDoc = null,
+        pageNum = selectedPageNum,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 3,
+        canvas = document.getElementById('pdf-canvas-af48ac7e'),
+        ctx = canvas.getContext('2d'),
+        paginator = document.getElementById("pdf-paginator-af48ac7e"),
+        loadingWrapper = document.getElementById('pdf-loadingWrapper-af48ac7e');
+
+
+    
+    showPaginator();
+    showLoader();
+
+    
+
+    function renderPage(num) {
+      pageRendering = true;
+      
+      pdfDoc.getPage(num).then(function(page) {
+        var viewport = page.getViewport({scale: scale});
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        var renderTask = page.render(renderContext);
+
+        
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          showContent();
+
+          if (pageNumPending !== null) {
+            
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+
+      
+      document.getElementById('pdf-pagenum-af48ac7e').textContent = num;
+    }
+
+    
+
+    function showContent() {
+      loadingWrapper.style.display = 'none';
+      canvas.style.display = 'block';
+    }
+
+    
+
+    function showLoader() {
+      if(hideLoader) return
+      loadingWrapper.style.display = 'flex';
+      canvas.style.display = 'none';
+    }
+
+    
+
+    function showPaginator() {
+      if(hidePaginator) return
+      paginator.style.display = 'block';
+    }
+
+    
+
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+
+    
+
+    function onPrevPage() {
+      if (pageNum <= 1) {
+        return;
+      }
+      pageNum--;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('pdf-prev-af48ac7e').addEventListener('click', onPrevPage);
+
+    
+
+    function onNextPage() {
+      if (pageNum >= pdfDoc.numPages) {
+        return;
+      }
+      pageNum++;
+      queueRenderPage(pageNum);
+    }
+    document.getElementById('pdf-next-af48ac7e').addEventListener('click', onNextPage);
+
+    
+
+    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      var numPages = pdfDoc.numPages;
+      document.getElementById('pdf-pagecount-af48ac7e').textContent = numPages;
+
+      
+      if(pageNum > numPages) {
+        pageNum = numPages
+      }
+
+      
+      renderPage(pageNum);
+    });
+    })();
+</script>
+
+<h4 id="content-ingestion-reference-sheet">Content Ingestion Reference Sheet</h4>
+<p>A simple reference created to help new projectionists know which DCPs to ingest.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-15-15">
+  <label for="gallery-lightbox-input-15-15" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="ingest.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-15" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-15-15" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="ingest.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="ingest.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption></figcaption>
+</figure>
+
+
+
+
+</p>
+<h4 id="projection-training-passport">Projection Training Passport</h4>
+<p>An updated version of a checklist used to track projection trainee progress.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-16-16">
+  <label for="gallery-lightbox-input-16-16" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="passport.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-16" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-16-16" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="passport.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="passport.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption></figcaption>
+</figure>
+
+
+
+
+</p>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; <a href="/">Will Kittredge</a>
+        </p>
+        
+          
+          
+          
+        
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+

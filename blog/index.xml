@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Blog on wkittredge</title>
+		<link>https://wkittredge.com/blog/</link>
+		<description>Recent content in Blog on wkittredge</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://wkittredge.com/blog/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>From Projectionist to Analyst</title>
+				<link>https://wkittredge.com/blog/projection-cybersecurity/</link>
+				<pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/projection-cybersecurity/</guid>
+				<description>&lt;p&gt;I worked as a projectionist at &lt;a href=&#34;https://www.celebrationcinema.com/cinemas/Celebration-Cinema-GR-South&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Celebration Cinema South&lt;/a&gt; for nearly four years before I attended the Information Security and Intelligence program at Ferris State University. Since I&amp;rsquo;ve been on a roll with reflecting on my prior experiences lately, I thought now would be a good opportunity to write about being a projectionist. What was it like? What did I learn? Most importantly, how did my experience prepare me to be a cybersecurity analyst?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>National Heritage Academies Internship</title>
+				<link>https://wkittredge.com/blog/nha-internship/</link>
+				<pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/nha-internship/</guid>
+				<description>&lt;p&gt;Last summer, I completed an IT security internship at &lt;a href=&#34;https://www.nhaschools.com/en&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;National Heritage Academies&lt;/a&gt; (NHA) as part of my &lt;a href=&#34;https://catalog.ferris.edu/preview_program.php?catoid=4&amp;amp;poid=2120&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;bachelor&amp;rsquo;s degree requirements&lt;/a&gt; for Ferris State University. Since then I&amp;rsquo;ve also earned two certifications, graduated, and launched this blog/portfolio site. Now I have a little time to breathe while I search for an entry into the cyber industry, so I think this is the perfect time to reflect on my internship experience. I&amp;rsquo;ve recorded the details I remember and that I thought were worth sharing in this post.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Home Network Upgrade: Part 3</title>
+				<link>https://wkittredge.com/blog/home-network-3/</link>
+				<pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/home-network-3/</guid>
+				<description>&lt;blockquote class=&#34;alert alert-important&#34;&gt;&#xA;  &lt;p class=&#34;alert-heading&#34;&gt;&#xA;    🔍&#xA;    &#xA;      Important&#xA;    &#xA;  &lt;/p&gt;&#xA;  &lt;p&gt;This post is part of a series. Also see parts &lt;a href=&#34;https://wkittredge.com/blog/home-network-1&#34;&gt;1&lt;/a&gt; and &lt;a href=&#34;https://wkittredge.com/blog/home-network-2&#34;&gt;2&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;fcc-bans-new-foreign-routers&#34;&gt;FCC Bans New Foreign Routers&lt;/h2&gt;&#xA;&lt;p&gt;If you pay attention to tech news, you might&amp;rsquo;ve heard that the FCC recently &lt;em&gt;&amp;quot;&amp;hellip;updated its &lt;a href=&#34;https://www.fcc.gov/supplychain/coveredlist&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Covered List&lt;/a&gt; to include all consumer-grade routers produced in foreign countries.&amp;quot;&lt;/em&gt; You can view a PDF of the news release &lt;a href=&#34;https://docs.fcc.gov/public/attachments/DOC-420034A1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Essentially, this means that foreign routers are banned. Preexisting ones are fine, but new ones aren&amp;rsquo;t. Indeed, following the link to their list reveals that all routers produced in a foreign country &lt;em&gt;&amp;quot;&amp;hellip;are deemed to pose an unacceptable risk to the national security of the United States&amp;quot;&lt;/em&gt; &lt;strong&gt;except&lt;/strong&gt; in cases where conditional approval has been granted by the DoD or DHS. According to the executive branch determination that the FCC followed:&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>SP-111 Keyboard</title>
+				<link>https://wkittredge.com/blog/sp111/</link>
+				<pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/sp111/</guid>
+				<description>&lt;p&gt;One of the first things people notice when they see my setup (whether at &lt;a href=&#34;https://wkittredge.com/blog/cyber-competitions&#34;&gt;cyber competitions&lt;/a&gt; or in pictures) is my keyboard, the SP-111. It&amp;rsquo;s essentially the opposite of what one normally expects. The numpad is on the left side, it has two (three?) spacebars, a variety of non-standard keys, and it runs on customized &lt;a href=&#34;https://docs.qmk.fm/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;QMK Firmware&lt;/a&gt;. Not to mention the elephant in the room: it&amp;rsquo;s split in half.&lt;/p&gt;&#xA;&lt;p&gt;I won&amp;rsquo;t lie, it took a long time to finish and it was &lt;em&gt;expensive&lt;/em&gt;. I invested a lot into customizing this keyboard, but I also learned a lot. The end result is a silent, reliable, and perfectly-tailored input device that I intend to use for the rest of my life. Many would find it hard to justify spending so much time and money on a keyboard, but a keyboard is more than just the sum of its parts when you work in cybersecurity. This post is an overview of anything someone might want to know about it; it&amp;rsquo;s just as much for my reference as it is anyone else&amp;rsquo;s.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Cyber Competition Experiences</title>
+				<link>https://wkittredge.com/blog/cyber-competitions/</link>
+				<pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/cyber-competitions/</guid>
+				<description>&lt;p&gt;I participated in at least &lt;strong&gt;six cybersecurity competitions&lt;/strong&gt; during my time as an &lt;a href=&#34;https://www.ferris.edu/business/information-security-intelligence/homepage.htm&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;ISIN&lt;/a&gt; student at Ferris State University. Now that my degree is finished, I thought it would be a good idea to record what I remember from the experiences.&lt;/p&gt;&#xA;&lt;p&gt;Apart from being a healthy thing to do, reflection is also a core analyst skill. Knowing how best to &amp;ldquo;make it mean something&amp;rdquo; after you finish a competition, certification, or other cyber engagement will give perspective to your experiences. Recording what happened or creating something like a &lt;em&gt;lessons learned&lt;/em&gt; writeup can also benefit your peers and future analyst collaborators, so I feel grateful that the ISIN program reinforced this habit.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Managing Dotfiles with Yolk</title>
+				<link>https://wkittredge.com/blog/yolk/</link>
+				<pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/yolk/</guid>
+				<description>&lt;p&gt;I found &lt;a href=&#34;https://elkowar.github.io/yolk/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;yolk&lt;/a&gt; when searching for an easy way to manage and template my configuration files. I had been using &lt;a href=&#34;https://www.gnu.org/software/stow/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;GNU Stow&lt;/a&gt; beforehand, but it lacks a convenient templating method.&lt;/p&gt;&#xA;&lt;p&gt;Apart from the &lt;a href=&#34;https://elkowar.github.io/yolk/book/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;yolk documentation&lt;/a&gt; itself, I couldn&amp;rsquo;t find many resources about how to use it. I also haven&amp;rsquo;t seen it mentioned in many online discussions or lists of similar tools. &lt;strong&gt;This is a quickstart guide for replicating my yolk setup and getting started with configuration templating.&lt;/strong&gt; If you&amp;rsquo;re interested, you can read about how I previously managed configuration files with Stow. Otherwise, skip straight to seeing &lt;a href=&#34;#yolk&#34;&gt;how I use yolk&lt;/a&gt;.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Home Network Upgrade: Part 2</title>
+				<link>https://wkittredge.com/blog/home-network-2/</link>
+				<pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/home-network-2/</guid>
+				<description>&lt;blockquote class=&#34;alert alert-important&#34;&gt;&#xA;  &lt;p class=&#34;alert-heading&#34;&gt;&#xA;    🔍&#xA;    &#xA;      Important&#xA;    &#xA;  &lt;/p&gt;&#xA;  &lt;p&gt;This post is part of a series. Also see parts &lt;a href=&#34;https://wkittredge.com/blog/home-network-1&#34;&gt;1&lt;/a&gt; and &lt;a href=&#34;https://wkittredge.com/blog/home-network-3&#34;&gt;3&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;second-access-point&#34;&gt;Second Access Point&lt;/h2&gt;&#xA;&lt;p&gt;Because the first access point I deployed has a weaker signal than the Wi-Fi router it replaced, I need to deploy another access point to cover the basement. No new cables are getting installed—I&amp;rsquo;m just adding another access point along the path that already exists. See the diagram below for a better idea of what I&amp;rsquo;m talking about.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Home Network Upgrade: Part 1</title>
+				<link>https://wkittredge.com/blog/home-network-1/</link>
+				<pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+				<guid>https://wkittredge.com/blog/home-network-1/</guid>
+				<description>&lt;blockquote class=&#34;alert alert-important&#34;&gt;&#xA;  &lt;p class=&#34;alert-heading&#34;&gt;&#xA;    🔍&#xA;    &#xA;      Important&#xA;    &#xA;  &lt;/p&gt;&#xA;  &lt;p&gt;This post is part of a series. Also see parts &lt;a href=&#34;https://wkittredge.com/blog/home-network-2&#34;&gt;2&lt;/a&gt; and &lt;a href=&#34;https://wkittredge.com/blog/home-network-3&#34;&gt;3&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;background--goals&#34;&gt;Background &amp;amp; Goals&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been wanting to upgrade my home network for a long time. I&amp;rsquo;m severely limited in the types of cyber projects that I can engage with until I address this, so I thought that a home network upgrade had better be the first thing I complete after graduating. &lt;em&gt;&lt;strong&gt;The existing setup is lacking in several areas:&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

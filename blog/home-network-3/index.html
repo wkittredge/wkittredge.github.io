@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Network Upgrade: Part 3</title>
+<link rel="stylesheet" href="/fonts.min.432d30cc1eb59295499225e91344ecaeefad12455678a1c3d2342ab2353e6b77.css" integrity="sha256-Qy0wzB61kpVJkiXpE0Tsru&#43;tEkVWeKHD0jQqsjU&#43;a3c=">
+<link rel="stylesheet" href="/main.min.4a2ea50553fe1d95f47677a089b7ffadc6863726e5b698b8f719e86f8b787b83.css" integrity="sha256-Si6lBVP&#43;HZX0dnegibf/rcaGNybltpi49xnob4t4e4M=">
+<link rel="stylesheet" href="/dark.min.2ba570a67c27c8503fa3dac85965646b23a90904424ac0320ed5e2c46161d4ae.css" integrity="sha256-K6VwpnwnyFA/o9rIWWVkayOpCQRCSsAyDtXixGFh1K4=">
+<meta name="generator" content="Hugo 0.164.0">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="icon" href="data:," />
+        
+        <script>
+          if (localStorage.getItem('darkMode')) {
+            document.documentElement.classList.add('dark-mode');
+          }
+        </script>
+    </head>
+    <body>
+      <header>
+  <nav class="navbar">
+    <div class="menu-toggle">
+  <input type="checkbox" id="menu-toggle" aria-label="Toggle menu"/>
+  <label for="menu-toggle" class="menu-toggle-label" title="Toggle menu (Esc)">
+    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </label>
+</div>
+
+    <button class="search-toggle" id="search-toggle" aria-label="Search">
+  <label for="search-toggle" class="search-toggle-label" title="Search (/)">
+  <svg class="search-icon" xmlns="http://www.w3.org/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="10.5" cy="10.5" r="7"/>
+    <line x1="21" y1="21" x2="15.45" y2="15.45"/>
+  </svg>
+</button>
+
+    <ul class="navbar-text">
+          <li class="navbar-text"><a href="/">Home</a></li>
+          <li class="navbar-text"><a href="/blog/">Blog</a></li>
+          <li class="navbar-text"><a href="/portfolio/">Portfolio</a></li>
+          <li class="navbar-text"><a href="/about/">About</a></li>
+          <li class="navbar-text"><a href="/contact/">Contact</a></li>
+    </ul>
+
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+    <script src="/pagefind/pagefind-component-ui.js" type="module"></script>
+    <style>
+      :root {
+        --pf-font: Roboto;
+        --pf-input-height: 24px;
+        --pf-border-radius: 4px;
+        --pf-modal-max-width: 700px;
+        --pf-mark: hsl(24 100% 4%);
+        --pf-text: hsl(38 48% 28%);
+        --pf-text-muted: hsl(38 48% 28%);
+        --pf-border-focus: hsl(291 39% 52%);
+        --pf-outline-focus: hsl(291 39% 52%);
+        --pf-text-secondary: hsl(24 9% 54%);
+        --pf-background: hsl(37 100% 98%);
+        --pf-hover: hsl(37 51% 87%);
+        --pf-border: hsl(38 26% 46%);
+      }
+    </style>
+    <pagefind-modal></pagefind-modal>
+
+    <span class="navbar-filler"></span>
+    <div class="theme-toggle">
+  <input type="checkbox" id="theme-toggle" aria-label="Toggle theme"/>
+  <label for="theme-toggle" class="theme-toggle-label" title="Toggle theme (T)">
+    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"/>
+		</svg>
+    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill="currentColor" d="M12 17q-2.075 0-3.538-1.463T7 12q0-2.075 1.463-3.538T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17ZM2 13q-.425 0-.713-.288T1 12q0-.425.288-.713T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13H2Zm18 0q-.425 0-.713-.288T19 12q0-.425.288-.713T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13h-2Zm-8-8q-.425 0-.713-.288T11 4V2q0-.425.288-.713T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5Zm0 18q-.425 0-.713-.288T11 22v-2q0-.425.288-.713T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23ZM5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05ZM18 19.425l-1.05-1.075q-.275-.3-.275-.713t.275-.687q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3ZM16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275ZM4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.712-.275t.688.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288Z"/>
+		</svg>
+  </label>
+</div>
+
+  </nav>
+  
+  <script src="/js/toggle-theme.min.3e5b425b4b935f4c94bfe1a74db4888c8928896c24d81da4aed25049716026b3.js" integrity="sha256-PltCW0uTX0yUv&#43;GnTbSIjIkoiWwk2B2krtJQSXFgJrM=" defer></script>
+  
+  <script src="/js/toggle-search.min.ca3987cff86c419e69b0ece70db05ebddb6bd19da20c2741f10a5af09f6ca1c1.js" integrity="sha256-yjmHz/hsQZ5psOznDbBevdtr0Z2iDCdB8Qpa8J9socE=" defer></script>
+</header>
+
+      <nav class="side-menu">
+  
+    
+  
+  
+  
+  
+  
+    
+      
+    
+  
+  <p class="side-menu-main">Main</p>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <p class="side-menu-section">Resources</p>
+  <ul>
+    
+    <li><a href="/links/">Links</a></li>
+    <li><a href="/news/">News</a></li>
+    
+    
+  </ul>
+  <p class="side-menu-section">Miscellaneous</p>
+  <ul>
+    
+    
+    <li><a href="/library/">Library</a></li>
+    <li><a href="/planned/">Planned Posts</a></li>
+    
+  </ul>
+</nav>
+
+<script src="/js/toggle-menu.min.d127d5789b156c038204796c3571910da7e149a96c334c80cbca37b1fbb30279.js" integrity="sha256-0SfVeJsVbAOCBHlsNXGRDafhSalsM0yAy8o3sfuzAnk=" defer></script>
+
+
+
+<main>
+  <section class="post-open">
+    <div class="post-open-title">
+      <h1>Home Network Upgrade: Part 3</h1>
+      <div class="post-open-dates">
+        <p>
+          <b><i>Published: Apr 2, 2026</i></b>
+            ·&nbsp;<i>Updated: May 28, 2026</i>
+        </p>
+      </div>
+    </div>
+    <div class="post-open-tags"><a class="taglink" href="/tags/cybersecurity/"><kbd class="tag">cybersecurity</kbd></a><a class="taglink" href="/tags/networking/"><kbd class="tag">networking</kbd></a><a class="taglink" href="/tags/projects/"><kbd class="tag">projects</kbd></a></div>
+    <div class="post-open-quote">So the FCC won&#39;t let me be...</div>
+  </section>
+  
+    <div class="toc-toggle">
+  <input type="checkbox" id="toc-toggle" aria-label="Toggle TOC"/>
+  <label for="toc-toggle" class="toc-toggle-label" title="Toggle contents (C)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><path fill="currentColor" d="M4 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zm0 6h18v2H4zM26 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2zm0 6h2v2h-2z"/>
+    </svg>
+  </label>
+</div>
+<script>
+  if (localStorage.getItem('tocOpen') !== 'false') {
+    document.documentElement.classList.add('toc-open');
+  }
+</script>
+<aside class="toc">
+  <nav class="toc-inner">
+    <h1 class="toc-title">
+      <a title="Go to top" href="#">Table of Contents</a>
+    </h1>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fcc-bans-new-foreign-routers">FCC Bans New Foreign Routers</a></li>
+    <li><a href="#replacement-motherboard">Replacement Motherboard</a></li>
+    <li><a href="#proxmox-reinstall">Proxmox Reinstall</a>
+      <ul>
+        <li><a href="#no-device-with-valid-iso-found">No Device with Valid ISO Found</a></li>
+        <li><a href="#mount2-system-call-failed">Mount(2) System Call Failed</a></li>
+        <li><a href="#unable-to-initialize-physical-volume">Unable to Initialize Physical Volume</a></li>
+      </ul>
+    </li>
+    <li><a href="#vm-rebuilding">VM Rebuilding</a></li>
+    <li><a href="#opnsense-configuration">OPNsense Configuration</a></li>
+    <li><a href="#switch-configuration">Switch Configuration</a></li>
+    <li><a href="#access-point-configuration">Access Point Configuration</a></li>
+    <li><a href="#testing">Testing</a></li>
+    <li><a href="#next-post">Next Post</a></li>
+  </ul>
+</nav>
+  </nav>
+</aside>
+
+<script src="/js/toggle-toc.min.0619f3fb0f5f1eef268a6c056de299c79647923e8aa3398e8f88e1e87c01a7ba.js" integrity="sha256-Bhnz&#43;w9fHu8mimwFbeKZx5ZHkj6KozmOj4jh6HwBp7o=" defer></script>
+
+  
+  <section class="post-body">
+
+<blockquote class="alert alert-important">
+  <p class="alert-heading">
+    🔍
+    
+      Important
+    
+  </p>
+  <p>This post is part of a series. Also see parts <a href="/blog/home-network-1">1</a> and <a href="/blog/home-network-2">2</a>.</p>
+</blockquote>
+<h2 id="fcc-bans-new-foreign-routers">FCC Bans New Foreign Routers</h2>
+<p>If you pay attention to tech news, you might&rsquo;ve heard that the FCC recently <em>&quot;&hellip;updated its <a href="https://www.fcc.gov/supplychain/coveredlist" target="_blank" rel="noopener noreferrer">Covered List</a> to include all consumer-grade routers produced in foreign countries.&quot;</em> You can view a PDF of the news release <a href="https://docs.fcc.gov/public/attachments/DOC-420034A1.pdf" target="_blank" rel="noopener noreferrer">here</a>.</p>
+<p>Essentially, this means that foreign routers are banned. Preexisting ones are fine, but new ones aren&rsquo;t. Indeed, following the link to their list reveals that all routers produced in a foreign country <em>&quot;&hellip;are deemed to pose an unacceptable risk to the national security of the United States&quot;</em> <strong>except</strong> in cases where conditional approval has been granted by the DoD or DHS. According to the executive branch determination that the FCC followed:</p>
+<figure class="blockquote">
+  <blockquote >
+    <i><p>&hellip;foreign-produced routers (1) introduce a &ldquo;supply chain vulnerability that could disrupt the U.S. economy, critical infrastructure, and national defense&rdquo; and (2) pose &ldquo;a severe cybersecurity risk that could be leveraged to immediately and severely disrupt U.S. critical infrastructure and directly harm U.S. persons.&rdquo;</p>
+</i>
+  </blockquote></figure>
+<p>So, If the government is concerned with our critical infrastructure then why put restrictions on consumer-grade routers rather than the commercial-grade equipment that businesses use?</p>
+<p>One could argue that they&rsquo;re attempting to tighten up security for employees that work from home, as there have been cases of APTs leveraging vulnerable home routers to assist in their malicious activities. For example, according to a <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-144a" target="_blank" rel="noopener noreferrer">2023 CISA advisory</a>, groups such as <a href="https://attack.mitre.org/groups/G1017/" target="_blank" rel="noopener noreferrer">Volt Typhoon</a> have been observed using compromised SOHO (small office/home office) network devices as part of their efforts to target critical infrastructure (see <em>network artifacts</em> section). These activities were mentioned directly in the FCC news release, so the decision can at least be partially attributed to them (personally, I find the reasoning somewhat weak and doubt the ban&rsquo;s effectiveness).</p>
+<p>In any case, I think decisions like this highlight the importance of staying on top of tech news. Whether you think the decision is justified or not is up to you, but it&rsquo;s undeniable that <strong>this makes open-source/DIY router solutions like <a href="https://opnsense.org/" target="_blank" rel="noopener noreferrer">OPNsense</a> more appealing for tech enthusiasts.</strong> The government didn&rsquo;t come right out and say it, but as someone with a cybersecurity degree, what I heard was: <em>&ldquo;You are only allowed to buy technology that contains OUR backdoors.&rdquo;</em></p>
+<h2 id="replacement-motherboard">Replacement Motherboard</h2>
+<p>I <a href="/blog/home-network-2#machine-assembly">previously mentioned</a> that none of my spare M.2 NVMe drives were being detected by the motherboard I used in my DIY router, so I would need to change it later.</p>
+<p>Sourcing a motherboard sounded easy at first, but there were a variety of factors that complicated this:</p>
+<ul>
+<li>My budget is small (≤ $100)</li>
+<li>Hardware is expensive at the time of writing</li>
+<li>I needed a Mini-ITX AM4 board</li>
+<li>I needed support for old Ryzen 2000 series processors</li>
+</ul>
+<p>Unfortunately, I had to settle for another <a href="https://jginyue.com/index/Article/show/cat_id/43/id/212" target="_blank" rel="noopener noreferrer">JGINYUE board</a> since there were no other options (the old/used motherboard market leaves a lot to be desired). I returned the one I had and ordered a replacement with an older B350 chipset in hopes that this would have better support for the aging hardware I&rsquo;m repurposing.</p>
+<p>
+
+
+
+  <link rel="stylesheet" href="/css/gallery.min.8355ca89b786f020baa6372a4dde65908fa4a191d9ee6cafc3f66a3cd9d81375.css"
+        integrity="sha256-g1XKibeG8CC6pjcqTd5lkI&#43;koZHZ7myvw/ZqPNnYE3U="/>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-80 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-1-1">
+  <label for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="motherboard.avif" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-1" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-1-1" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="motherboard.avif" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="motherboard.avif">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A picture of my replacement motherboard. Image credits to JGINYUE.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>I waited nearly a month for my new motherboard to get delivered from mainland China, so you can imagine my reaction when I found out that it still didn&rsquo;t support any of my spare M.2 drives (NVMe or SATA)! At this point, I honestly believe that this brand just puts fake M.2 connectors on their boards. This was disappointing, but I had an even bigger problem on my hands at this point: <strong>after installing the new motherboard, Proxmox would not boot.</strong></p>
+<h2 id="proxmox-reinstall">Proxmox Reinstall</h2>
+<p>No Proxmox meant no OPNsense, and no OPNsense meant no Internet connection. <strong>Fortunately, I planned for a scenario like this.</strong></p>
+<p>I kept our old router when I deployed my DIY replacement in case the new machine ever experienced a problem. Getting Internet working again was as simple as booting the old router back up, disabling the wireless radio (the access points handle Wi-Fi now) and connecting the LAN/WAN cables. This essentially reverts my network back to its <a href="/blog/home-network-1#background--goals">original state</a> from before I began the project (poor logging, no VLANs, etc&hellip;), but it was at least a start until I could get Proxmox booting again.</p>
+<p>Situations like this are one of the primary reasons that I waited to upgrade my home network until <em>after</em> I finished my degree. Having more control over my network would mean nothing if I wasn&rsquo;t able to keep it up, and spending time on troubleshooting my side project wasn&rsquo;t something I could easily do during school.</p>
+<p>I knew that I had backups of all my important settings, so it would be easy to start from a fresh install if necessary. I spent ~30 minutes checking the obvious things like UEFI/BIOS boot settings and physical connections before deciding that it would be simpler to wipe, reinstall everything, and then import my configurations. Unfortunately, this ended up taking nearly an entire day after unexpected issues occurred.</p>
+<h3 id="no-device-with-valid-iso-found">No Device with Valid ISO Found</h3>
+<p>Performing OS installs is something I can do with my eyes closed at this point, so I was surprised when Proxmox started giving me an error I hadn&rsquo;t seen before when I attempted a reinstall:</p>
+<pre tabindex="0"><code>[ERROR] no device with valid ISO found, please check your installation medium
+unable to continue (type exit or CTRL-D to reboot)
+</code></pre><p>Even more strange was the fact that I used the same USB drive with the same ISO image as when I originally installed Proxmox.</p>
+<p>I used <a href="https://etcher.balena.io/" target="_blank" rel="noopener noreferrer">balenaEtcher</a> to quickly re-flash the ISO image, but was met with the same result when I tried installing Proxmox again. <a href="https://rufus.ie/en/" target="_blank" rel="noopener noreferrer">Rufus</a> gave me the exact same problem, and I started to become concerned that my new motherboard might be defective or incompatible with the other hardware. I decided that I would try to manually flash an ISO to my USB with <code>dd</code> as a last resort:</p>
+<pre tabindex="0"><code>sudo dd if=~/Downloads/proxmox-ve_9.1-1.iso of=/dev/sda bs=1M conv=fdatasync
+</code></pre><p>This at least allowed Proxmox to recognize the ISO when I attempted another install, but now I was getting a new error.</p>
+<h3 id="mount2-system-call-failed">Mount(2) System Call Failed</h3>
+<p>Proxmox found the ISO and started installing, but then came back with this:</p>
+<pre tabindex="0"><code>testing device &#39;/dev/sda&#39; for ISO
+found Proxmox VE ISO
+switching root from initrd to actual installation system
+Starting Proxmox installation
+EFI boot mode detected, mounting efivars filesystem
+mount:	/sys/firmware/efi/efivars: mount(2) system call failed: Operation not supported.
+	dmesg(1) may have more information after failed mount system call.
+
+Installation aborted - unable to continue (type exit or CTRL-D to reboot)
+</code></pre><p>Seeing that the <code>mount</code> operation was &ldquo;not supported&rdquo; didn&rsquo;t make sense to me. This would mean I wouldn&rsquo;t be able to use a filesystem and that the device would essentially be useless. As soon as I read the message, I figured that something had to be amiss in the UEFI/BIOS settings.</p>
+<p>My thinking was that there was likely some low-level security feature that prevented the Proxmox install from continuing. The only setting I was aware of that <em>might</em> cause this was <code>Secure Boot</code>, which I had already disabled during prior troubleshooting. Proxmox is also supposed to have <a href="https://pve.proxmox.com/wiki/Secure_Boot_Setup" target="_blank" rel="noopener noreferrer">secure boot support</a>, so I wasn&rsquo;t getting my hopes up.</p>
+<p>Then I found this <a href="https://forum.proxmox.com/threads/proxmox-installation-error.160328/post-736975" target="_blank" rel="noopener noreferrer">forum thread</a> while searching that suggested to enable <code>NX Mode</code> in UEFI/BIOS, and it actually solved the problem! The commenter mentioned that <em>&ldquo;this setting has caused issues to many mini PCs running sketchy BIOSs.&rdquo;</em> Since I&rsquo;m now on my second mini JGINYUE board that has experienced strange issues (not to mention that is has the longest initialization time I&rsquo;ve ever seen), I would definitely say their comment applies to me.</p>
+<h3 id="unable-to-initialize-physical-volume">Unable to Initialize Physical Volume</h3>
+<p>I was now able to work my way through the entire Proxmox installation wizard as expected, but I encountered another error just after confirming my options at the end:</p>
+<pre tabindex="0"><code>unable to initialize physical volume /dev/sda3
+</code></pre><p>This ended up being an easy fix, although I&rsquo;m still somewhat confused about why it happened in the first place.</p>
+<p>All I had to do was reduce my <code>hdsize</code> using the options window on the installer page where you pick your target harddisk. I have a 525 GB SSD installed. Proxmox defaulted to using 489 GB, so I lowered this amount to 480 GB and was able to complete the installation afterwards. It seems like it would be easy to account for this strange behavior in the installer, but what do I know?</p>
+<h2 id="vm-rebuilding">VM Rebuilding</h2>
+<p>I&rsquo;m closer to getting OPNsense back up and running now that Proxmox has been reinstalled, but there are a few tasks to take care of first:</p>
+<ul>
+<li>Update repositories</li>
+<li>Update Proxmox</li>
+<li>Download OPNsense ISO</li>
+<li>Create Linux bridges</li>
+<li>Create VM</li>
+</ul>
+<p>Updating the Proxmox <a href="https://pve.proxmox.com/wiki/Package_Repositories" target="_blank" rel="noopener noreferrer">repositories</a> and system are both relatively easy. I don&rsquo;t have an enterprise subscription, so I need to disable the enterprise repositories and add the no-subscription one. I updated the package database, installed any updates, and rebooted the system.</p>
+<p>Next up is downloading an OPNsense ISO. You could save the file to your PC and then upload it to Proxmox, but in my case it&rsquo;s faster to do it directly from the host machine:</p>
+<pre tabindex="0"><code>root@pve:~# wget -P /var/lib/vz/template/iso/ https://pkg.opnsense.org/releases/26.1.2/OPNsense-26.1.2-dvd-amd64.iso.bz2
+--2026-03-30 18:11:34--  https://pkg.opnsense.org/releases/26.1.2/OPNsense-26.1.2-dvd-amd64.iso.bz2
+Resolving pkg.opnsense.org (pkg.opnsense.org)... 89.149.222.99, 2001:1af8:5300:a010:1::1
+Connecting to pkg.opnsense.org (pkg.opnsense.org)|89.149.222.99|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 527057268 (503M) [application/x-bzip2]
+Saving to: &#39;/var/lib/vz/template/iso/OPNsense-26.1.2-dvd-amd64.iso.bz2&#39;
+
+OPNsense-26.1.2-dvd-amd64.iso. 100%[==================================================&gt;] 502.64M  21.6MB/s    in 25s     
+
+2026-03-30 18:12:00 (20.4 MB/s) - &#39;/var/lib/vz/template/iso/OPNsense-26.1.2-dvd-amd64.iso.bz2&#39; saved [527057268/527057268]
+</code></pre><p>The file needs to be unzipped after downloading:</p>
+<pre tabindex="0"><code>root@pve:~# bzip2 -d /var/lib/vz/template/iso/OPNsense-26.1.2-dvd-amd64.iso.bz2 
+</code></pre><p>I also need to create two Linux bridges in Proxmox to pass to my OPNsense VM later (for LAN and WAN). The LAN bridge needs to be VLAN aware.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-2-2">
+  <label for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="interfaces.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-2" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-2-2" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="interfaces.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="interfaces.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A screenshot of my Proxmox network interfaces.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>Now I can create a VM according to <a href="https://docs.opnsense.org/manual/hardware.html#hardware-requirements" target="_blank" rel="noopener noreferrer">OPNsense hardware requirements</a>. A screenshot of what I configured can be viewed below:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-3-3">
+  <label for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vm.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-3" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-3-3" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vm.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="vm.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>A screenshot of my OPNsense VM hardware.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h2 id="opnsense-configuration">OPNsense Configuration</h2>
+<p>OPNsense is finally ready to get installed and configured. I booted up the VM to proceed with installation and encountered one final <a href="https://forum.opnsense.org/index.php?topic=51022.0" target="_blank" rel="noopener noreferrer">error</a> when attempting to select the UFS installer option. You can get around this issue by selecting the auto-guided UFS option.</p>
+<p>Once OPNsense was installed I performed system updates, downloaded the QEMU Guest Agent service, and spoofed the WAN interface&rsquo;s MAC address again before taking the old router offline. Now OPNsense is routing all the traffic on my network, so <strong>it&rsquo;s time to (re)configure the VLANs. Here&rsquo;s an overview of what needs to be done:</strong></p>
+<ul>
+<li>Create and assign VLAN interfaces</li>
+<li>Enable VLAN interfaces and set static IPs</li>
+<li>Configure DHCP for VLANs</li>
+<li>Configure firewall rules</li>
+</ul>
+<p>I started creating and assigning the VLAN interfaces, then saved and applied my changes:</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-7"
+             id="gallery-thumbnail-input-7-7"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-7-7">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-7-7">
+        <label for="gallery-lightbox-input-7-7"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vlan_1.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-7" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-7-7"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vlan_1.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="vlan_1.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Created VLAN interfaces.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-7"
+             id="gallery-thumbnail-input-7-8">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-7-8">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-7-8">
+        <label for="gallery-lightbox-input-7-8"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vlan_2.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-7" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-7-8"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vlan_2.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="vlan_2.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Assigned VLAN interfaces.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-7-7"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-7-7"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="vlan_1.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-7-8"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-7-8"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="vlan_2.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<p>You might be wondering why I didn&rsquo;t create a management VLAN. I messed with configuration settings for a significant amount of time, but it appears that my switches and access points simply don&rsquo;t support this out of the box. There is <a href="https://community.tp-link.com/en/business/forum/topic/174562?replyId=377988" target="_blank" rel="noopener noreferrer">no way for me to restrict access to management interfaces based on VLAN alone</a>. I decided that this is acceptable for my use case in a home network, but I would definitely be more concerned if this was a small business network (ironic, considering that&rsquo;s the market my devices target). I think that my current best option here is to use the OPNsense firewall to lock management access down as much as possible based on device IPs.</p>
+<p>I need to enable and configure each interface once the changes are applied. Here&rsquo;s a summary of the settings for each VLAN interface:</p>
+<table>
+	<thead>
+			<tr>
+					<th>VLAN?</th>
+					<th>Enabled?</th>
+					<th>IPv4 Configuration?</th>
+					<th>IPv4 Address?</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>VLAN10_User</code></td>
+					<td>Yes</td>
+					<td>Static</td>
+					<td><code>192.168.10.1/24</code></td>
+			</tr>
+			<tr>
+					<td><code>VLAN20_Guest</code></td>
+					<td>Yes</td>
+					<td>Static</td>
+					<td><code>192.168.20.1/24</code></td>
+			</tr>
+			<tr>
+					<td><code>VLAN30_IoT</code></td>
+					<td>Yes</td>
+					<td>Static</td>
+					<td><code>192.168.30.1/24</code></td>
+			</tr>
+			<tr>
+					<td><code>VLAN40_Secure</code></td>
+					<td>Yes</td>
+					<td>Static</td>
+					<td><code>192.168.40.1/24</code></td>
+			</tr>
+	</tbody>
+</table>
+<p>Now that the VLANs themselves are set up I need to get DHCP working and create some firewall rules to pass traffic. Otherwise, none of the devices on my VLANs will be able to lease IPs automatically, reach the router&rsquo;s DNS server, or communicate with things out on the Internet.</p>
+<p>I added all of my VLANs to the <code>Interface</code> list in Dnsmasq general settings and then defined the DHCP ranges visible below:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-4-4">
+  <label for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vlan_3.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-4" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-4-4" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vlan_3.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="vlan_3.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>DHCP ranges for my VLAN interfaces.</figcaption>
+</figure>
+
+
+
+
+</p>
+<p>In the OPNsense firewall I created a network alias called <code>privnets</code> and added the <a href="https://datatracker.ietf.org/doc/html/rfc1918#section-3" target="_blank" rel="noopener noreferrer">private address blocks from RFC1918</a>. Now I can create some <em>baseline</em> rules to get started with passing traffic for my VLANs. It&rsquo;s important to note that this will <strong>not</strong> be my final configuration—this is just to get started. Specific real-world examples of useful rules will come in a later post. I copied the <code>VLAN10_User</code> firewall rules visible below over to my other VLAN interfaces and modified them accordingly. <code>VLAN40_Secure</code> has an additional rule that allows it to access certain private network addresses (e.g., to configure network devices).</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-90 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-5-5">
+  <label for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vlan_4.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-5" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-5-5" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vlan_4.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="vlan_4.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>Baseline rules for <code>VLAN10_User</code>. Repeat and modify accordingly for each VLAN.</figcaption>
+</figure>
+
+
+
+
+</p>
+<h2 id="switch-configuration">Switch Configuration</h2>
+<p>Next, I need to configure my &ldquo;core&rdquo; switch to handle the VLAN traffic. I need to tell my switch that it should be expecting VLAN tagged frames between OPNsense and the wireless access points. Here&rsquo;s a screenshot of the management page and a table to summarize what&rsquo;s going on:</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+      
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+  
+  
+    
+  
+    
+  
+
+
+<figure class="gallery-standalone gallery-maxwidth-80 gallery-center ">
+  <input class="gallery-lightbox" type="checkbox"
+         id="gallery-lightbox-input-6-6">
+  <label for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vlan_5.webp" alt="" loading="lazy">
+</picture>
+
+  </label>
+
+  
+  <div id="gallery-6" class="gallery-lightbox-full">
+    <label class="gallery-lightbox-full"
+           for="gallery-lightbox-input-6-6" title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vlan_5.webp" alt="" loading="lazy">
+</picture>
+
+    </label>
+    <p class="gallery-lightbox-full">
+      <a href="vlan_5.webp">View full size image</a>
+    </p>
+  </div>
+  <figcaption>The 802.1Q VLAN configuration for my TL-SG108PE.</figcaption>
+</figure>
+
+
+
+
+</p>
+<div class="rowtable">
+  <table>
+	<thead>
+			<tr>
+					<th>Port?</th>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+					<th>7</th>
+					<th>8</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>For?</strong></td>
+					<td>Access point</td>
+					<td>Access point</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td>Proxmox MGMT</td>
+					<td>OPNsense LAN</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+			</tr>
+			<tr>
+					<td><strong>Tagged?</strong></td>
+					<td><code>10</code>, <code>20</code>, <code>30</code>, <code>40</code></td>
+					<td><code>10</code>, <code>20</code>, <code>30</code>, <code>40</code></td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td><code>10</code>, <code>20</code>, <code>30</code>, <code>40</code></td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+			</tr>
+			<tr>
+					<td><strong>Untagged?</strong></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+<h2 id="access-point-configuration">Access Point Configuration</h2>
+<p>Lastly, there are some finishing touches to configure in my Wi-Fi access points. This involves setting an appropriate VLAN for each SSID and physical network port to ensure that traffic is getting tagged like I expect.</p>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-8"
+             id="gallery-thumbnail-input-8-10"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-8-10">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-8-10">
+        <label for="gallery-lightbox-input-8-10"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vlan_6.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-8" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-8-10"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vlan_6.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="vlan_6.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Assigned VLANs to SSIDs.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-8"
+             id="gallery-thumbnail-input-8-11">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-8-11">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-8-11">
+        <label for="gallery-lightbox-input-8-11"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="vlan_7.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-8" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-8-11"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="vlan_7.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="vlan_7.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>Assigned VLANs to network ports (living room AP only, not configured for basement AP).</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-8-10"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-8-10"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="vlan_6.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-8-11"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-8-11"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="vlan_7.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+
+<h2 id="testing">Testing</h2>
+<p>Now it&rsquo;s time to test the configurations to make sure that everything works the way I&rsquo;ve set it up. <strong>Here&rsquo;s the expected behavior:</strong></p>
+<ul>
+<li>There are 4 VLANs</li>
+<li>All VLANs have DNS and Internet access, but no private network access</li>
+<li>All VLANs except <code>VLAN40_Secure</code> (wired only) have a dedicated Wi-Fi SSID</li>
+<li>Only <code>VLAN40_Secure</code> is allowed through the firewall to configure network devices</li>
+</ul>
+<p>When I deployed the <a href="/blog/home-network-2#second-access-point">second access point</a>, I also added a network switch between it and the computer lab (not pictured in the diagram I made). This allows me to very easily hop to different VLANs for testing by simply plugging devices into different network ports, assuming that my switch is configured correctly. Here&rsquo;s a summary of what&rsquo;s happening on the switch:</p>
+<div class="rowtable">
+  <table>
+	<thead>
+			<tr>
+					<th>Port?</th>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+					<th>5</th>
+					<th>6</th>
+					<th>7</th>
+					<th>8</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>For?</strong></td>
+					<td>LAN</td>
+					<td>VLAN 1</td>
+					<td>VLAN 10</td>
+					<td>VLAN 20</td>
+					<td>VLAN 30</td>
+					<td>VLAN 40</td>
+					<td>VLAN 40</td>
+					<td>VLAN 40</td>
+			</tr>
+			<tr>
+					<td><strong>Tagged?</strong></td>
+					<td><code>10</code>, <code>20</code>, <code>30</code>, <code>40</code></td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+					<td>&ndash;</td>
+			</tr>
+			<tr>
+					<td><strong>Untagged?</strong></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>10</code></td>
+					<td><code>20</code></td>
+					<td><code>30</code></td>
+					<td><code>40</code></td>
+					<td><code>40</code></td>
+					<td><code>40</code></td>
+			</tr>
+			<tr>
+					<td><strong>PVID?</strong></td>
+					<td><code>1</code></td>
+					<td><code>1</code></td>
+					<td><code>10</code></td>
+					<td><code>20</code></td>
+					<td><code>30</code></td>
+					<td><code>40</code></td>
+					<td><code>40</code></td>
+					<td><code>40</code></td>
+			</tr>
+	</tbody>
+</table>
+
+</div>
+
+<p>You can view some testing screenshots below:
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+
+<div class="gallery-thumbnail
+              ">
+  <div class="gallery-thumbnail-focusimage">
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-13"
+               checked="checked">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-13">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-13">
+        <label for="gallery-lightbox-input-9-13"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="test_1.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-13"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="test_1.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="test_1.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>DNS and Internet work, other devices in the VLAN are reachable, but no management access.</i> </figcaption>
+      </figure>
+      
+      
+    
+      
+      
+      
+      <input class="gallery-thumbnail-focusimage" type="radio"
+             name="gallery-thumbnail-radio-9"
+             id="gallery-thumbnail-input-9-14">
+      <figure class="gallery-thumbnail-focusimage"
+              id="gallery-figure-9-14">
+        <input class="gallery-lightbox" type="checkbox"
+               id="gallery-lightbox-input-9-14">
+        <label for="gallery-lightbox-input-9-14"
+               title="Close">
+
+<picture class="gallery-image-primary">
+    
+      
+      <img class="gallery-image-primary" src="test_2.webp" alt="" loading="lazy">
+</picture>
+
+        </label>
+
+        
+        <div id="gallery-9" class="gallery-lightbox-full">
+          <label class="gallery-lightbox-full"
+                 for="gallery-lightbox-input-9-14"
+                 title="Close">
+
+<picture class="gallery-lightbox-full">
+    
+      
+      <img class="gallery-lightbox-full" src="test_2.webp" alt="" loading="lazy">
+</picture>
+
+          </label>
+          <p class="gallery-lightbox-full">
+            <a href="test_2.webp">View full size image</a>
+          </p>
+        </div>
+        <figcaption> <i>DNS and Internet work, devices outside the VLAN aren&#39;t reachable, and management access is allowed.</i> </figcaption>
+      </figure>
+      
+      
+    
+  </div>
+
+  
+  <div class="gallery-thumbnail-thumbs">
+  
+    
+    
+    <figure id="gallery-figure-9-13"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-13"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="test_1.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+    
+    
+    <figure id="gallery-figure-9-14"
+            class="gallery-thumbnail-thumbimage">
+      <label for="gallery-thumbnail-input-9-14"
+             class="gallery-thumbnail-thumbimage" title="Close">
+
+<picture class="gallery-thumbnail-thumbimage">
+    
+      
+      <img class="gallery-thumbnail-thumbimage" src="test_2.webp" alt="" loading="lazy">
+</picture>
+
+      </label>
+    </figure>
+    
+  
+  </div>
+</div>
+
+
+
+
+</p>
+<p>This should give me a good base to build upon. Now I have network segmentation, much better logging and controls, and I can be reasonably confident that devices won&rsquo;t be able to access management interfaces at all unless they find a way to hop onto the secure VLAN. Even then, you would still need a password or knowledge of some unpatched vulnerability in order to change any configurations. From here I can continue tweaking device configurations and firewall rules to lock the network down even more. This is always an ongoing process—expect a post at some point in the future when I have enough to report!</p>
+<h2 id="next-post">Next Post</h2>
+<p>The next part of this project will leave network configuration behind for a while to look at a simple NAS (network attached storage) deployment.</p>
+</section>
+  <section class="post-share">
+<div class="social-share-container"></div>
+</section>
+</main>
+      <footer>
+        <p class='copyright'>
+          Copyright &copy; <a href="/">Will Kittredge</a>
+        </p>
+        
+          
+          
+          
+        
+        <p class='copyrightAccent'>
+        </p>
+      </footer>
+    </body>
+</html>
+
